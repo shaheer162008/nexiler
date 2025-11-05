@@ -1,0 +1,359 @@
+# STYLING GUIDE - Nexiler Agency Website
+# Complete Reference for Consistent Design
+# Last Updated: November 5, 2025
+
+================================================================================
+                            COLOR PALETTE
+================================================================================
+
+PRIMARY COLORS:
+---------------
+• Background (Main):        bg-white
+• Background (Cards):       bg-white
+• Background (Hover):       (no color change, only border)
+• Icon Container:           bg-gray-50
+• CTA Background:           bg-gray-50
+
+TEXT COLORS:
+------------
+• Heading:                  text-black
+• Body Text:                text-gray-700
+• Card Text:                text-gray-600
+• Icon:                     text-black
+
+ACCENT COLORS:
+--------------
+• Primary Button:           bg-blue-600
+• Primary Button Hover:     hover:bg-blue-700
+• Secondary Button BG:      bg-blue-50
+• Secondary Button Hover:   hover:bg-blue-100
+• Border (Default):         border-gray-200
+• Border (Hover):           hover:border-gray-300
+
+
+================================================================================
+                            BORDER RADIUS
+================================================================================
+
+CARD CORNERS:
+-------------
+• Service Cards:            rounded-2xl  (16px radius)
+• Icon Container:           rounded-2xl  (16px radius)
+• CTA Section:              rounded-2xl  (16px radius)
+• Stats Cards:              rounded-2xl  (16px radius)
+
+BUTTON CORNERS:
+---------------
+• All Buttons:              rounded-lg   (8px radius)
+• Small Buttons:            rounded-md   (6px radius)
+
+
+================================================================================
+                            SPACING & PADDING
+================================================================================
+
+SECTION SPACING:
+----------------
+• Top Padding:              pt-8   (32px - reduced gap from hero)
+• Bottom Padding:           pb-16  (64px)
+• Side Padding:             px-4 sm:px-6 lg:px-8  (responsive)
+
+CARD PADDING:
+-------------
+• Service Cards:            p-8  (32px all sides)
+• CTA Section:              p-8 sm:p-12  (32px mobile, 48px desktop)
+• Stats Cards:              p-8  (32px all sides)
+• Icon Container:           (auto - flex centered)
+
+INTERNAL SPACING:
+-----------------
+• Between Icon & Title:     mb-6  (24px)
+• Between Title & Text:     mb-3  (12px)
+• Between Text & Button:    mb-6  (24px)
+• Card Gaps (Grid):         gap-6  (24px)
+
+
+================================================================================
+                            TYPOGRAPHY
+================================================================================
+
+FONT WEIGHTS:
+-------------
+• Headings (Main):          font-bold  (700)
+• Card Titles:              font-bold  (700)
+• Buttons:                  font-semibold  (600)
+• Body Text:                (default 400)
+
+FONT SIZES:
+-----------
+• Section Heading:          text-3xl sm:text-4xl md:text-5xl lg:text-6xl
+  (30px → 36px → 48px → 60px responsive)
+
+• Card Title:               text-xl  (20px)
+• Card Description:         text-sm  (14px)
+• Button Text:              text-sm  (14px)
+• Stats Numbers:            text-3xl sm:text-4xl  (30px → 36px)
+• Stats Labels:             text-sm  (14px)
+
+LINE HEIGHT:
+------------
+• Headings:                 leading-tight
+• Body Text:                leading-relaxed
+• Card Text:                leading-relaxed
+
+LETTER SPACING:
+---------------
+• Headings Only:            tracking-tight
+
+
+================================================================================
+                            COMPONENT DIMENSIONS
+================================================================================
+
+ICON SIZES:
+-----------
+• Icon Container:           w-16 h-16  (64px × 64px)
+• Icon Inside:              w-8 h-8  (32px × 32px)
+• Button Icons:             w-4 h-4  (16px × 16px)
+
+BUTTON SIZES:
+-------------
+• Primary Buttons:          px-6 py-3  (24px horizontal, 12px vertical)
+• Secondary Buttons:        px-6 py-3  (same as primary)
+• Small Buttons (Cards):    px-4 py-2  (16px horizontal, 8px vertical)
+
+CONTAINER WIDTHS:
+-----------------
+• Max Content Width:        max-w-4xl  (896px)
+• Always Centered:          mx-auto
+
+
+================================================================================
+                            CARD DESIGN PATTERN
+================================================================================
+
+SERVICE CARD STRUCTURE:
+-----------------------
+<div className="group p-8 rounded-2xl border border-gray-200 bg-white hover:border-gray-300 transition-all duration-300 cursor-pointer">
+  
+  {/* Icon Container */}
+  <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-6">
+    <Icon className="w-8 h-8 text-black" />
+  </div>
+  
+  {/* Content */}
+  <div>
+    <h3 className="text-xl font-bold text-black mb-3">Card Title</h3>
+    <p className="text-sm text-gray-600 leading-relaxed">Description text</p>
+  </div>
+  
+</div>
+
+
+================================================================================
+                            BUTTON STYLES
+================================================================================
+
+PRIMARY BUTTON:
+---------------
+className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold text-sm transition-colors"
+
+SECONDARY BUTTON (Light):
+--------------------------
+className="px-6 py-3 bg-blue-50 hover:bg-blue-100 border border-gray-200 text-blue-600 rounded-lg font-semibold text-sm transition-colors"
+
+
+================================================================================
+                            GRID LAYOUTS
+================================================================================
+
+SERVICE CARDS GRID:
+-------------------
+className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+• Mobile: 1 column
+• Tablet: 2 columns (768px+)
+• Desktop: 3 columns (1024px+)
+• Gap: 24px between cards
+
+STATS GRID:
+-----------
+className="grid grid-cols-2 md:grid-cols-4 gap-6"
+• Mobile: 2 columns
+• Desktop: 4 columns (768px+)
+• Gap: 24px between cards
+
+
+================================================================================
+                            HOVER EFFECTS
+================================================================================
+
+CARDS:
+------
+• Default State:            border-gray-200
+• Hover State:              hover:border-gray-300
+• Transition:               transition-all duration-300
+
+BUTTONS:
+--------
+• Primary:                  hover:bg-blue-700
+• Secondary (Light):        hover:bg-blue-100
+• Transition:               transition-colors
+
+CURSOR:
+-------
+• All Interactive Items:    cursor-pointer
+
+
+================================================================================
+                            RESPONSIVE BREAKPOINTS
+================================================================================
+
+TAILWIND BREAKPOINTS:
+---------------------
+• sm:  640px   (Small tablets and up)
+• md:  768px   (Tablets and up)
+• lg:  1024px  (Small laptops and up)
+• xl:  1280px  (Desktops and up)
+
+USAGE PATTERN:
+--------------
+• Mobile First: Write base classes without prefix
+• Add sm:, md:, lg: for larger screens
+• Example: text-3xl sm:text-4xl md:text-5xl lg:text-6xl
+
+
+================================================================================
+                            SECTION STRUCTURE
+================================================================================
+
+STANDARD SECTION TEMPLATE:
+--------------------------
+<section className="pt-16 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
+  <div className="max-w-4xl mx-auto">
+    
+    {/* Section Header */}
+    <div className="text-center space-y-6 mb-12">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black leading-tight px-2">
+        Section Title
+      </h2>
+      <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed px-2">
+        Section description text
+      </p>
+    </div>
+    
+    {/* Content Grid */}
+    <div className="grid ... gap-6 mb-12">
+      {/* Cards */}
+    </div>
+    
+    {/* CTA or Additional Content */}
+    
+  </div>
+</section>
+
+
+================================================================================
+                            TRANSITION TIMING
+================================================================================
+
+RECOMMENDED DURATIONS:
+----------------------
+• Card Hover:               duration-300  (300ms)
+• Button Hover:             (default - instant color change)
+• Complex Animations:       duration-300
+
+TRANSITION PROPERTIES:
+----------------------
+• Color Changes Only:       transition-colors
+• Multiple Properties:      transition-all
+• Custom:                   transition-[property]
+
+
+================================================================================
+                            ACCESSIBILITY NOTES
+================================================================================
+
+• Always use semantic HTML (<section>, <button>, <a>)
+• Maintain proper heading hierarchy (h1 → h2 → h3)
+• Ensure sufficient color contrast (dark cards pass WCAG AA)
+• Add hover states for all interactive elements
+• Use cursor-pointer for clickable items
+• Include proper alt text for images
+
+
+================================================================================
+                            DO's AND DON'Ts
+================================================================================
+
+DO:
+---
+✓ Use rounded-2xl for all cards (16px radius)
+✓ Use rounded-lg for all buttons (8px radius)
+✓ Keep padding consistent (p-8 for cards)
+✓ Use gap-6 for grid spacing (24px)
+✓ Light cards: bg-white with border-gray-200
+✓ Maintain icon size: w-16 h-16 container, w-8 h-8 icon
+✓ Add hover effects (border color change)
+✓ Use transition-all duration-300 for cards
+✓ Section top padding: pt-8 (reduced gap from hero)
+
+DON'T:
+------
+✗ Don't use rounded-md or rounded-xl for cards (use rounded-2xl)
+✗ Don't mix different padding sizes (stick to p-8)
+✗ Don't use shadows (not in current design system)
+✗ Don't use gradient backgrounds (keep it solid)
+✗ Don't forget hover states
+✗ Don't use gap-4 (use gap-6 for consistency)
+✗ Don't use dark backgrounds (keep it light and clean)
+
+
+================================================================================
+                            QUICK REFERENCE
+================================================================================
+
+Card:           p-8 rounded-2xl border border-gray-200 bg-white hover:border-gray-300
+Icon Box:       w-16 h-16 bg-gray-50 rounded-2xl
+Icon:           w-8 h-8 text-black
+Title:          text-xl font-bold text-black mb-3
+Text:           text-sm text-gray-600 leading-relaxed
+Grid:           grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
+Section:        pt-8 pb-16 px-4 sm:px-6 lg:px-8
+Primary Btn:    px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg
+Secondary Btn:  px-6 py-3 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-lg
+
+
+================================================================================
+                            VERSION HISTORY
+================================================================================
+
+v2.1 - November 5, 2025
+-----------------------
+• Reverted to light theme (white cards)
+• Kept rounded-2xl corners from v2.0
+• Maintained p-8 padding
+• Kept gap-6 grid spacing
+• Updated to light backgrounds with borders
+• Reduced section top padding to pt-8 (less gap from hero)
+• Clean, minimal aesthetic with borders
+
+v2.0 - November 5, 2025
+-----------------------
+• Updated to dark card design (reverted in v2.1)
+• Changed to rounded-2xl corners (kept)
+• Increased card padding to p-8 (kept)
+• Updated grid gaps to gap-6 (kept)
+
+v1.0 - November 5, 2025
+-----------------------
+• Initial light theme with flat cards
+• Notion.com inspired minimalism
+• Black/white color scheme
+
+
+================================================================================
+                            END OF GUIDE
+================================================================================
+
+For questions or updates, refer to DESIGN_GUIDELINES.md for overall design philosophy.
+This file focuses specifically on styling, spacing, and technical implementation.
