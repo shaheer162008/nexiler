@@ -121,7 +121,7 @@ const Navbar = () => {
                 <div className="absolute top-full left-0 mt-1 w-80 bg-white border border-gray-200 rounded-lg shadow-xl p-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <h3 className="text-xs font-semibold text-gray-500 uppercase mb-2 px-2">Teams</h3>
+                    
                       <div className="space-y-0.5">
                         {servicesData.teams.map((item) => (
                           <Link
@@ -136,7 +136,7 @@ const Navbar = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-xs font-semibold text-gray-500 uppercase mb-2 px-2">Team Size</h3>
+
                       <div className="space-y-0.5">
                         {servicesData.teamSize.map((item) => (
                           <Link
