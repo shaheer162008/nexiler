@@ -34,7 +34,7 @@ const PricingFeatures = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {features.map((section, index) => (
-            <div key={index} className="p-8 rounded-2xl border border-gray-200 bg-white">
+            <div key={index} className="p-8 rounded-2xl border border-gray-400 bg-white">
               <h3 className="text-2xl font-bold text-black mb-6">{section.title}</h3>
               <div className="space-y-4">
                 {section.items.map((item, itemIndex) => (

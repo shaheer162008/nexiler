@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Send } from 'lucide-react';
+import Select from '../ui/select';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -20,6 +21,35 @@ const ContactForm = () => {
     });
   };
 
+  const handleSelectChange = (name: string, value: string) => {
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  // Service options - matching navbar services
+  const serviceOptions = [
+    { value: 'web-development', label: 'Web Development' },
+    { value: 'mobile-apps', label: 'Mobile Apps' },
+    { value: 'ai-automation', label: 'AI & Automation' },
+    { value: 'e-commerce', label: 'E-Commerce' },
+    { value: 'design-branding', label: 'Design & Branding' },
+    { value: 'cloud-solutions', label: 'Cloud Solutions' },
+    { value: 'data-solutions', label: 'Data Solutions' },
+    { value: 'digital-marketing', label: 'Digital Marketing' },
+    { value: 'custom-solutions', label: 'Custom Solutions' },
+    { value: 'other', label: 'Other' },
+  ];
+
+  // Budget options
+  const budgetOptions = [
+    { value: '<1k', label: 'Less than $1,000' },
+    { value: '1k-5k', label: '$1,000 - $5,000' },
+    { value: '5k-10k', label: '$5,000 - $10,000' },
+    { value: '10k+', label: '$10,000+' },
+  ];
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
@@ -29,7 +59,7 @@ const ContactForm = () => {
   return (
     <section className="pt-8 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-4xl mx-auto">
-        <form onSubmit={handleSubmit} className="p-8 rounded-2xl border border-gray-200 bg-white">
+        <form onSubmit={handleSubmit} className="p-8 rounded-2xl border border-gray-400 bg-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Name */}
             <div>
@@ -43,7 +73,7 @@ const ContactForm = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-gray-300 transition-colors"
+                className="w-full px-4 py-3 border border-gray-400 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-gray-300 transition-colors"
                 placeholder="John Doe"
               />
             </div>
@@ -60,7 +90,7 @@ const ContactForm = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-gray-300 transition-colors"
+                className="w-full px-4 py-3 border border-gray-400 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-gray-300 transition-colors"
                 placeholder="john@example.com"
               />
             </div>
@@ -76,7 +106,7 @@ const ContactForm = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-gray-300 transition-colors"
+                className="w-full px-4 py-3 border border-gray-400 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-gray-300 transition-colors"
                 placeholder="+1 (555) 000-0000"
               />
             </div>
@@ -86,22 +116,15 @@ const ContactForm = () => {
               <label htmlFor="service" className="block text-sm font-semibold text-black mb-2">
                 Service Needed *
               </label>
-              <select
+              <Select
                 id="service"
                 name="service"
                 value={formData.service}
-                onChange={handleChange}
+                onChange={(value) => handleSelectChange('service', value)}
+                options={serviceOptions}
+                placeholder="Select a service"
                 required
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg text-black focus:outline-none focus:border-gray-300 transition-colors"
-              >
-                <option value="">Select a service</option>
-                <option value="web-development">Web Development</option>
-                <option value="mobile-apps">Mobile Apps</option>
-                <option value="ai-automation">AI & Automation</option>
-                <option value="e-commerce">E-Commerce</option>
-                <option value="design">Design & Branding</option>
-                <option value="other">Other</option>
-              </select>
+              />
             </div>
 
             {/* Budget */}
@@ -109,19 +132,14 @@ const ContactForm = () => {
               <label htmlFor="budget" className="block text-sm font-semibold text-black mb-2">
                 Budget Range
               </label>
-              <select
+              <Select
                 id="budget"
                 name="budget"
                 value={formData.budget}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg text-black focus:outline-none focus:border-gray-300 transition-colors"
-              >
-                <option value="">Select budget range</option>
-                <option value="<1k">Less than $1,000</option>
-                <option value="1k-5k">$1,000 - $5,000</option>
-                <option value="5k-10k">$5,000 - $10,000</option>
-                <option value="10k+">$10,000+</option>
-              </select>
+                onChange={(value) => handleSelectChange('budget', value)}
+                options={budgetOptions}
+                placeholder="Select budget range"
+              />
             </div>
 
             {/* Message */}
@@ -136,7 +154,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 required
                 rows={6}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-gray-300 transition-colors resize-none"
+                className="w-full px-4 py-3 border border-gray-400 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-gray-300 transition-colors resize-none"
                 placeholder="Tell us about your project..."
               />
             </div>

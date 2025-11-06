@@ -19,7 +19,7 @@ const BlogsFilters = ({ activeFilter, onFilterChange }: BlogsFiltersProps) => {
   ];
 
   return (
-    <section className="pt-8 pb-8 px-4 sm:px-6 lg:px-8 bg-white sticky top-14 z-40 border-b border-gray-200">
+    <section className="pt-8 pb-8 px-4 sm:px-6 lg:px-8 bg-white sticky top-14 z-40 border-b border-gray-300">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-wrap items-center justify-center gap-3">
           {filters.map((filter) => (
@@ -29,7 +29,7 @@ const BlogsFilters = ({ activeFilter, onFilterChange }: BlogsFiltersProps) => {
               className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
                 activeFilter === filter
                   ? 'bg-black text-white'
-                  : 'bg-white border border-gray-200 text-black hover:bg-gray-50'
+                  : 'bg-white border border-gray-400 text-black hover:bg-gray-50'
               }`}
             >
               {filter}

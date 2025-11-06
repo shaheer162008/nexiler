@@ -52,7 +52,7 @@ const Testimonials = () => {
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full mb-6">
             <div className="w-2 h-2 bg-black rounded-full"></div>
             <span className="text-sm font-semibold text-black uppercase tracking-wider">Client Testimonials</span>
           </div>
@@ -73,7 +73,7 @@ const Testimonials = () => {
           <div className="flex justify-center gap-4 mb-6">
             <button
               onClick={prevTestimonial}
-              className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:border-gray-300 transition-colors"
+              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:border-gray-300 transition-colors"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-5 h-5 text-black" />
@@ -95,7 +95,7 @@ const Testimonials = () => {
 
             <button
               onClick={nextTestimonial}
-              className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:border-gray-300 transition-colors"
+              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:border-gray-300 transition-colors"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-5 h-5 text-black" />
@@ -103,7 +103,7 @@ const Testimonials = () => {
           </div>
 
           {/* Testimonial Content */}
-          <div className="p-8 sm:p-12 rounded-2xl bg-white border border-gray-200">
+          <div className="p-8 sm:p-12 rounded-2xl bg-white border border-gray-300">
             {/* Stars */}
             <div className="flex justify-center gap-1 mb-6">
               {[...Array(currentTestimonial.rating)].map((_, i) => (

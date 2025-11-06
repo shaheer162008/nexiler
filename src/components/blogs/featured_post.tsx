@@ -7,7 +7,7 @@ const FeaturedPost = () => {
   return (
     <section className="pt-8 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="p-8 sm:p-12 rounded-2xl border border-gray-200 bg-white">
+        <div className="p-8 sm:p-12 rounded-2xl border border-gray-400 bg-white">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left - Content */}
             <div className="space-y-4">

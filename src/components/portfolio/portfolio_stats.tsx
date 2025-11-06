@@ -15,7 +15,7 @@ const PortfolioStats = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center p-8 rounded-2xl border border-gray-200 bg-white">
+            <div key={index} className="text-center p-8 rounded-2xl border border-gray-400 bg-white">
               <div className="text-3xl sm:text-4xl font-bold text-black mb-2">
                 {stat.value}
               </div>

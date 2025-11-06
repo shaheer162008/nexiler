@@ -48,7 +48,7 @@ const ContactInfo = () => {
             );
 
             return (
-              <div key={index} className="p-6 rounded-2xl border border-gray-200 bg-white text-center flex flex-col items-center">
+              <div key={index} className="p-6 rounded-2xl border border-gray-400 bg-white text-center flex flex-col items-center">
                 {detail.link ? (
                   <a href={detail.link} className="block hover:opacity-80 transition-opacity">
                     {content}

@@ -62,7 +62,7 @@ const PricingCard = ({
         className={`block w-full text-center px-6 py-3 rounded-lg font-semibold text-sm transition-colors mb-6 ${
           isPopular
             ? 'bg-black hover:bg-gray-800 text-white'
-            : 'bg-white hover:bg-gray-50 border border-gray-200 text-black'
+            : 'bg-white hover:bg-gray-50 border border-gray-400 text-black'
         }`}
       >
         {ctaText}

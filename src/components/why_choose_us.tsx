@@ -36,7 +36,7 @@ const WhyChooseUs = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full mb-6">
             <div className="w-2 h-2 bg-black rounded-full"></div>
             <span className="text-sm font-semibold text-black uppercase tracking-wider">Why Choose Us</span>
           </div>
@@ -56,7 +56,7 @@ const WhyChooseUs = () => {
             return (
               <div
                 key={feature.title}
-                className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-gray-300 transition-all duration-300"
+                className="p-6 rounded-2xl bg-white border border-gray-300 hover:border-gray-300 transition-all duration-300"
               >
                 {/* Icon */}
                 <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-6">
@@ -72,7 +72,7 @@ const WhyChooseUs = () => {
                 </p>
 
                 {/* Badge */}
-                <div className="inline-flex px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg">
+                <div className="inline-flex px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg">
                   <span className="text-xs font-semibold text-gray-700">
                     {feature.badge}
                   </span>

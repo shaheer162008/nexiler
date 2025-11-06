@@ -18,7 +18,7 @@ interface BlogCardProps {
 
 const BlogCard = ({ title, excerpt, category, image, date, readTime, author, slug }: BlogCardProps) => {
   return (
-    <article className="group rounded-2xl border border-gray-200 bg-white hover:border-gray-300 transition-all overflow-hidden">
+    <article className="group rounded-2xl border border-gray-400 bg-white hover:border-gray-300 transition-all overflow-hidden">
       {/* Image */}
       <div className="relative w-full h-56 bg-gray-100 overflow-hidden">
         <Image
@@ -52,7 +52,7 @@ const BlogCard = ({ title, excerpt, category, image, date, readTime, author, slu
         <p className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-3">{excerpt}</p>
 
         {/* Footer */}
-        <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+        <div className="flex items-center justify-between pt-4 border-t border-gray-400">
           <span className="text-sm font-medium text-gray-700">{author}</span>
           <Link
             href={`/blog/${slug}`}

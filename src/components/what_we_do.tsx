@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Code2, Smartphone, Brain, ShoppingCart, TrendingUp, Cloud, Database, Sparkles, ArrowRight } from 'lucide-react';
+import { Code2, Smartphone, Brain, ShoppingCart, TrendingUp, Cloud, Database, Sparkles, Palette, ArrowRight } from 'lucide-react';
 
 const WhatWeDo = () => {
   const services = [
@@ -33,6 +33,13 @@ const WhatWeDo = () => {
       description: 'Complete online store solutions with payment integration, inventory management, and analytics.',
       features: ['Shopping Cart', 'Payment Gateway', 'Inventory System', 'Order Management'],
       link: '/services/e-commerce',
+    },
+    {
+      icon: Palette,
+      title: 'Design & Branding',
+      description: 'Professional brand identity design, logos, UI/UX, and complete visual identity systems.',
+      features: ['Logo Design', 'Brand Identity', 'UI/UX Design', 'Style Guides'],
+      link: '/services/design-branding',
     },
     {
       icon: TrendingUp,
@@ -69,7 +76,7 @@ const WhatWeDo = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full mb-4">
             <div className="w-2 h-2 bg-black rounded-full"></div>
             <span className="text-sm font-semibold text-black uppercase tracking-wider">What We Do</span>
           </div>
@@ -88,7 +95,7 @@ const WhatWeDo = () => {
             return (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-black transition-colors group"
+                className="bg-white border border-gray-300 rounded-2xl p-6 hover:border-black transition-colors group"
               >
                 <div className="mb-4">
                   <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -132,7 +139,7 @@ const WhatWeDo = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center gap-2"
+              className="px-6 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-colors inline-flex items-center justify-center gap-2"
             >
               Get Custom Quote
               <ArrowRight className="h-4 w-4" />

@@ -7,7 +7,7 @@ import { Instagram, Twitter, Linkedin, Facebook, Youtube } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-white border-t border-gray-200 py-12">
+    <footer className="bg-white border-t border-gray-400 py-12">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-8">
           {/* Logo & Social Links */}
@@ -170,7 +170,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-gray-400 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-600">
             © 2025 Nexiler, Inc.
           </p>

@@ -73,7 +73,7 @@ const ServicesGrid = () => {
             return (
               <div
                 key={index}
-                className="p-8 rounded-2xl border border-gray-200 bg-white hover:border-gray-300 transition-all"
+                className="p-8 rounded-2xl border border-gray-400 bg-white hover:border-gray-300 transition-all"
               >
                 {/* Icon & Title */}
                 <div className="flex items-start gap-4 mb-4">

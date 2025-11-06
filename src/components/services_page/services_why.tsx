@@ -22,7 +22,7 @@ const ServicesWhy = () => {
   return (
     <section className="pt-8 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="p-8 sm:p-12 rounded-2xl border border-gray-200 bg-white">
+        <div className="p-8 sm:p-12 rounded-2xl border border-gray-400 bg-white">
           <div className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">Why Choose Us?</h2>
             <p className="text-base text-black max-w-2xl mx-auto">

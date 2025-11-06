@@ -24,7 +24,7 @@ const Newsletter = () => {
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-400 rounded-full mb-6">
             <Mail className="w-4 h-4 text-black" />
             <span className="text-sm font-semibold text-black uppercase tracking-wider">Newsletter</span>
           </div>
@@ -48,7 +48,7 @@ const Newsletter = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email address"
                 required
-                className="w-full pl-12 pr-4 py-3 bg-white border border-gray-200 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-gray-300 transition-colors"
+                className="w-full pl-12 pr-4 py-3 bg-white border border-gray-400 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-gray-300 transition-colors"
               />
             </div>
             <button

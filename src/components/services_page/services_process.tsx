@@ -39,7 +39,7 @@ const ServicesProcess = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, index) => (
-            <div key={index} className="p-6 rounded-2xl border border-gray-200 bg-white">
+            <div key={index} className="p-6 rounded-2xl border border-gray-400 bg-white">
               <div className="text-4xl font-bold text-gray-200 mb-4">{step.number}</div>
               <h3 className="text-lg font-bold text-black mb-3">{step.title}</h3>
               <p className="text-sm text-gray-700 leading-relaxed">{step.description}</p>

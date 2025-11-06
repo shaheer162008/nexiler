@@ -40,7 +40,7 @@ const Hero = () => {
           </Link>
           <Link
             href="/portfolio"
-            className="w-full sm:w-auto px-6 py-3 bg-white border border-gray-200 text-black hover:bg-gray-50 rounded-lg font-semibold text-sm transition-colors"
+            className="w-full sm:w-auto px-6 py-3 bg-white border border-gray-400 text-black hover:bg-gray-50 rounded-lg font-semibold text-sm transition-colors"
           >
             View Our Work
           </Link>

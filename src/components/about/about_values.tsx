@@ -41,7 +41,7 @@ const AboutValues = () => {
           {values.map((value, index) => {
             const Icon = value.icon;
             return (
-              <div key={index} className="p-6 rounded-2xl border border-gray-200 bg-white">
+              <div key={index} className="p-6 rounded-2xl border border-gray-400 bg-white">
                 <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-black" />
                 </div>

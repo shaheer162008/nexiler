@@ -50,7 +50,7 @@ const OurPromise = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Left Side - Promise Box */}
           <div className="lg:col-span-5">
-            <div className="p-8 rounded-2xl bg-white border border-gray-200 h-full">
+            <div className="p-8 rounded-2xl bg-white border border-gray-300 h-full">
               <div className="border-l-4 border-black pl-6 mb-8">
                 <h3 className="text-2xl font-bold text-black mb-3">
                   Our Promise to You
@@ -84,7 +84,7 @@ const OurPromise = () => {
                 return (
                   <div
                     key={index}
-                    className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-gray-200 hover:border-gray-300 transition-all duration-300"
+                    className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-gray-300 hover:border-gray-300 transition-all duration-300"
                   >
                     {/* Icon */}
                     <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center shrink-0">

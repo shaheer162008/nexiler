@@ -16,7 +16,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, category, image, tags, link }: ProjectCardProps) => {
   return (
-    <div className="group rounded-2xl border border-gray-200 bg-white hover:border-gray-300 transition-all overflow-hidden">
+    <div className="group rounded-2xl border border-gray-400 bg-white hover:border-gray-300 transition-all overflow-hidden">
       {/* Image */}
       <div className="relative w-full h-64 bg-gray-100 overflow-hidden">
         <Image

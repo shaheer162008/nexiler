@@ -1,69 +1,31 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import Dropdown from './ui/dropdown';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isPackagesOpen, setIsPackagesOpen] = useState(false);
-  const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const packagesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Clear timeouts on component unmount
-  useEffect(() => {
-    return () => {
-      if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
-      if (packagesTimeoutRef.current) clearTimeout(packagesTimeoutRef.current);
-    };
-  }, []);
-
-  // Services Dropdown Handlers
-  const handleServicesMouseEnter = () => {
-    if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
-    setIsServicesOpen(true);
-  };
-
-  const handleServicesMouseLeave = () => {
-    servicesTimeoutRef.current = setTimeout(() => {
-      setIsServicesOpen(false);
-    }, 200);
-  };
-
-  // Packages Dropdown Handlers
-  const handlePackagesMouseEnter = () => {
-    if (packagesTimeoutRef.current) clearTimeout(packagesTimeoutRef.current);
-    setIsPackagesOpen(true);
-  };
-
-  const handlePackagesMouseLeave = () => {
-    packagesTimeoutRef.current = setTimeout(() => {
-      setIsPackagesOpen(false);
-    }, 200);
-  };
-
-  // Services Data - Multi-column like Notion
-  const servicesData = {
-    teams: [
-      { name: 'Web Development', href: '/services/web-development' },
-      { name: 'Mobile Apps', href: '/services/mobile-apps' },
-      { name: 'AI & Automation', href: '/services/ai-automation' },
-      { name: 'E-Commerce', href: '/services/e-commerce' },
-    ],
-    teamSize: [
-      { name: 'Cloud Solutions', href: '/services/cloud-solutions' },
-      { name: 'Data Solutions', href: '/services/data-solutions' },
-      { name: 'Digital Marketing', href: '/services/digital-marketing' },
-      { name: 'Custom Solutions', href: '/services/custom-solutions' },
-    ],
-  };
+  // Services Data
+  const servicesItems = [
+    { name: 'Web Development', href: '/services/web-development' },
+    { name: 'Mobile Apps', href: '/services/mobile-apps' },
+    { name: 'AI & Automation', href: '/services/ai-automation' },
+    { name: 'E-Commerce', href: '/services/e-commerce' },
+    { name: 'Design & Branding', href: '/services/design-branding' },
+    { name: 'Cloud Solutions', href: '/services/cloud-solutions' },
+    { name: 'Data Solutions', href: '/services/data-solutions' },
+    { name: 'Digital Marketing', href: '/services/digital-marketing' },
+    { name: 'Custom Solutions', href: '/services/custom-solutions' },
+  ];
 
   // Packages Data
-  const packagesData = [
+  const packagesItems = [
     { name: 'View All Packages', href: '/packages' },
     { name: 'Custom Package', href: '/contact' },
     { name: 'Free Consultation', href: '/consultation' },
@@ -78,7 +40,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-300 shadow-sm">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center h-14">
           {/* Logo */}
@@ -103,107 +65,64 @@ const Navbar = () => {
             </Link>
 
             {/* Services Dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={handleServicesMouseEnter}
-              onMouseLeave={handleServicesMouseLeave}
-            >
-              <Link 
-                href="/services"
-                className="px-3 py-1.5 text-sm text-black font-semibold hover:scale-110 rounded-md flex items-center gap-1 transition-transform"
-              >
-                Services
-                <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
-              </Link>
-              
-              {/* Services Mega Dropdown */}
-              {isServicesOpen && (
-                <div className="absolute top-full left-0 mt-1 w-80 bg-white border border-gray-200 rounded-lg shadow-xl p-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                    
-                      <div className="space-y-0.5">
-                        {servicesData.teams.map((item) => (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                            className="block px-2 py-1.5 text-sm text-black font-medium hover:scale-105 rounded transition-transform origin-left"
-                            onClick={() => setIsServicesOpen(false)}
-                          >
-                            {item.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                    <div>
-
-                      <div className="space-y-0.5">
-                        {servicesData.teamSize.map((item) => (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                            className="block px-2 py-1.5 text-sm text-black font-medium hover:scale-105 rounded transition-transform origin-left"
-                            onClick={() => setIsServicesOpen(false)}
-                          >
-                            {item.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
+            <Dropdown 
+              trigger={{ label: 'Services', href: '/services' }}
+              items={servicesItems}
+              columns={2}
+            />
 
             {/* Packages Dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={handlePackagesMouseEnter}
-              onMouseLeave={handlePackagesMouseLeave}
-            >
-              <Link 
-                href="/packages"
-                className="px-3 py-1.5 text-sm text-black font-semibold hover:scale-110 rounded-md flex items-center gap-1 transition-transform"
-              >
-                Packages
-                <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${isPackagesOpen ? 'rotate-180' : ''}`} />
-              </Link>
-              
-              {/* Packages Dropdown */}
-              {isPackagesOpen && (
-                <div className="absolute top-full left-0 mt-1 w-52 bg-white border border-gray-200 rounded-lg shadow-xl p-2">
-                  <div className="space-y-0.5">
-                    {packagesData.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className="block px-3 py-2 text-sm text-black font-medium hover:scale-105 rounded transition-transform origin-left"
-                        onClick={() => setIsPackagesOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+            <Dropdown 
+              trigger={{ label: 'Packages', href: '/packages' }}
+              items={packagesItems}
+              columns={1}
+            />
 
-            {/* Regular Navigation Links */}
-            {navigationLinks.map((link) => (
-              <Link 
-                key={link.name}
-                href={link.href} 
-                className="px-3 py-1.5 text-sm text-black font-semibold hover:scale-110 rounded-md transition-transform"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {/* Portfolio Link */}
+            <Link 
+              href="/portfolio" 
+              className="px-3 py-1.5 text-sm text-black font-semibold hover:scale-110 rounded-md transition-transform"
+            >
+              Portfolio
+            </Link>
+
+            {/* Pricing Link */}
+            <Link 
+              href="/pricing" 
+              className="px-3 py-1.5 text-sm text-black font-semibold hover:scale-110 rounded-md transition-transform"
+            >
+              Pricing
+            </Link>
+
+            {/* Blogs Link */}
+            <Link 
+              href="/blogs" 
+              className="px-3 py-1.5 text-sm text-black font-semibold hover:scale-110 rounded-md transition-transform"
+            >
+              Blogs
+            </Link>
+
+            {/* About Link */}
+            <Link 
+              href="/about" 
+              className="px-3 py-1.5 text-sm text-black font-semibold hover:scale-110 rounded-md transition-transform"
+            >
+              About
+            </Link>
+
+            {/* Contact Link */}
+            <Link 
+              href="/contact" 
+              className="px-3 py-1.5 text-sm text-black font-semibold hover:scale-110 rounded-md transition-transform"
+            >
+              Contact
+            </Link>
           </div>
 
           {/* Right Side - CTA Buttons & Mobile Menu */}
           <div className="flex items-center gap-3 ml-auto">
             <div className="hidden lg:flex items-center gap-3">
-              <Link href="/packages" className="px-3 py-1.5 text-sm bg-white border border-gray-200 text-black hover:bg-gray-50 font-semibold rounded-md transition-colors">
+              <Link href="/packages" className="px-3 py-1.5 text-sm bg-white border border-gray-300 text-black hover:bg-gray-50 font-semibold rounded-md transition-colors">
                 Packages
               </Link>
               <Link href="/consultation" className="px-4 py-1.5 text-sm bg-black hover:bg-gray-800 text-white rounded-md font-semibold transition-colors">

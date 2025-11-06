@@ -22,14 +22,14 @@ const AboutTeam = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center p-6 rounded-2xl border border-gray-200 bg-white">
+            <div key={index} className="text-center p-6 rounded-2xl border border-gray-400 bg-white">
               <div className="text-3xl sm:text-4xl font-bold text-black mb-2">{stat.value}</div>
               <div className="text-sm text-gray-600">{stat.label}</div>
             </div>
           ))}
         </div>
 
-        <div className="p-8 sm:p-12 rounded-2xl border border-gray-200 bg-white text-center">
+        <div className="p-8 sm:p-12 rounded-2xl border border-gray-400 bg-white text-center">
           <p className="text-base text-gray-700 leading-relaxed max-w-3xl mx-auto">
             Our team includes developers, designers, project managers, and strategists from around the world. 
             We bring together diverse perspectives and expertise to deliver solutions that truly make a difference. 
