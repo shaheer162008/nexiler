@@ -3,11 +3,13 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import Dropdown from './ui/dropdown';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isPackagesOpen, setIsPackagesOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -182,22 +184,7 @@ const Navbar = () => {
               </Link>
               {isServicesOpen && (
                 <div className="mt-1 pl-4 space-y-1">
-                  <p className="text-xs font-semibold text-gray-500 uppercase px-3 py-1">Teams</p>
-                  {servicesData.teams.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="block px-3 py-2 text-sm text-black font-medium hover:bg-gray-100 rounded-md"
-                      onClick={() => {
-                        setIsOpen(false);
-                        setIsServicesOpen(false);
-                      }}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                  <p className="text-xs font-semibold text-gray-500 uppercase px-3 py-1 mt-2">Team Size</p>
-                  {servicesData.teamSize.map((item) => (
+                  {servicesItems.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
@@ -241,7 +228,7 @@ const Navbar = () => {
               </Link>
               {isPackagesOpen && (
                 <div className="mt-1 pl-4 space-y-1">
-                  {packagesData.map((item) => (
+                  {packagesItems.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
