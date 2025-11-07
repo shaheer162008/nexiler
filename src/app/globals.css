@@ -1,5 +1,70 @@
 @import "tailwindcss";
 
+/* Custom Nexiler Color Variables */
+:root {
+  --nexiler-primary: #87ed82;
+  --nexiler-primary-dark: #6ed969;
+  --nexiler-primary-light: #a0f29c;
+  --nexiler-primary-subtle: #e8fce7;
+}
+
+/* Background Classes */
+.bg-nexiler {
+  background-color: var(--nexiler-primary);
+}
+
+.bg-nexiler-dark {
+  background-color: var(--nexiler-primary-dark);
+}
+
+.bg-nexiler-light {
+  background-color: var(--nexiler-primary-light);
+}
+
+.bg-nexiler-subtle {
+  background-color: var(--nexiler-primary-subtle);
+}
+
+/* Text Classes */
+.text-nexiler {
+  color: var(--nexiler-primary);
+}
+
+.text-nexiler-dark {
+  color: var(--nexiler-primary-dark);
+}
+
+/* Border Classes */
+.border-nexiler {
+  border-color: var(--nexiler-primary);
+}
+
+.border-nexiler-dark {
+  border-color: var(--nexiler-primary-dark);
+}
+
+/* Hover Classes */
+.hover\:bg-nexiler:hover {
+  background-color: var(--nexiler-primary);
+}
+
+.hover\:bg-nexiler-dark:hover {
+  background-color: var(--nexiler-primary-dark);
+}
+
+.hover\:text-nexiler:hover {
+  color: var(--nexiler-primary);
+}
+
+.hover\:border-nexiler:hover {
+  border-color: var(--nexiler-primary);
+}
+
+/* Gradient Class */
+.bg-nexiler-gradient {
+  background: linear-gradient(135deg, var(--nexiler-primary-light) 0%, var(--nexiler-primary) 100%);
+}
+
 /* Fade-in Animation */
 @keyframes fade-in {
   from {
