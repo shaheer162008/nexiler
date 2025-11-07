@@ -90,7 +90,7 @@ const DesignBrandingPage = () => {
                 key={index}
                 className="flex items-start gap-3 p-6 rounded-xl border border-gray-300 bg-white hover:border-black transition-colors"
               >
-                <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center shrink-0 mt-0.5">
                   <Check className="h-3 w-3 text-white" />
                 </div>
                 <span className="text-sm font-medium text-black">{feature}</span>
