@@ -37,7 +37,7 @@ const WhyChooseUs = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full mb-6">
-            <div className="w-2 h-2 bg-black rounded-full"></div>
+            <div className="w-2 h-2 bg-nexiler rounded-full animate-pulse"></div>
             <span className="text-sm font-semibold text-black uppercase tracking-wider">Why Choose Us</span>
           </div>
           
@@ -56,15 +56,15 @@ const WhyChooseUs = () => {
             return (
               <div
                 key={feature.title}
-                className="p-6 rounded-2xl bg-white border border-gray-300 hover:border-gray-300 transition-all duration-300"
+                className="group p-6 rounded-2xl bg-white border-2 border-gray-300 hover:border-nexiler hover:shadow-xl transition-all duration-300 cursor-pointer text-center"
               >
                 {/* Icon */}
-                <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-6">
+                <div className="w-16 h-16 border-2 border-gray-300 bg-white group-hover:bg-nexiler rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 mx-auto">
                   <Icon className="w-7 h-7 text-black" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg font-bold text-black mb-3">
+                <h3 className="text-lg font-bold text-black group-hover:text-nexiler mb-3 transition-colors duration-300">
                   {feature.title}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed mb-6">
@@ -72,8 +72,8 @@ const WhyChooseUs = () => {
                 </p>
 
                 {/* Badge */}
-                <div className="inline-flex px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg">
-                  <span className="text-xs font-semibold text-gray-700">
+                <div className="inline-flex px-4 py-2 bg-nexiler-subtle border-2 border-nexiler group-hover:bg-nexiler rounded-lg transition-all duration-300">
+                  <span className="text-xs font-semibold text-nexiler-dark group-hover:text-white transition-colors duration-300">
                     {feature.badge}
                   </span>
                 </div>

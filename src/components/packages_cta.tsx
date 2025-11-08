@@ -10,10 +10,13 @@ const PackagesCTA = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-400 rounded-full mb-4">
-            <div className="w-2 h-2 bg-black rounded-full"></div>
+          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full mb-4">
+            <div className="w-2 h-2 bg-nexiler rounded-full animate-pulse"></div>
             <span className="text-sm font-semibold text-black uppercase tracking-wider">Ready to Get Started?</span>
           </div>
+
+
+          
           <h2 className="text-4xl sm:text-5xl font-bold text-black mb-4">
             Choose Your Perfect Solution
           </h2>
@@ -25,22 +28,20 @@ const PackagesCTA = () => {
         {/* Two Column Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* View Packages Card */}
-          <div className="rounded-2xl border border-gray-400 bg-linear-to-br from-gray-50 via-white to-gray-100 p-8 sm:p-10 relative overflow-hidden group hover:border-black transition-colors">
-            <div className="absolute inset-0 bg-linear-to-br from-gray-200/20 via-transparent to-gray-300/20 animate-gradient-shift"></div>
-            
-            <div className="relative">
-              {/* Icon */}
-              <div className="w-16 h-16 bg-black rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Package className="h-8 w-8 text-white" />
-              </div>
+          <div className="group p-8 sm:p-10 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler hover:shadow-xl transition-all duration-300 cursor-pointer text-center lg:text-left">
+            {/* Icon */}
+            <div className="w-16 h-16 border-2 border-gray-300 group-hover:border-nexiler rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 mx-auto lg:mx-0">
+              <Package className="h-8 w-8 text-black group-hover:text-nexiler transition-colors duration-300" />
+            </div>
 
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-black text-white rounded-full text-xs font-semibold mb-4">
-                <span>POPULAR CHOICE</span>
-              </div>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-nexiler-subtle border-2 border-nexiler text-nexiler-dark rounded-full text-xs font-semibold mb-4">
+              <span>POPULAR CHOICE</span>
+            </div>
 
-              {/* Content */}
-              <h3 className="text-2xl sm:text-3xl font-bold text-black mb-3">
+            {/* Content */}
+            <div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-black group-hover:text-nexiler mb-3 transition-colors duration-300">
                 Pre-Built Packages
               </h3>
               <p className="text-gray-600 mb-6 text-base leading-relaxed">
@@ -48,9 +49,9 @@ const PackagesCTA = () => {
               </p>
 
               {/* Features */}
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-8 text-left inline-block">
                 <li className="flex items-start gap-3">
-                  <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-5 h-5 bg-nexiler rounded-full flex items-center justify-center shrink-0 mt-0.5">
                     <Check className="h-3 w-3 text-white" />
                   </div>
                   <span className="text-gray-700 text-sm">
@@ -58,7 +59,7 @@ const PackagesCTA = () => {
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-5 h-5 bg-nexiler rounded-full flex items-center justify-center shrink-0 mt-0.5">
                     <Check className="h-3 w-3 text-white" />
                   </div>
                   <span className="text-gray-700 text-sm">
@@ -66,7 +67,7 @@ const PackagesCTA = () => {
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-5 h-5 bg-nexiler rounded-full flex items-center justify-center shrink-0 mt-0.5">
                     <Check className="h-3 w-3 text-white" />
                   </div>
                   <span className="text-gray-700 text-sm">
@@ -74,7 +75,7 @@ const PackagesCTA = () => {
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-5 h-5 bg-nexiler rounded-full flex items-center justify-center shrink-0 mt-0.5">
                     <Check className="h-3 w-3 text-white" />
                   </div>
                   <span className="text-gray-700 text-sm">
@@ -84,115 +85,126 @@ const PackagesCTA = () => {
               </ul>
 
               {/* Pricing Preview */}
-              <div className="bg-white border border-gray-400 rounded-xl p-4 mb-6">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-gray-600">Starting from</span>
-                  <span className="text-xs text-gray-500">+ Add-ons available</span>
+              <div className="relative bg-black rounded-2xl p-6 mb-6 overflow-hidden group-hover:scale-[1.02] transition-all duration-300">
+                <div className="absolute inset-0 bg-linear-to-br from-nexiler/20 to-transparent"></div>
+                <div className="relative">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full mb-4">
+                    <div className="w-1.5 h-1.5 bg-nexiler rounded-full animate-pulse"></div>
+                    <span className="text-xs font-medium text-white/80">STARTING PRICE</span>
+                  </div>
+                  <div className="flex items-end gap-2 mb-2">
+                    <span className="text-6xl font-bold text-white">$999</span>
+                    <span className="text-xl text-white/60 mb-2">/project</span>
+                  </div>
+                  <p className="text-sm text-white/50">Fixed packages • Quick delivery</p>
                 </div>
-                <div className="text-4xl font-bold text-black">$999</div>
               </div>
 
               {/* CTA Buttons */}
               <div className="space-y-3">
                 <Link
                   href="/packages"
-                  className="w-full px-6 py-4 bg-black hover:bg-gray-800 text-white rounded-xl font-semibold text-base transition-colors inline-flex items-center justify-center gap-2 group"
+                  className="group w-full px-6 py-4 bg-nexiler hover:bg-nexiler-dark text-white rounded-xl font-semibold text-base transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   View All Packages
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="/contact"
-                  className="w-full px-6 py-4 bg-white hover:bg-gray-50 border-2 border-gray-200 text-black rounded-xl font-semibold text-base transition-colors inline-flex items-center justify-center gap-2"
+                  className="group w-full px-6 py-4 bg-white hover:bg-nexiler-subtle border-2 border-gray-300 hover:border-nexiler text-black rounded-xl font-semibold text-base transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
-                  Customize Pre-Built Package
+                  <span className="group-hover:text-nexiler transition-colors duration-300">Customize Pre-Built Package</span>
                 </Link>
               </div>
             </div>
           </div>
 
           {/* Custom Solutions Card */}
-          <div className="rounded-2xl border-2 border-black bg-black p-8 sm:p-10 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-linear-to-br from-gray-800/50 via-transparent to-gray-700/50 animate-gradient-shift"></div>
-            
-            <div className="relative">
-              {/* Icon */}
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Sparkles className="h-8 w-8 text-black" />
-              </div>
+          <div className="group p-8 sm:p-10 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler hover:shadow-xl transition-all duration-300 cursor-pointer text-center lg:text-left">
+            {/* Icon */}
+            <div className="w-16 h-16 border-2 border-gray-300 group-hover:border-nexiler rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 mx-auto lg:mx-0">
+              <Sparkles className="h-8 w-8 text-black group-hover:text-nexiler transition-colors duration-300" />
+            </div>
 
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-black rounded-full text-xs font-semibold mb-4">
-                <span>RECOMMENDED</span>
-              </div>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-nexiler text-white rounded-full text-xs font-semibold mb-4">
+              <span>RECOMMENDED</span>
+            </div>
 
-              {/* Content */}
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+            {/* Content */}
+            <div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-black group-hover:text-nexiler mb-3 transition-colors duration-300">
                 Custom Solutions
               </h3>
-              <p className="text-gray-300 mb-6 text-base leading-relaxed">
+              <p className="text-gray-600 mb-6 text-base leading-relaxed">
                 Build something unique for your business. We design and develop tailored solutions that perfectly match your vision and requirements.
               </p>
 
               {/* Features */}
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-8 text-left inline-block">
                 <li className="flex items-start gap-3">
-                  <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="h-3 w-3 text-black" />
+                  <div className="w-5 h-5 bg-nexiler rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="h-3 w-3 text-white" />
                   </div>
-                  <span className="text-gray-300 text-sm">
-                    <strong className="text-white">100% Tailored</strong> - Built specifically for your needs
+                  <span className="text-gray-700 text-sm">
+                    <strong className="text-black">100% Tailored</strong> - Built specifically for your needs
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="h-3 w-3 text-black" />
+                  <div className="w-5 h-5 bg-nexiler rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="h-3 w-3 text-white" />
                   </div>
-                  <span className="text-gray-300 text-sm">
-                    <strong className="text-white">Unlimited Features</strong> - No restrictions on what we can build
+                  <span className="text-gray-700 text-sm">
+                    <strong className="text-black">Unlimited Features</strong> - No restrictions on what we can build
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="h-3 w-3 text-black" />
+                  <div className="w-5 h-5 bg-nexiler rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="h-3 w-3 text-white" />
                   </div>
-                  <span className="text-gray-300 text-sm">
-                    <strong className="text-white">Dedicated Team</strong> - Your own project manager and developers
+                  <span className="text-gray-700 text-sm">
+                    <strong className="text-black">Dedicated Team</strong> - Your own project manager and developers
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="h-3 w-3 text-black" />
+                  <div className="w-5 h-5 bg-nexiler rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="h-3 w-3 text-white" />
                   </div>
-                  <span className="text-gray-300 text-sm">
-                    <strong className="text-white">Full Ownership</strong> - Complete source code and rights
+                  <span className="text-gray-700 text-sm">
+                    <strong className="text-black">Full Ownership</strong> - Complete source code and rights
                   </span>
                 </li>
               </ul>
 
               {/* Pricing Preview */}
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 mb-6">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-gray-300">Flexible pricing</span>
-                  <span className="text-xs text-gray-400">Based on scope</span>
+              <div className="relative bg-black rounded-2xl p-6 mb-6 overflow-hidden group-hover:scale-[1.02] transition-all duration-300">
+                <div className="absolute inset-0 bg-linear-to-br from-nexiler/20 to-transparent"></div>
+                <div className="relative">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full mb-4">
+                    <div className="w-1.5 h-1.5 bg-nexiler rounded-full animate-pulse"></div>
+                    <span className="text-xs font-medium text-white/80">CUSTOM QUOTE</span>
+                  </div>
+                  <div className="flex items-end gap-2 mb-2">
+                    <span className="text-6xl font-bold text-white">Custom</span>
+                  </div>
+                  <p className="text-sm text-white/50">Tailored solutions • Unlimited scope</p>
                 </div>
-                <div className="text-4xl font-bold text-white">Custom</div>
               </div>
 
               {/* CTA Buttons */}
               <div className="space-y-3">
                 <Link
                   href="/contact"
-                  className="w-full px-6 py-4 bg-white hover:bg-gray-100 text-black rounded-xl font-semibold text-base transition-colors inline-flex items-center justify-center gap-2 group"
+                  className="group w-full px-6 py-4 bg-nexiler hover:bg-nexiler-dark text-white rounded-xl font-semibold text-base transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
                   Get Custom Quote
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="/consultation"
-                  className="w-full px-6 py-4 bg-transparent hover:bg-white/10 border-2 border-white text-white rounded-xl font-semibold text-base transition-colors inline-flex items-center justify-center gap-2"
+                  className="group w-full px-6 py-4 bg-white hover:bg-nexiler-subtle border-2 border-gray-300 hover:border-nexiler text-black rounded-xl font-semibold text-base transition-all duration-300 inline-flex items-center justify-center gap-2"
                 >
-                  Free Consultation
+                  <span className="group-hover:text-nexiler transition-colors duration-300">Free Consultation</span>
                 </Link>
               </div>
             </div>
@@ -203,19 +215,19 @@ const PackagesCTA = () => {
         <div className="mt-12 text-center">
           <div className="inline-flex flex-wrap items-center justify-center gap-6 text-sm text-gray-600">
             <div className="flex items-center gap-2">
-              <Check className="h-4 w-4 text-black" />
+              <Check className="h-4 w-4 text-nexiler" />
               <span>No hidden fees</span>
             </div>
             <div className="flex items-center gap-2">
-              <Check className="h-4 w-4 text-black" />
+              <Check className="h-4 w-4 text-nexiler" />
               <span>Free consultation</span>
             </div>
             <div className="flex items-center gap-2">
-              <Check className="h-4 w-4 text-black" />
+              <Check className="h-4 w-4 text-nexiler" />
               <span>Money-back guarantee</span>
             </div>
             <div className="flex items-center gap-2">
-              <Check className="h-4 w-4 text-black" />
+              <Check className="h-4 w-4 text-nexiler" />
               <span>24/7 support</span>
             </div>
           </div>

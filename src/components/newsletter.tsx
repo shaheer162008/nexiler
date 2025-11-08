@@ -24,8 +24,8 @@ const Newsletter = () => {
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-400 rounded-full mb-6">
-            <Mail className="w-4 h-4 text-black" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full mb-6">
+            <Mail className="w-4 h-4 text-nexiler" />
             <span className="text-sm font-semibold text-black uppercase tracking-wider">Newsletter</span>
           </div>
           
@@ -48,15 +48,16 @@ const Newsletter = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email address"
                 required
-                className="w-full pl-12 pr-4 py-3 bg-white border border-gray-400 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-gray-300 transition-colors"
+                className="w-full pl-12 pr-4 py-3 bg-white border-2 border-gray-300 rounded-xl text-black placeholder-gray-500 focus:outline-none focus:border-nexiler transition-colors"
               />
             </div>
             <button
               type="submit"
-              className="px-6 py-3 bg-black hover:bg-gray-800 text-white rounded-lg font-semibold text-sm transition-colors inline-flex items-center justify-center gap-2 whitespace-nowrap"
+              className="group relative px-6 sm:px-8 py-3 bg-nexiler text-white rounded-xl font-semibold text-xs sm:text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(135,237,130,0.4)] hover:-translate-y-0.5 inline-flex items-center justify-center gap-2 whitespace-nowrap"
             >
-              Subscribe Now
-              <ArrowRight className="w-4 h-4" />
+              <span className="relative z-10">Subscribe Now</span>
+              <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
+              <div className="absolute inset-0 bg-nexiler-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             </button>
           </div>
         </form>
@@ -65,7 +66,7 @@ const Newsletter = () => {
         <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-700">
           {benefits.map((benefit, index) => (
             <div key={index} className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-green-600" />
+              <Check className="w-4 h-4 text-nexiler" />
               <span>{benefit}</span>
             </div>
           ))}

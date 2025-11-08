@@ -15,6 +15,7 @@ const Navbar = () => {
 
   // Services Data
   const servicesItems = [
+    { name: 'Services', href: '/services' },
     { name: 'Web Development', href: '/services/web-development' },
     { name: 'Mobile Apps', href: '/services/mobile-apps' },
     { name: 'AI & Automation', href: '/services/ai-automation' },
@@ -46,7 +47,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center h-14">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center transition-transform hover:scale-105 duration-300">
             <Image 
               src="/nexiler.png" 
               alt="Nexiler" 
@@ -61,9 +62,10 @@ const Navbar = () => {
             {/* Home Link */}
             <Link 
               href="/" 
-              className="px-3 py-1.5 text-sm text-black font-semibold hover:scale-110 rounded-md transition-transform"
+              className="relative px-3 py-1.5 text-sm text-black font-semibold rounded-md transition-all group"
             >
               Home
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-nexiler group-hover:w-full transition-all duration-300"></span>
             </Link>
 
             {/* Services Dropdown */}
@@ -83,52 +85,58 @@ const Navbar = () => {
             {/* Portfolio Link */}
             <Link 
               href="/portfolio" 
-              className="px-3 py-1.5 text-sm text-black font-semibold hover:scale-110 rounded-md transition-transform"
+              className="relative px-3 py-1.5 text-sm text-black font-semibold rounded-md transition-all group"
             >
               Portfolio
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-nexiler group-hover:w-full transition-all duration-300"></span>
             </Link>
 
             {/* Pricing Link */}
             <Link 
               href="/pricing" 
-              className="px-3 py-1.5 text-sm text-black font-semibold hover:scale-110 rounded-md transition-transform"
+              className="relative px-3 py-1.5 text-sm text-black font-semibold rounded-md transition-all group"
             >
               Pricing
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-nexiler group-hover:w-full transition-all duration-300"></span>
             </Link>
 
             {/* Blogs Link */}
             <Link 
               href="/blogs" 
-              className="px-3 py-1.5 text-sm text-black font-semibold hover:scale-110 rounded-md transition-transform"
+              className="relative px-3 py-1.5 text-sm text-black font-semibold rounded-md transition-all group"
             >
               Blogs
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-nexiler group-hover:w-full transition-all duration-300"></span>
             </Link>
 
             {/* About Link */}
             <Link 
               href="/about" 
-              className="px-3 py-1.5 text-sm text-black font-semibold hover:scale-110 rounded-md transition-transform"
+              className="relative px-3 py-1.5 text-sm text-black font-semibold rounded-md transition-all group"
             >
               About
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-nexiler group-hover:w-full transition-all duration-300"></span>
             </Link>
 
             {/* Contact Link */}
             <Link 
               href="/contact" 
-              className="px-3 py-1.5 text-sm text-black font-semibold hover:scale-110 rounded-md transition-transform"
+              className="relative px-3 py-1.5 text-sm text-black font-semibold rounded-md transition-all group"
             >
               Contact
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-nexiler group-hover:w-full transition-all duration-300"></span>
             </Link>
           </div>
 
           {/* Right Side - CTA Buttons & Mobile Menu */}
           <div className="flex items-center gap-3 ml-auto">
-            <div className="hidden lg:flex items-center gap-3">
-              <Link href="/packages" className="px-3 py-1.5 text-sm bg-white border border-gray-300 text-black hover:bg-gray-50 font-semibold rounded-md transition-colors">
-                Packages
+            <div className="hidden lg:flex items-center gap-2.5">
+              <Link href="/packages" className="group relative px-4 py-1.5 bg-white border-2 border-gray-300 text-black rounded-lg font-semibold text-sm transition-all duration-300 hover:border-nexiler hover:shadow-md">
+                <span className="relative z-10 group-hover:text-nexiler transition-colors duration-300">Packages</span>
               </Link>
-              <Link href="/consultation" className="px-4 py-1.5 text-sm bg-black hover:bg-gray-800 text-white rounded-md font-semibold transition-colors">
-                Free Consultation
+              <Link href="/consultation" className="group relative px-4 py-1.5 bg-nexiler text-white rounded-lg font-semibold text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(135,237,130,0.3)]">
+                <span className="relative z-10">Free Consultation</span>
+                <div className="absolute inset-0 bg-nexiler-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </Link>
             </div>
 
@@ -146,7 +154,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       {isOpen && (
-        <div className="lg:hidden border-t border-gray-200 bg-white max-h-[calc(100vh-3.5rem)] overflow-y-auto">
+        <div className="lg:hidden border-t border-gray-200 bg-white fixed inset-0 top-14 overflow-y-auto">
           <div className="px-4 py-3 space-y-1">
             {/* Home Link */}
             <Link 
@@ -159,29 +167,13 @@ const Navbar = () => {
 
             {/* Services Accordion */}
             <div>
-              <Link
-                href="/services"
+              <button
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
                 className="w-full flex items-center justify-between px-3 py-2 text-sm text-black font-semibold hover:bg-gray-100 rounded-md"
-                onClick={(e) => {
-                  if (isServicesOpen) {
-                    e.preventDefault();
-                    setIsServicesOpen(false);
-                  }
-                }}
               >
                 Services
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    setIsServicesOpen(!isServicesOpen);
-                  }}
-                  className="p-1"
-                  aria-label="Toggle services menu"
-                >
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
-                </button>
-              </Link>
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
+              </button>
               {isServicesOpen && (
                 <div className="mt-1 pl-4 space-y-1">
                   {servicesItems.map((item) => (
@@ -203,29 +195,13 @@ const Navbar = () => {
 
             {/* Packages Accordion */}
             <div>
-              <Link
-                href="/packages"
+              <button
+                onClick={() => setIsPackagesOpen(!isPackagesOpen)}
                 className="w-full flex items-center justify-between px-3 py-2 text-sm text-black font-semibold hover:bg-gray-100 rounded-md"
-                onClick={(e) => {
-                  if (isPackagesOpen) {
-                    e.preventDefault();
-                    setIsPackagesOpen(false);
-                  }
-                }}
               >
                 Packages
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    setIsPackagesOpen(!isPackagesOpen);
-                  }}
-                  className="p-1"
-                  aria-label="Toggle packages menu"
-                >
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isPackagesOpen ? 'rotate-180' : ''}`} />
-                </button>
-              </Link>
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isPackagesOpen ? 'rotate-180' : ''}`} />
+              </button>
               {isPackagesOpen && (
                 <div className="mt-1 pl-4 space-y-1">
                   {packagesItems.map((item) => (
@@ -261,17 +237,18 @@ const Navbar = () => {
             <div className="pt-3 border-t border-gray-200 mt-3 space-y-2 pb-2">
               <Link
                 href="/packages"
-                className="block w-full text-center px-4 py-2 text-sm text-black font-semibold bg-gray-100 hover:bg-gray-200 rounded-md"
+                className="group relative block w-full text-center px-4 py-2.5 text-sm text-black font-semibold bg-white border-2 border-gray-300 hover:border-nexiler rounded-xl transition-all duration-300"
                 onClick={() => setIsOpen(false)}
               >
-                View Packages
+                <span className="group-hover:text-nexiler transition-colors duration-300">View Packages</span>
               </Link>
               <Link
                 href="/consultation"
-                className="block w-full text-center px-4 py-2 text-sm bg-blue-600 hover:bg-blue-700 text-white rounded-md font-semibold"
+                className="group relative block w-full text-center px-4 py-2.5 text-sm bg-nexiler text-white rounded-xl font-semibold overflow-hidden transition-all duration-300"
                 onClick={() => setIsOpen(false)}
               >
-                Free Consultation
+                <span className="relative z-10">Free Consultation</span>
+                <div className="absolute inset-0 bg-nexiler-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </Link>
             </div>
           </div>

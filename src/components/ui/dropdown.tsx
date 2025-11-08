@@ -50,22 +50,17 @@ const Dropdown = ({ trigger, items, columns = 1, className = '' }: DropdownProps
       onMouseLeave={handleMouseLeave}
     >
       {/* Trigger */}
-      {trigger.href ? (
-        <Link 
-          href={trigger.href}
-          className="px-3 py-1.5 text-sm text-black font-semibold hover:scale-110 rounded-md flex items-center gap-1 transition-transform"
-        >
-          {trigger.label}
-          <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
-        </Link>
-      ) : (
-        <button
-          className="px-3 py-1.5 text-sm text-black font-semibold hover:scale-110 rounded-md flex items-center gap-1 transition-transform"
-        >
-          {trigger.label}
-          <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
-        </button>
-      )}
+      <button
+        className="relative px-3 py-1.5 text-sm text-black font-semibold rounded-md flex items-center gap-1 transition-all group"
+        onClick={(e) => {
+          e.preventDefault();
+          setIsOpen(!isOpen);
+        }}
+      >
+        {trigger.label}
+        <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-nexiler group-hover:w-full transition-all duration-300"></span>
+      </button>
 
       {/* Dropdown Menu */}
       {isOpen && (

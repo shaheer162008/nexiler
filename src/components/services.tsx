@@ -25,6 +25,11 @@ const Services = () => {
     <section className="pt-8 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-4xl mx-auto">
         <div className="text-center space-y-6 mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full mb-6">
+            <div className="w-2 h-2 bg-nexiler rounded-full animate-pulse"></div>
+            <span className="text-sm font-semibold text-black uppercase tracking-wider">Services</span>
+          </div>
+          
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black leading-tight px-2">
             Services for Every Business
           </h2>
@@ -37,22 +42,27 @@ const Services = () => {
           {visibleServices.map((service) => {
             const Icon = service.icon;
             return (
-              <Link 
-                key={service.title} 
-                href={service.link}
-                className="group p-8 rounded-2xl border border-gray-300 bg-white hover:border-black hover:shadow-lg transition-all duration-300 cursor-pointer relative overflow-hidden"
+              <div
+                key={service.title}
+                className="group p-8 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler hover:shadow-xl transition-all duration-300 cursor-pointer text-center flex flex-col"
               >
-                <div className="absolute inset-0 bg-linear-to-br from-gray-100/50 via-transparent to-gray-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative">
-                  <div className="w-16 h-16 bg-black group-hover:scale-110 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300">
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-black mb-3 group-hover:text-black">{service.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-700">{service.description}</p>
-                  </div>
+                <div className="w-16 h-16 border-2 border-gray-300 bg-white group-hover:bg-nexiler rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 mx-auto">
+                  <Icon className="w-8 h-8 text-black" />
                 </div>
-              </Link>
+                <div className="flex-1 flex flex-col">
+                  <h3 className="text-xl font-bold text-black mb-3 group-hover:text-nexiler transition-colors duration-300">{service.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-1">{service.description}</p>
+                  <Link 
+                    href={service.link}
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-nexiler-subtle border-2 border-nexiler text-nexiler-dark rounded-lg text-xs font-semibold uppercase tracking-wider group-hover:bg-nexiler group-hover:text-white transition-all duration-300 mt-auto mx-auto"
+                  >
+                    Learn More
+                    <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
             );
           })}
         </div>
@@ -62,29 +72,31 @@ const Services = () => {
           <div className="text-center mb-12">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="px-6 py-3 bg-white hover:bg-gray-50 border border-gray-300 text-black rounded-lg font-semibold text-sm transition-colors inline-flex items-center gap-2"
+              className="group relative px-6 py-3 bg-white hover:border-nexiler border-2 border-gray-300 text-black rounded-lg font-semibold text-sm transition-all duration-300 inline-flex items-center gap-2 hover:shadow-md"
             >
-              {showAll ? 'Show Less Services' : `Show ${services.length - 6} More Services`}
-              <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`} />
+              <span className="group-hover:text-nexiler transition-colors duration-300">
+                {showAll ? 'Show Less Services' : `Show ${services.length - 6} More Services`}
+              </span>
+              <ChevronDown className={`h-4 w-4 group-hover:text-nexiler transition-all duration-300 ${showAll ? 'rotate-180' : ''}`} />
             </button>
           </div>
         )}
 
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="text-center p-8 rounded-2xl border border-gray-300 bg-white">
-            <div className="text-3xl sm:text-4xl font-bold text-black mb-2">500+</div>
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="group text-center p-8 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler transition-all duration-300">
+            <div className="text-3xl sm:text-4xl font-bold text-black group-hover:text-nexiler mb-2 transition-colors duration-300">500+</div>
             <div className="text-sm text-gray-600">Projects Completed</div>
           </div>
-          <div className="text-center p-8 rounded-2xl border border-gray-300 bg-white">
-            <div className="text-3xl sm:text-4xl font-bold text-black mb-2">200+</div>
+          <div className="group text-center p-8 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler transition-all duration-300">
+            <div className="text-3xl sm:text-4xl font-bold text-black group-hover:text-nexiler mb-2 transition-colors duration-300">200+</div>
             <div className="text-sm text-gray-600">Happy Clients</div>
           </div>
-          <div className="text-center p-8 rounded-2xl border border-gray-300 bg-white">
-            <div className="text-3xl sm:text-4xl font-bold text-black mb-2">98%</div>
+          <div className="group text-center p-8 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler transition-all duration-300">
+            <div className="text-3xl sm:text-4xl font-bold text-black group-hover:text-nexiler mb-2 transition-colors duration-300">98%</div>
             <div className="text-sm text-gray-600">Client Satisfaction</div>
           </div>
-          <div className="text-center p-8 rounded-2xl border border-gray-300 bg-white">
-            <div className="text-3xl sm:text-4xl font-bold text-black mb-2">5+</div>
+          <div className="group text-center p-8 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler transition-all duration-300">
+            <div className="text-3xl sm:text-4xl font-bold text-black group-hover:text-nexiler mb-2 transition-colors duration-300">5+</div>
             <div className="text-sm text-gray-600">Years Experience</div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
 const Testimonials = () => {
@@ -50,15 +51,15 @@ const Testimonials = () => {
   return (
     <section className="pt-8 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-5xl mx-auto">
-        {/* Hea          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full mb-6">
-            <div className="w-2 h-2 bg-black rounded-full"></div>
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full mb-6">
+            <div className="w-2 h-2 bg-nexiler rounded-full"></div>
             <span className="text-sm font-semibold text-black uppercase tracking-wider">Client Testimonials</span>
           </div>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4">
-            What Our Clients
-            <br />
-            <span className="text-black">Say About Us</span>
+            What Our Clients Say About Us
           </h2>
           <p className="text-base text-gray-700 max-w-2xl mx-auto leading-relaxed">
             Don't just take our word for it. Here's what our satisfied clients have to say about their experience working with us.
@@ -83,8 +84,8 @@ const Testimonials = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentIndex ? 'bg-black w-8' : 'bg-gray-300'
+                  className={`h-2 rounded-full transition-all ${
+                    index === currentIndex ? 'bg-nexiler w-8' : 'bg-gray-300 w-2'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
@@ -132,8 +133,8 @@ const Testimonials = () => {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-black mb-1">
+            <div key={index} className="group text-center p-6 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler transition-all duration-300">
+              <div className="text-3xl sm:text-4xl font-bold text-black group-hover:text-nexiler mb-1 transition-colors duration-300">
                 {stat.value}
               </div>
               <div className="text-sm text-gray-600">{stat.label}</div>
@@ -141,12 +142,36 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* CTA Button */}
-        <div className="text-center">
-          <button className="px-6 py-3 bg-black hover:bg-gray-800 text-white rounded-lg font-semibold text-sm transition-colors inline-flex items-center gap-2">
-            Schedule Free Consultation
-            <ChevronRight className="w-4 h-4" />
-          </button>
+        {/* CTA Card */}
+        <div className="bg-black rounded-2xl p-8 sm:p-10 text-center border-2 border-gray-800">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full mb-4">
+            <div className="w-2 h-2 bg-nexiler rounded-full animate-pulse"></div>
+            <span className="text-xs font-semibold text-white uppercase tracking-wider">Ready to Start?</span>
+          </div>
+          
+          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+            Let's Build Something Amazing Together
+          </h3>
+          <p className="text-base text-gray-300 mb-6 max-w-xl mx-auto">
+            Join hundreds of satisfied clients. Get a free consultation and see how we can transform your business.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="/consultation"
+              className="group relative px-6 sm:px-8 py-3.5 bg-nexiler text-white rounded-xl font-semibold text-xs sm:text-sm overflow-hidden transition-all duration-300 text-center hover:shadow-[0_0_30px_rgba(135,237,130,0.4)] hover:-translate-y-0.5 inline-flex items-center gap-2 whitespace-nowrap"
+            >
+              <span className="relative z-10">Schedule Free Consultation</span>
+              <ChevronRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
+              <div className="absolute inset-0 bg-nexiler-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            </Link>
+            <Link
+              href="/portfolio"
+              className="group relative px-6 sm:px-8 py-3.5 bg-white border-2 border-gray-700 text-black rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 text-center hover:border-nexiler hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center justify-center whitespace-nowrap"
+            >
+              <span className="relative z-10 group-hover:text-nexiler transition-colors duration-300">View Our Work</span>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
