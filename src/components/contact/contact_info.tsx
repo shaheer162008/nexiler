@@ -40,7 +40,7 @@ const ContactInfo = () => {
             const content = (
               <>
                 <div className="w-12 h-12 border-2 border-gray-300 rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:bg-nexiler group-hover:border-nexiler transition-all">
-                  <Icon className="w-6 h-6 text-black group-hover:text-white transition-colors" />
+                  <Icon className="w-6 h-6 text-black group-hover:text-black transition-colors" />
                 </div>
                 <h3 className="text-sm font-semibold text-gray-600 mb-2 group-hover:text-nexiler transition-colors">{detail.title}</h3>
                 <p className="text-base font-semibold text-black">{detail.value}</p>

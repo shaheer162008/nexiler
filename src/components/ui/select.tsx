@@ -86,10 +86,10 @@ const Select = ({
         onClick={() => !disabled && setIsOpen(!isOpen)}
         disabled={disabled}
         className={`
-          w-full px-4 py-3 border border-gray-300 rounded-lg text-left
-          focus:outline-none focus:border-black transition-colors
+          w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-left
+          focus:outline-none focus:border-nexiler transition-colors
           flex items-center justify-between
-          ${disabled ? 'bg-gray-100 cursor-not-allowed opacity-50' : 'bg-white cursor-pointer hover:border-gray-500'}
+          ${disabled ? 'bg-gray-100 cursor-not-allowed opacity-50' : 'bg-white cursor-pointer hover:border-nexiler'}
           ${!selectedOption ? 'text-gray-500' : 'text-black'}
         `}
       >
@@ -101,7 +101,7 @@ const Select = ({
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-300 rounded-lg shadow-xl max-h-60 overflow-y-auto z-50">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white border-2 border-gray-300 rounded-lg shadow-xl max-h-60 overflow-y-auto z-50">
           {options.map((option) => {
             const isSelected = option.value === value;
             return (
@@ -114,8 +114,8 @@ const Select = ({
                   flex items-center justify-between
                   transition-colors
                   ${isSelected 
-                    ? 'bg-gray-50 text-black' 
-                    : 'text-gray-700 hover:bg-gray-50'
+                    ? 'bg-nexiler-subtle text-black' 
+                    : 'text-gray-700 hover:bg-nexiler-subtle'
                   }
                   ${option.value === options[options.length - 1].value ? '' : 'border-b border-gray-300'}
                 `}

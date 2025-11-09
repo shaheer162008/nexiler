@@ -59,7 +59,7 @@ const ContactForm = () => {
   return (
     <section className="pt-8 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-4xl mx-auto">
-        <form onSubmit={handleSubmit} className="p-8 rounded-2xl border border-gray-400 bg-white">
+        <form onSubmit={handleSubmit} className="p-8 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler transition-all">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Name */}
             <div>
@@ -73,7 +73,7 @@ const ContactForm = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-400 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-gray-300 transition-colors"
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-nexiler transition-colors"
                 placeholder="John Doe"
               />
             </div>
@@ -90,7 +90,7 @@ const ContactForm = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-400 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-gray-300 transition-colors"
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-nexiler transition-colors"
                 placeholder="john@example.com"
               />
             </div>
@@ -106,7 +106,7 @@ const ContactForm = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-400 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-gray-300 transition-colors"
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-nexiler transition-colors"
                 placeholder="+1 (555) 000-0000"
               />
             </div>
@@ -154,7 +154,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 required
                 rows={6}
-                className="w-full px-4 py-3 border border-gray-400 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-gray-300 transition-colors resize-none"
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:border-nexiler transition-colors resize-none"
                 placeholder="Tell us about your project..."
               />
             </div>
@@ -164,7 +164,7 @@ const ContactForm = () => {
           <div className="mt-6">
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-black hover:bg-gray-800 text-white rounded-lg font-semibold text-sm transition-colors flex items-center justify-center gap-2"
+              className="w-full px-6 py-3 bg-nexiler hover:shadow-[0_0_20px_rgba(135,237,130,0.4)] text-black rounded-lg font-semibold text-sm transition-all flex items-center justify-center gap-2"
             >
               Send Message
               <Send className="w-4 h-4" />

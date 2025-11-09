@@ -43,20 +43,20 @@ const ConsultationPage = () => {
       {/* Hero */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full mb-4">
-            <div className="w-2 h-2 bg-black rounded-full"></div>
+          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full mb-4">
+            <div className="w-2 h-2 bg-nexiler rounded-full animate-pulse"></div>
             <span className="text-sm font-semibold text-black uppercase tracking-wider">Free Consultation</span>
           </div>
 
-          <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <div className="w-16 h-16 border-2 border-gray-300 rounded-2xl flex items-center justify-center mx-auto mb-6 hover:border-nexiler transition-all">
             <Calendar className="w-8 h-8 text-black" />
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black leading-tight px-2">
-            Free Strategy Session
+            Free <span className="text-nexiler">Strategy Session</span>
           </h1>
 
-          <p className="text-sm sm:text-base md:text-lg text-black max-w-2xl mx-auto leading-relaxed px-2">
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed px-2">
             Book a free 30-minute consultation to discuss your project. No strings attached, just expert advice and honest recommendations.
           </p>
 
@@ -82,8 +82,8 @@ const ConsultationPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-center gap-3 p-4 rounded-lg border border-gray-200">
-                <Check className="w-5 h-5 text-black shrink-0" />
+              <div key={index} className="flex items-center gap-3 p-4 rounded-lg border-2 border-gray-300 hover:border-nexiler transition-all">
+                <Check className="w-5 h-5 text-nexiler shrink-0" />
                 <span className="text-sm text-gray-700">{benefit}</span>
               </div>
             ))}
@@ -96,13 +96,13 @@ const ConsultationPage = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-black mb-4">What to Expect</h2>
-            <p className="text-base text-black">Here's how the consultation process works</p>
+            <p className="text-base text-gray-700">Here's how the consultation process works</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {whatToExpect.map((item, index) => (
-              <div key={index} className="p-6 rounded-2xl border border-gray-200 bg-white">
-                <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mb-4">
+              <div key={index} className="group p-6 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler hover:shadow-lg transition-all">
+                <div className="w-12 h-12 border-2 border-gray-300 rounded-full flex items-center justify-center mb-4 group-hover:bg-nexiler group-hover:border-nexiler transition-all">
                   <span className="text-xl font-bold text-black">{item.step}</span>
                 </div>
                 <h3 className="text-lg font-bold text-black mb-2">{item.title}</h3>
@@ -116,14 +116,14 @@ const ConsultationPage = () => {
       {/* CTA */}
       <section className="pt-8 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="p-12 rounded-2xl border border-gray-200 bg-white text-center">
+          <div className="p-12 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler transition-all text-center">
             <h2 className="text-3xl font-bold text-black mb-4">Ready to Get Started?</h2>
-            <p className="text-base text-black mb-6 max-w-2xl mx-auto">
+            <p className="text-base text-gray-700 mb-6 max-w-2xl mx-auto">
               Book your free consultation now. No commitment, no pressure - just honest advice from experienced professionals.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-semibold text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-nexiler text-black rounded-lg hover:shadow-[0_0_20px_rgba(135,237,130,0.4)] transition-all font-semibold text-sm"
             >
               Schedule Free Consultation
               <ArrowRight className="w-4 h-4" />
@@ -140,22 +140,22 @@ const ConsultationPage = () => {
           </div>
 
           <div className="space-y-6">
-            <div className="p-6 rounded-2xl border border-gray-200 bg-white">
+            <div className="p-6 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler transition-all">
               <h3 className="text-lg font-bold text-black mb-2">Is the consultation really free?</h3>
               <p className="text-sm text-gray-700">Yes, absolutely! There's no cost and no obligation. We just want to understand your needs and see if we can help.</p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-gray-200 bg-white">
+            <div className="p-6 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler transition-all">
               <h3 className="text-lg font-bold text-black mb-2">How long does it take?</h3>
               <p className="text-sm text-gray-700">Typically 30-45 minutes, depending on the complexity of your project. We can schedule more time if needed.</p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-gray-200 bg-white">
+            <div className="p-6 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler transition-all">
               <h3 className="text-lg font-bold text-black mb-2">What should I prepare?</h3>
               <p className="text-sm text-gray-700">Just come with an open mind! It helps to have a general idea of your goals, budget, and timeline, but we can figure it out together.</p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-gray-200 bg-white">
+            <div className="p-6 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler transition-all">
               <h3 className="text-lg font-bold text-black mb-2">Will I receive a quote?</h3>
               <p className="text-sm text-gray-700">After understanding your needs, we'll provide a preliminary estimate. A detailed proposal follows if you decide to move forward.</p>
             </div>

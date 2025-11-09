@@ -16,7 +16,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, category, image, tags, link }: ProjectCardProps) => {
   return (
-    <div className="group rounded-2xl border border-gray-400 bg-white hover:border-gray-300 transition-all overflow-hidden">
+    <div className="group rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler hover:shadow-lg transition-all overflow-hidden">
       {/* Image */}
       <div className="relative w-full h-64 bg-gray-100 overflow-hidden">
         <Image
@@ -26,7 +26,7 @@ const ProjectCard = ({ title, description, category, image, tags, link }: Projec
           className="object-cover group-hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute top-4 right-4">
-          <span className="px-3 py-1 bg-white rounded-full text-xs font-semibold text-black">
+          <span className="px-3 py-1 bg-nexiler rounded-full text-xs font-semibold text-black">
             {category}
           </span>
         </div>
@@ -42,7 +42,7 @@ const ProjectCard = ({ title, description, category, image, tags, link }: Projec
           {tags.map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 bg-gray-50 rounded-md text-xs font-medium text-gray-700"
+              className="px-3 py-1 border border-gray-300 rounded-md text-xs font-medium text-gray-700"
             >
               {tag}
             </span>
@@ -53,7 +53,7 @@ const ProjectCard = ({ title, description, category, image, tags, link }: Projec
         {link && (
           <Link
             href={link}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-black hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-nexiler hover:gap-3 transition-all"
           >
             View Case Study
             <ArrowRight className="w-4 h-4" />

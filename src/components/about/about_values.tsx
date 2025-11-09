@@ -32,7 +32,7 @@ const AboutValues = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">Our Values</h2>
-          <p className="text-base text-black max-w-2xl mx-auto">
+          <p className="text-base text-gray-700 max-w-2xl mx-auto">
             The principles that guide everything we do
           </p>
         </div>
@@ -41,8 +41,8 @@ const AboutValues = () => {
           {values.map((value, index) => {
             const Icon = value.icon;
             return (
-              <div key={index} className="p-6 rounded-2xl border border-gray-400 bg-white">
-                <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center mb-4">
+              <div key={index} className="group p-6 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler hover:shadow-lg transition-all">
+                <div className="w-12 h-12 border-2 border-gray-300 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-nexiler group-hover:border-nexiler transition-all">
                   <Icon className="w-6 h-6 text-black" />
                 </div>
                 <h3 className="text-lg font-bold text-black mb-2">{value.title}</h3>

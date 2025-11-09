@@ -18,7 +18,7 @@ interface BlogCardProps {
 
 const BlogCard = ({ title, excerpt, category, image, date, readTime, author, slug }: BlogCardProps) => {
   return (
-    <article className="group rounded-2xl border border-gray-400 bg-white hover:border-gray-300 transition-all overflow-hidden">
+    <article className="group rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler hover:shadow-lg transition-all overflow-hidden">
       {/* Image */}
       <div className="relative w-full h-56 bg-gray-100 overflow-hidden">
         <Image
@@ -28,7 +28,7 @@ const BlogCard = ({ title, excerpt, category, image, date, readTime, author, slu
           className="object-cover group-hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 bg-white rounded-full text-xs font-semibold text-black">
+          <span className="px-3 py-1 bg-nexiler rounded-full text-xs font-semibold text-black">
             {category}
           </span>
         </div>
@@ -52,11 +52,11 @@ const BlogCard = ({ title, excerpt, category, image, date, readTime, author, slu
         <p className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-3">{excerpt}</p>
 
         {/* Footer */}
-        <div className="flex items-center justify-between pt-4 border-t border-gray-400">
+        <div className="flex items-center justify-between pt-4 border-t border-gray-300">
           <span className="text-sm font-medium text-gray-700">{author}</span>
           <Link
             href={`/blog/${slug}`}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-black hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-nexiler hover:gap-3 transition-all"
           >
             Read More
             <ArrowRight className="w-4 h-4" />

@@ -25,13 +25,13 @@ const AboutStory = () => {
 
           {/* Right - Mission & Vision */}
           <div className="space-y-8">
-            <div className="p-6 rounded-2xl border border-gray-400 bg-white">
+            <div className="p-6 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler transition-all">
               <h3 className="text-xl font-bold text-black mb-3">Our Mission</h3>
               <p className="text-sm text-gray-700 leading-relaxed">
                 To empower businesses with innovative digital solutions that are accessible, affordable, and built to last. We believe every business deserves world-class technology.
               </p>
             </div>
-            <div className="p-6 rounded-2xl border border-gray-400 bg-white">
+            <div className="p-6 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler transition-all">
               <h3 className="text-xl font-bold text-black mb-3">Our Vision</h3>
               <p className="text-sm text-gray-700 leading-relaxed">
                 To be the go-to digital partner for businesses worldwide, known for our quality, reliability, and commitment to client success.
