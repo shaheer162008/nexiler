@@ -179,29 +179,28 @@ const DesignBrandingPage = () => {
       {/* CTA */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white border-t border-gray-300">
         <div className="max-w-4xl mx-auto">
-          <div className="p-12 rounded-2xl bg-black text-white text-center">
+          <div className="p-12 rounded-2xl bg-white border-2 border-gray-300 text-center hover:border-nexiler hover:shadow-lg transition-all">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-nexiler-subtle border border-nexiler rounded-full mb-6">
               <div className="w-2 h-2 bg-nexiler rounded-full animate-pulse"></div>
               <span className="text-sm font-semibold text-black uppercase tracking-wider">Let's Create Together</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
               Ready to Build Your Brand?
             </h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
               Let's create a brand identity that makes a lasting impression
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link 
                 href="/consultation"
-                className="relative px-8 py-4 bg-nexiler text-white rounded-lg font-semibold overflow-hidden group hover:shadow-[0_0_20px_rgba(135,237,130,0.4)] transition-all inline-flex items-center gap-2"
+                className="relative px-8 py-4 bg-nexiler text-black rounded-lg font-semibold overflow-hidden group hover:shadow-[0_0_20px_rgba(135,237,130,0.4)] transition-all inline-flex items-center gap-2"
               >
                 <span className="relative z-10">Get Free Consultation</span>
                 <ArrowRight className="h-5 w-5 relative z-10" />
-                <div className="absolute inset-0 bg-nexiler-dark transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
               </Link>
               <Link 
                 href="/packages"
-                className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-black transition-all"
+                className="px-8 py-4 bg-transparent border-2 border-gray-300 text-black rounded-lg font-semibold hover:border-nexiler transition-all"
               >
                 View Packages
               </Link>

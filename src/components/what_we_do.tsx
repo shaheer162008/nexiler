@@ -129,24 +129,24 @@ const WhatWeDo = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center bg-black rounded-2xl p-8 sm:p-12">
-          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+        <div className="text-center bg-white border-2 border-gray-300 rounded-2xl p-8 sm:p-12 hover:border-nexiler hover:shadow-lg transition-all">
+          <h3 className="text-2xl sm:text-3xl font-bold text-black mb-4">
             Need Something Custom?
           </h3>
-          <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+          <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
             Every business is unique. If you need a custom solution tailored to your specific requirements, we are here to help you build it from scratch.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="px-6 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-colors inline-flex items-center justify-center gap-2"
+              className="px-6 py-3 bg-white border-2 border-gray-300 text-black font-semibold rounded-lg hover:border-nexiler transition-all inline-flex items-center justify-center gap-2"
             >
               Get Custom Quote
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/consultation"
-              className="px-6 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-colors inline-flex items-center justify-center gap-2"
+              className="px-6 py-3 bg-nexiler text-black font-semibold rounded-lg hover:shadow-[0_0_20px_rgba(135,237,130,0.4)] transition-all inline-flex items-center justify-center gap-2"
             >
               Free Consultation
               <ArrowRight className="h-4 w-4" />

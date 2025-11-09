@@ -106,27 +106,26 @@ const DataSolutionsPage = () => {
       {/* CTA */}
       <section className="pt-8 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="p-12 rounded-2xl bg-black text-white text-center">
+          <div className="p-12 rounded-2xl bg-white border-2 border-gray-300 text-center hover:border-nexiler hover:shadow-lg transition-all">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-nexiler-subtle border border-nexiler rounded-full mb-6">
               <div className="w-2 h-2 bg-nexiler rounded-full animate-pulse"></div>
               <span className="text-sm font-semibold text-black uppercase tracking-wider">Let's Get Started</span>
             </div>
-            <h2 className="text-3xl font-bold text-white mb-4">Ready to Harness Your Data?</h2>
-            <p className="text-base text-gray-300 mb-6">
+            <h2 className="text-3xl font-bold text-black mb-4">Ready to Harness Your Data?</h2>
+            <p className="text-base text-gray-700 mb-6">
               Let's unlock the power of your data
             </p>
             <div className="flex items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="relative inline-flex items-center gap-2 px-6 py-3 bg-nexiler text-white rounded-lg font-semibold text-sm overflow-hidden group hover:shadow-[0_0_20px_rgba(135,237,130,0.4)] transition-all"
+                className="relative inline-flex items-center gap-2 px-6 py-3 bg-nexiler text-black rounded-lg font-semibold text-sm overflow-hidden group hover:shadow-[0_0_20px_rgba(135,237,130,0.4)] transition-all"
               >
                 <span className="relative z-10">Get in Touch</span>
                 <ArrowRight className="w-4 h-4 relative z-10" />
-                <div className="absolute inset-0 bg-nexiler-dark transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
               </Link>
               <Link
                 href="/pricing"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold text-sm hover:bg-white hover:text-black transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border-2 border-gray-300 text-black rounded-lg font-semibold text-sm hover:border-nexiler transition-all"
               >
                 View Pricing
                 <ArrowRight className="w-4 h-4" />

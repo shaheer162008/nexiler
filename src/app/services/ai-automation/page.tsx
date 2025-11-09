@@ -110,19 +110,19 @@ const AIAutomationPage = () => {
       {/* CTA */}
       <section className="pt-8 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="p-12 rounded-2xl bg-black text-white text-center">
+          <div className="p-12 rounded-2xl bg-white border-2 border-gray-300 text-center hover:border-nexiler hover:shadow-lg transition-all">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-nexiler-subtle border border-nexiler rounded-full mb-6">
               <div className="w-2 h-2 bg-nexiler rounded-full animate-pulse"></div>
               <span className="text-sm font-semibold text-black uppercase tracking-wider">Ready to Get Started?</span>
             </div>
-            <h2 className="text-3xl font-bold mb-4">Automate Your Business with AI</h2>
-            <p className="text-base text-gray-300 mb-6 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-black mb-4">Automate Your Business with AI</h2>
+            <p className="text-base text-gray-700 mb-6 max-w-2xl mx-auto">
               Let's discuss how AI can transform your operations and boost productivity.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="group relative px-6 py-3 bg-nexiler text-white rounded-lg font-semibold text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(135,237,130,0.4)] w-full sm:w-auto text-center"
+                className="group relative px-6 py-3 bg-nexiler text-black rounded-lg font-semibold text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(135,237,130,0.4)] w-full sm:w-auto text-center"
               >
                 <span className="relative z-10 inline-flex items-center gap-2">
                   Get in Touch

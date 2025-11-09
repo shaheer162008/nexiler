@@ -122,32 +122,31 @@ const ServicesGrid = () => {
         </div>
 
         {/* Packages CTA Box */}
-        <div className="mt-16 p-8 sm:p-12 rounded-2xl bg-black text-white text-center">
+        <div className="mt-16 p-8 sm:p-12 rounded-2xl bg-white border-2 border-gray-300 text-center hover:border-nexiler hover:shadow-lg transition-all">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-nexiler-subtle border border-nexiler rounded-full mb-6">
             <div className="w-2 h-2 bg-nexiler rounded-full animate-pulse"></div>
             <span className="text-sm font-semibold text-black uppercase tracking-wider">Ready to Get Started?</span>
           </div>
           
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
             Choose the Perfect Package
           </h2>
           
-          <p className="text-base text-gray-300 max-w-2xl mx-auto mb-8">
+          <p className="text-base text-gray-700 max-w-2xl mx-auto mb-8">
             We've created affordable packages for startups, businesses, and enterprises. Find the one that fits your needs and budget.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link 
               href="/packages" 
-              className="group relative px-6 py-3 bg-nexiler text-white rounded-lg font-semibold text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(135,237,130,0.4)] w-full sm:w-auto text-center"
+              className="group relative px-6 py-3 bg-nexiler text-black rounded-lg font-semibold text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(135,237,130,0.4)] w-full sm:w-auto text-center"
             >
               <span className="relative z-10">View All Packages</span>
-              <div className="absolute inset-0 bg-nexiler-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             </Link>
             
             <Link 
               href="/consultation" 
-              className="group relative px-6 py-3 bg-white border-2 border-white text-black rounded-lg font-semibold text-sm transition-all duration-300 hover:bg-transparent hover:text-white w-full sm:w-auto text-center"
+              className="group relative px-6 py-3 bg-white border-2 border-gray-300 text-black rounded-lg font-semibold text-sm transition-all duration-300 hover:border-nexiler hover:shadow-lg w-full sm:w-auto text-center"
             >
               <span className="relative z-10">Get Free Consultation</span>
             </Link>

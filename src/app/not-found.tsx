@@ -12,7 +12,7 @@ export default function NotFound() {
             404
           </h1>
           <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full">
-            <div className="w-2 h-2 bg-black rounded-full"></div>
+            <div className="w-2 h-2 bg-nexiler rounded-full animate-pulse"></div>
             <span className="text-sm font-semibold text-black uppercase tracking-wider">Page Not Found</span>
           </div>
         </div>
@@ -31,14 +31,14 @@ export default function NotFound() {
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
           <Link 
             href="/"
-            className="px-6 py-3 bg-black hover:bg-gray-800 text-white rounded-lg font-semibold text-sm transition-colors inline-flex items-center gap-2"
+            className="px-6 py-3 bg-nexiler text-black rounded-lg font-semibold text-sm hover:shadow-[0_0_20px_rgba(135,237,130,0.4)] transition-all inline-flex items-center gap-2"
           >
             <Home className="h-4 w-4" />
             Back to Home
           </Link>
           <Link 
             href="/services"
-            className="px-6 py-3 bg-white hover:bg-gray-50 border border-gray-300 text-black rounded-lg font-semibold text-sm transition-colors inline-flex items-center gap-2"
+            className="px-6 py-3 bg-white border-2 border-gray-300 text-black rounded-lg font-semibold text-sm hover:border-nexiler transition-all inline-flex items-center gap-2"
           >
             <Search className="h-4 w-4" />
             Browse Services
