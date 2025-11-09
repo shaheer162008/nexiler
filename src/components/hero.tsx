@@ -12,9 +12,11 @@ const Hero = () => {
           {/* Left Content */}
           <div className="space-y-5 lg:pr-8 text-center lg:text-left">
             {/* Main Heading */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black leading-[1.1]">
-              Transform Your Ideas Into Digital Reality
-            </h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black leading-tight px-2">
+            Transform Your Ideas
+          <br />
+          <span className="text-nexiler">into Digital Reality</span>
+        </h1>
 
             {/* Subtitle */}
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed max-w-xl mx-auto lg:mx-0">

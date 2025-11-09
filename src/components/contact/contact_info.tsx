@@ -39,18 +39,18 @@ const ContactInfo = () => {
             const Icon = detail.icon;
             const content = (
               <>
-                <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center mb-4 mx-auto">
-                  <Icon className="w-6 h-6 text-black" />
+                <div className="w-12 h-12 border-2 border-gray-300 rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:bg-nexiler group-hover:border-nexiler transition-all">
+                  <Icon className="w-6 h-6 text-black group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-sm font-semibold text-gray-600 mb-2">{detail.title}</h3>
+                <h3 className="text-sm font-semibold text-gray-600 mb-2 group-hover:text-nexiler transition-colors">{detail.title}</h3>
                 <p className="text-base font-semibold text-black">{detail.value}</p>
               </>
             );
 
             return (
-              <div key={index} className="p-6 rounded-2xl border border-gray-400 bg-white text-center flex flex-col items-center">
+              <div key={index} className="group p-6 rounded-2xl border-2 border-gray-300 bg-white text-center flex flex-col items-center hover:border-nexiler hover:shadow-lg transition-all">
                 {detail.link ? (
-                  <a href={detail.link} className="block hover:opacity-80 transition-opacity">
+                  <a href={detail.link} className="block">
                     {content}
                   </a>
                 ) : (

@@ -38,12 +38,12 @@ const DesignBrandingPage = () => {
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full mb-4">
-            <div className="w-2 h-2 bg-black rounded-full"></div>
+            <div className="w-2 h-2 bg-nexiler rounded-full animate-pulse"></div>
             <span className="text-sm font-semibold text-black uppercase tracking-wider">Service</span>
           </div>
 
-          <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <Palette className="w-8 h-8 text-black" />
+          <div className="w-16 h-16 border-2 border-gray-300 rounded-2xl flex items-center justify-center mx-auto mb-6 hover:bg-nexiler transition-all group">
+            <Palette className="w-8 h-8 text-black group-hover:text-white transition-colors" />
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black leading-tight px-2">
@@ -57,16 +57,17 @@ const DesignBrandingPage = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <Link 
               href="/consultation"
-              className="px-6 py-3 bg-black hover:bg-gray-800 text-white rounded-lg font-semibold text-sm transition-colors inline-flex items-center gap-2"
+              className="relative px-6 py-3 bg-nexiler text-white rounded-lg font-semibold text-sm overflow-hidden group hover:shadow-[0_0_20px_rgba(135,237,130,0.4)] transition-all inline-flex items-center gap-2"
             >
-              Start Your Brand
-              <ArrowRight className="h-4 w-4" />
+              <span className="relative z-10">Start Your Brand</span>
+              <ArrowRight className="h-4 w-4 relative z-10" />
+              <div className="absolute inset-0 bg-nexiler-dark transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
             </Link>
             <Link 
               href="/portfolio"
-              className="px-6 py-3 bg-white hover:bg-gray-50 border border-gray-300 text-black rounded-lg font-semibold text-sm transition-colors"
+              className="relative px-6 py-3 bg-white border-2 border-nexiler text-black rounded-lg font-semibold text-sm overflow-hidden group hover:bg-nexiler-subtle transition-all"
             >
-              View Portfolio
+              <span className="relative z-10">View Portfolio</span>
             </Link>
           </div>
         </div>
@@ -88,10 +89,10 @@ const DesignBrandingPage = () => {
             {features.map((feature, index) => (
               <div 
                 key={index}
-                className="flex items-start gap-3 p-6 rounded-xl border border-gray-300 bg-white hover:border-black transition-colors"
+                className="flex items-start gap-3 p-6 rounded-xl border-2 border-gray-300 bg-white hover:border-nexiler hover:bg-nexiler-subtle transition-all"
               >
-                <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                  <Check className="h-3 w-3 text-white" />
+                <div className="shrink-0 mt-0.5">
+                  <Check className="h-5 w-5 text-nexiler" />
                 </div>
                 <span className="text-sm font-medium text-black">{feature}</span>
               </div>
@@ -116,7 +117,7 @@ const DesignBrandingPage = () => {
             {technologies.map((tech, index) => (
               <div 
                 key={index}
-                className="p-6 text-center rounded-xl border border-gray-300 bg-white hover:border-black transition-colors"
+                className="p-6 text-center rounded-xl border-2 border-gray-300 bg-white hover:border-nexiler hover:bg-nexiler-subtle transition-all"
               >
                 <span className="text-sm font-semibold text-black">{tech}</span>
               </div>
@@ -162,9 +163,9 @@ const DesignBrandingPage = () => {
             ].map((item, index) => (
               <div 
                 key={index}
-                className="flex gap-6 p-6 rounded-xl border border-gray-300 bg-white hover:border-black transition-colors"
+                className="flex gap-6 p-6 rounded-xl border-2 border-gray-300 bg-white hover:border-nexiler hover:bg-nexiler-subtle transition-all"
               >
-                <div className="text-4xl font-bold text-gray-200">{item.step}</div>
+                <div className="text-4xl font-bold text-nexiler-light">{item.step}</div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-black mb-2">{item.title}</h3>
                   <p className="text-sm text-gray-600">{item.description}</p>
@@ -177,27 +178,34 @@ const DesignBrandingPage = () => {
 
       {/* CTA */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white border-t border-gray-300">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
-            Ready to Build Your Brand?
-          </h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Let's create a brand identity that makes a lasting impression
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link 
-              href="/consultation"
-              className="px-8 py-4 bg-black hover:bg-gray-800 text-white rounded-lg font-semibold transition-colors inline-flex items-center gap-2"
-            >
-              Get Free Consultation
-              <ArrowRight className="h-5 w-5" />
-            </Link>
-            <Link 
-              href="/packages"
-              className="px-8 py-4 bg-white hover:bg-gray-50 border border-gray-300 text-black rounded-lg font-semibold transition-colors"
-            >
-              View Packages
-            </Link>
+        <div className="max-w-4xl mx-auto">
+          <div className="p-12 rounded-2xl bg-black text-white text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-nexiler-subtle border border-nexiler rounded-full mb-6">
+              <div className="w-2 h-2 bg-nexiler rounded-full animate-pulse"></div>
+              <span className="text-sm font-semibold text-black uppercase tracking-wider">Let's Create Together</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Ready to Build Your Brand?
+            </h2>
+            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+              Let's create a brand identity that makes a lasting impression
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link 
+                href="/consultation"
+                className="relative px-8 py-4 bg-nexiler text-white rounded-lg font-semibold overflow-hidden group hover:shadow-[0_0_20px_rgba(135,237,130,0.4)] transition-all inline-flex items-center gap-2"
+              >
+                <span className="relative z-10">Get Free Consultation</span>
+                <ArrowRight className="h-5 w-5 relative z-10" />
+                <div className="absolute inset-0 bg-nexiler-dark transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+              </Link>
+              <Link 
+                href="/packages"
+                className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-black transition-all"
+              >
+                View Packages
+              </Link>
+            </div>
           </div>
         </div>
       </section>
