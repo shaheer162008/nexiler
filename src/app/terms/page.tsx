@@ -9,16 +9,16 @@ const TermsPage = () => {
       {/* Hero */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full mb-4">
-            <div className="w-2 h-2 bg-black rounded-full"></div>
+          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full mb-4">
+            <div className="w-2 h-2 bg-nexiler rounded-full animate-pulse"></div>
             <span className="text-sm font-semibold text-black uppercase tracking-wider">Legal</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black leading-tight px-2">
-            Terms & Privacy
+            Terms & <span className="text-nexiler">Privacy</span>
           </h1>
 
-          <p className="text-sm sm:text-base md:text-lg text-black max-w-2xl mx-auto leading-relaxed px-2">
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed px-2">
             Last updated: November 5, 2025
           </p>
         </div>
@@ -28,7 +28,7 @@ const TermsPage = () => {
       <section className="pt-8 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto space-y-12">
           {/* Terms of Service */}
-          <div className="p-8 rounded-2xl border border-gray-200 bg-white">
+          <div className="p-8 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler transition-all">
             <h2 className="text-2xl font-bold text-black mb-6">Terms of Service</h2>
             
             <div className="space-y-6 text-sm text-gray-700 leading-relaxed">

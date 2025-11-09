@@ -35,18 +35,18 @@ const SolutionsPage = () => {
       {/* Hero */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full mb-4">
-            <div className="w-2 h-2 bg-black rounded-full"></div>
+          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full mb-4">
+            <div className="w-2 h-2 bg-nexiler rounded-full animate-pulse"></div>
             <span className="text-sm font-semibold text-black uppercase tracking-wider">Solutions</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black leading-tight px-2">
             Solutions Built for
             <br />
-            <span className="text-black">Your Business Size</span>
+            <span className="text-nexiler">Your Business Size</span>
           </h1>
 
-          <p className="text-sm sm:text-base md:text-lg text-black max-w-2xl mx-auto leading-relaxed px-2">
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed px-2">
             Whether you're an enterprise, small business, or startup, we have the perfect solution tailored to your needs and budget.
           </p>
         </div>
@@ -59,8 +59,8 @@ const SolutionsPage = () => {
             {solutions.map((solution, index) => {
               const Icon = solution.icon;
               return (
-                <div key={index} className="p-8 rounded-2xl border border-gray-200 bg-white hover:border-gray-300 transition-all">
-                  <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-6">
+                <div key={index} className="group p-8 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler hover:shadow-lg transition-all">
+                  <div className="w-16 h-16 border-2 border-gray-300 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-nexiler group-hover:border-nexiler transition-all">
                     <Icon className="w-8 h-8 text-black" />
                   </div>
                   
@@ -74,7 +74,7 @@ const SolutionsPage = () => {
                     <div className="space-y-2">
                       {solution.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
+                          <div className="w-1.5 h-1.5 bg-nexiler rounded-full"></div>
                           <span className="text-sm text-gray-700">{feature}</span>
                         </div>
                       ))}
@@ -83,7 +83,7 @@ const SolutionsPage = () => {
 
                   <Link
                     href={solution.link}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-black hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-nexiler hover:gap-3 transition-all"
                   >
                     Learn More
                     <ArrowRight className="w-4 h-4" />
@@ -98,14 +98,14 @@ const SolutionsPage = () => {
       {/* CTA */}
       <section className="pt-8 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="p-12 rounded-2xl border border-gray-200 bg-white text-center">
+          <div className="p-12 rounded-2xl border-2 border-gray-300 bg-white text-center hover:border-nexiler hover:shadow-lg transition-all">
             <h2 className="text-3xl font-bold text-black mb-4">Not Sure Which Solution is Right for You?</h2>
-            <p className="text-base text-black mb-6">
+            <p className="text-base text-gray-700 mb-6">
               Let's talk about your needs and find the perfect fit
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-semibold text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-nexiler text-black rounded-lg hover:shadow-[0_0_20px_rgba(135,237,130,0.4)] transition-all font-semibold text-sm"
             >
               Contact Us
             </Link>

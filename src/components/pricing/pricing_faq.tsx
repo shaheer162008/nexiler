@@ -46,7 +46,7 @@ const PricingFAQ = () => {
         {/* FAQ Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {faqs.map((faq, index) => (
-            <div key={index} className="p-6 rounded-2xl border border-gray-400 bg-white">
+            <div key={index} className="p-6 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler transition-all">
               <h3 className="text-lg font-bold text-black mb-3">{faq.question}</h3>
               <p className="text-sm text-gray-700 leading-relaxed">{faq.answer}</p>
             </div>

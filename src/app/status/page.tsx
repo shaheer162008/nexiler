@@ -19,16 +19,16 @@ const StatusPage = () => {
       {/* Hero */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full mb-4">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+          <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full mb-4">
+            <div className="w-2 h-2 bg-nexiler rounded-full animate-pulse"></div>
             <span className="text-sm font-semibold text-black uppercase tracking-wider">All Systems Operational</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black leading-tight px-2">
-            System Status
+            <span className="text-nexiler">System</span> Status
           </h1>
 
-          <p className="text-sm sm:text-base md:text-lg text-black max-w-2xl mx-auto leading-relaxed px-2">
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed px-2">
             Real-time status and uptime information for all Nexiler services
           </p>
         </div>
@@ -39,10 +39,10 @@ const StatusPage = () => {
         <div className="max-w-4xl mx-auto">
           <div className="space-y-4">
             {services.map((service, index) => (
-              <div key={index} className="p-6 rounded-2xl border border-gray-200 bg-white">
+              <div key={index} className="p-6 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler hover:shadow-lg transition-all">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <CheckCircle className="w-6 h-6 text-green-500 shrink-0" />
+                    <CheckCircle className="w-6 h-6 text-nexiler shrink-0" />
                     <div>
                       <h3 className="text-lg font-bold text-black">{service.name}</h3>
                       <p className="text-sm text-gray-600">Operational</p>
@@ -62,7 +62,7 @@ const StatusPage = () => {
       {/* Uptime Stats */}
       <section className="pt-8 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="p-12 rounded-2xl border border-gray-200 bg-white text-center">
+          <div className="p-12 rounded-2xl border-2 border-gray-300 bg-white text-center hover:border-nexiler hover:shadow-lg transition-all">
             <h2 className="text-3xl sm:text-4xl font-bold text-black mb-8">Overall Performance</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>

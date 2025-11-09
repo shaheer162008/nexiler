@@ -34,12 +34,12 @@ const PricingFeatures = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {features.map((section, index) => (
-            <div key={index} className="p-8 rounded-2xl border border-gray-400 bg-white">
+            <div key={index} className="p-8 rounded-2xl border-2 border-gray-300 bg-white hover:border-nexiler transition-all">
               <h3 className="text-2xl font-bold text-black mb-6">{section.title}</h3>
               <div className="space-y-4">
                 {section.items.map((item, itemIndex) => (
                   <div key={itemIndex} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-black shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-nexiler shrink-0 mt-0.5" />
                     <span className="text-sm text-gray-700">{item}</span>
                   </div>
                 ))}

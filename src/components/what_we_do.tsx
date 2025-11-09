@@ -77,7 +77,7 @@ const WhatWeDo = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full mb-4">
-            <div className="w-2 h-2 bg-black rounded-full"></div>
+            <div className="w-2 h-2 bg-nexiler rounded-full animate-pulse"></div>
             <span className="text-sm font-semibold text-black uppercase tracking-wider">What We Do</span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-black mb-4">
@@ -95,11 +95,11 @@ const WhatWeDo = () => {
             return (
               <div
                 key={index}
-                className="bg-white border border-gray-300 rounded-2xl p-6 hover:border-black transition-colors group"
+                className="bg-white border-2 border-gray-300 rounded-2xl p-6 hover:border-nexiler transition-all group"
               >
                 <div className="mb-4">
-                  <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon className="h-6 w-6 text-white" />
+                  <div className="w-12 h-12 border-2 border-gray-300 rounded-xl flex items-center justify-center mb-4 group-hover:bg-nexiler group-hover:border-nexiler group-hover:scale-110 transition-all">
+                    <Icon className="h-6 w-6 text-black" />
                   </div>
                   <h3 className="text-xl font-bold text-black mb-2">{service.title}</h3>
                   <p className="text-sm text-gray-600 mb-4">{service.description}</p>
