@@ -11,14 +11,15 @@ const PortfolioFilters = ({ activeFilter, onFilterChange }: PortfolioFiltersProp
   const filters = [
     'All Projects',
     'Web Development',
+    'Web Applications',
     'Mobile Apps',
-    'AI & Automation',
+    'AI Automation',
     'E-Commerce',
-    'Branding'
+    'AI-Powered Web-Application',
   ];
 
   return (
-    <section className="pt-8 pb-8 px-4 sm:px-6 lg:px-8 bg-white sticky top-14 z-40 border-b border-gray-300">
+    <section className="pt-8 pb-8 px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-300">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-wrap items-center justify-center gap-3">
           {filters.map((filter) => (

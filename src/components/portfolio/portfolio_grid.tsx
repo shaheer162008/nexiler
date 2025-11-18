@@ -11,6 +11,7 @@ interface Project {
   image: string;
   tags: string[];
   link?: string;
+  site?: string;
 }
 
 interface PortfolioGridProps {
@@ -32,6 +33,7 @@ const PortfolioGrid = ({ projects }: PortfolioGridProps) => {
                 image={project.image}
                 tags={project.tags}
                 link={project.link}
+                site={project.site}
               />
             ))}
           </div>
