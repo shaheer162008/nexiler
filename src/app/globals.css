@@ -1,11 +1,24 @@
 @import "tailwindcss";
 
-/* Custom Nexiler Color Variables */
+/* Custom Nexiler Color Variables - updated to new futuristic palette */
 :root {
-  --nexiler-primary: #87ed82;
-  --nexiler-primary-dark: #6ed969;
-  --nexiler-primary-light: #a0f29c;
-  --nexiler-primary-subtle: #e8fce7;
+  /* Primary / Accent */
+  --nexiler-primary: #00F0FF; /* futuristic highlight */
+  --nexiler-accent: #17D7E8; /* secondary accent */
+  --nexiler-accent-2: #6FFFFF; /* gradient end */
+  --color-black: #000000;
+  --color-card: #121212;
+  --color-white: #FFFFFF;
+
+  /* Dark backgrounds */
+  --nexiler-bg-dark: #000000;       /* main background / high-tech feel */
+  --nexiler-card-dark: #121212;     /* cards / UI sections */
+
+  /* Neutral text */
+  --nexiler-text-light: #FFFFFF;    /* clean minimal contrast */
+
+  /* Subtle translucent variant for backgrounds */
+  --nexiler-primary-subtle: rgba(0,240,255,0.06);
 }
 
 /* Smooth page animations - macOS style */
@@ -30,15 +43,19 @@
 }
 
 .bg-nexiler-dark {
-  background-color: var(--nexiler-primary-dark);
+  background-color: var(--nexiler-accent);
+}
+
+.bg-nexiler-card {
+  background-color: var(--nexiler-card-dark);
 }
 
 .bg-nexiler-light {
-  background-color: var(--nexiler-primary-light);
+  background-color: var(--nexiler-accent-2);
 }
 
 .bg-nexiler-subtle {
-  background-color: var(--nexiler-primary-subtle);
+  background-color: rgba(0,240,255,0.06);
 }
 
 /* Text Classes */
@@ -46,8 +63,12 @@
   color: var(--nexiler-primary);
 }
 
+.text-on-dark {
+  color: var(--nexiler-text-light);
+}
+
 .text-nexiler-dark {
-  color: var(--nexiler-primary-dark);
+  color: var(--nexiler-accent);
 }
 
 /* Border Classes */
@@ -78,7 +99,23 @@
 
 /* Gradient Class */
 .bg-nexiler-gradient {
-  background: linear-gradient(135deg, var(--nexiler-primary-light) 0%, var(--nexiler-primary) 100%);
+  /* Primary gradient: #00F0FF -> #17D7E8 */
+  background: linear-gradient(135deg, var(--nexiler-primary) 0%, var(--nexiler-accent) 50%, var(--nexiler-accent-2) 100%);
+}
+
+/* Utility: glow for icons / CTA */
+.glow-nexiler {
+  box-shadow: 0 6px 30px rgba(0,240,255,0.12), 0 0 12px rgba(23,215,232,0.12);
+}
+
+/* Background helpers */
+.bg-black-custom { background-color: var(--color-black); }
+.bg-card { background-color: var(--color-card); }
+.text-white-custom { color: var(--color-white); }
+
+.bg-nexiler-gradient-2 {
+  /* Secondary gradient: #17D7E8 -> #6FFFFF */
+  background: linear-gradient(135deg, var(--nexiler-primary-dark) 0%, var(--nexiler-primary-light) 100%);
 }
 
 /* Fade-in Animation */
@@ -95,4 +132,16 @@
 
 .animate-fade-in {
   animation: fade-in 0.8s ease-out;
+}
+
+/* Helper button styles */
+.btn-nexiler {
+  background: var(--nexiler-primary);
+  color: var(--nexiler-text-light);
+}
+
+.btn-nexiler-outline {
+  border: 2px solid var(--nexiler-primary);
+  color: var(--nexiler-primary);
+  background: transparent;
 }

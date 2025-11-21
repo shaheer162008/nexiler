@@ -77,7 +77,7 @@ if(auth){
           {/* Logo */}
           <Link href="/" className="flex items-center transition-transform hover:scale-105 duration-300">
             <Image 
-              src="/nexiler.png" 
+              src="/nexiler.jpg" 
               alt="Nexiler" 
               width={400} 
               height={110} 

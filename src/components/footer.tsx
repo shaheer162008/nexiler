@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <Link href="/" className="inline-block mb-4 transition-transform hover:scale-105 duration-300">
               <Image 
-                src="/nexiler.png" 
+                src="/nexiler.jpg" 
                 alt="Nexiler" 
                 width={400} 
                 height={110} 

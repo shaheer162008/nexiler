@@ -13,10 +13,9 @@ const Hero = () => {
           <div className="space-y-5 lg:pr-8 text-center lg:text-left">
             {/* Main Heading */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black leading-tight px-2">
-            Transform Your Ideas
-          <br />
-          <span className="text-nexiler">into Digital Reality</span>
-        </h1>
+              <span className="block whitespace-nowrap">Transform Your Ideas</span>
+              <span className="block text-nexiler">into Digital Reality</span>
+            </h1>
 
             {/* Subtitle */}
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed max-w-xl mx-auto lg:mx-0">
@@ -27,10 +26,10 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 pt-2">
               <Link
                 href="/consultation"
-                className="group relative w-full sm:w-auto px-8 py-3.5 bg-nexiler text-white rounded-xl font-semibold text-sm overflow-hidden transition-all duration-300 text-center hover:shadow-[0_0_30px_rgba(135,237,130,0.4)] hover:-translate-y-0.5"
+                className="group relative w-full sm:w-auto px-8 py-3.5 bg-nexiler-gradient text-white-custom rounded-xl font-semibold text-sm overflow-hidden transition-all duration-300 text-center glow-nexiler hover:shadow-lg"
               >
                 <span className="relative z-10">Get Free Consultation</span>
-                <div className="absolute inset-0 bg-nexiler-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300 origin-left"></div>
               </Link>
               <Link
                 href="/portfolio"
