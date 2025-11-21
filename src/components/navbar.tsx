@@ -5,14 +5,28 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import Dropdown from './ui/dropdown';
+import { getAuth, onAuthStateChanged, User } from 'firebase/auth';
+import { app } from '../../firebase/init';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isPackagesOpen, setIsPackagesOpen] = useState(false);
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+const auth = getAuth(app)
+
+useEffect(() => {
+
+if(auth){
+  const unsubscribe = onAuthStateChanged(auth, (user: User | null) => {
+    setCurrentUser(user);
+  })
+  return () => unsubscribe()
+}
+},[auth]);
   // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isOpen) {
@@ -148,8 +162,13 @@ const Navbar = () => {
               <Link href="/packages" className="group relative px-4 py-1.5 bg-white border-2 border-gray-300 text-black rounded-lg font-semibold text-sm transition-all duration-300 hover:border-nexiler hover:shadow-md">
                 <span className="relative z-10 group-hover:text-nexiler transition-colors duration-300">Packages</span>
               </Link>
-              <Link href="/consultation" className="group relative px-4 py-1.5 bg-nexiler text-white rounded-lg font-semibold text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(135,237,130,0.3)]">
+              {/* <Link href="/consultation" className="group relative px-4 py-1.5 bg-nexiler text-white rounded-lg font-semibold text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(135,237,130,0.3)]">
                 <span className="relative z-10">Free Consultation</span>
+                <div className="absolute inset-0 bg-nexiler-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              </Link> */}
+
+          <Link href={currentUser?'/console':'account'}className="group relative px-3 py-1.5 bg-nexiler text-white rounded-lg font-semibold text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_16px_rgba(135,237,130,0.25)]">
+                <span className="relative z-10">{currentUser?'Account Console':'My Account'}</span>
                 <div className="absolute inset-0 bg-nexiler-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </Link>
             </div>
@@ -262,6 +281,23 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 <span className="relative z-10">Free Consultation</span>
+                <div className="absolute inset-0 bg-nexiler-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              </Link>
+
+              {/* Login & Sign Up (mobile) */}
+              <Link
+                href="/login"
+                className="block w-full text-center px-4 py-2.5 text-sm text-black font-semibold bg-white border border-gray-300 rounded-xl hover:border-nexiler transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Login
+              </Link>
+              <Link
+                href="/signup"
+                className="group relative block w-full text-center px-4 py-2.5 text-sm bg-nexiler text-white rounded-xl font-semibold overflow-hidden transition-all duration-300"
+                onClick={() => setIsOpen(false)}
+              >
+                <span className="relative z-10">Sign Up</span>
                 <div className="absolute inset-0 bg-nexiler-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </Link>
             </div>
