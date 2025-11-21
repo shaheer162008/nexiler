@@ -269,6 +269,13 @@ if(auth){
             {/* Mobile CTA Buttons */}
             <div className="pt-3 border-t border-gray-200 mt-3 space-y-2 pb-2">
               <Link
+                href={currentUser?'/console':'account'}
+                className="block w-full text-center px-4 py-2.5 text-sm text-black font-semibold bg-white border border-gray-300 rounded-xl hover:border-nexiler transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+               {currentUser?'Account Console':'My Account'}
+              </Link>
+              <Link
                 href="/packages"
                 className="group relative block w-full text-center px-4 py-2.5 text-sm text-black font-semibold bg-white border-2 border-gray-300 hover:border-nexiler rounded-xl transition-all duration-300"
                 onClick={() => setIsOpen(false)}
@@ -285,13 +292,6 @@ if(auth){
               </Link>
 
               {/* Login & Sign Up (mobile) */}
-              <Link
-                href="/account"
-                className="block w-full text-center px-4 py-2.5 text-sm text-black font-semibold bg-white border border-gray-300 rounded-xl hover:border-nexiler transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
-              >
-                My Account
-              </Link>
             </div>
           </div>
         </div>
