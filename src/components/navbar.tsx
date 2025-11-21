@@ -286,19 +286,11 @@ if(auth){
 
               {/* Login & Sign Up (mobile) */}
               <Link
-                href="/login"
+                href="/account"
                 className="block w-full text-center px-4 py-2.5 text-sm text-black font-semibold bg-white border border-gray-300 rounded-xl hover:border-nexiler transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
-                Login
-              </Link>
-              <Link
-                href="/signup"
-                className="group relative block w-full text-center px-4 py-2.5 text-sm bg-nexiler text-white rounded-xl font-semibold overflow-hidden transition-all duration-300"
-                onClick={() => setIsOpen(false)}
-              >
-                <span className="relative z-10">Sign Up</span>
-                <div className="absolute inset-0 bg-nexiler-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                My Account
               </Link>
             </div>
           </div>
