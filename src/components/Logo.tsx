@@ -7,7 +7,7 @@ export const Logo = ({ className = "" }: { className?: string }) => {
             <div className="relative h-12 md:h-14 w-40 md:w-48">
                 <Image 
                     src="/Nexiler.png" 
-                    alt="Nexiler Logo" 
+                    alt="Nexiler" 
                     fill
                     className="object-contain object-left"
                     priority
