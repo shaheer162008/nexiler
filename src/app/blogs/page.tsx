@@ -1,12 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Newsletter } from "@/components/Newsletter";
+import { BlogFilter } from "@/components/BlogFilter";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 
 // Metadata is set in layout.tsx for client components
+
+const categories = ["All Posts", "AI Insights", "Development", "Security", "Case Studies"];
 
 const blogPosts = [
     {
@@ -60,6 +64,12 @@ const blogPosts = [
 ];
 
 export default function BlogPage() {
+    const [activeCategory, setActiveCategory] = useState("All Posts");
+
+    const filteredPosts = activeCategory === "All Posts"
+        ? blogPosts
+        : blogPosts.filter(post => post.category === activeCategory);
+
     return (
         <main className="min-h-screen">
             <Navbar />
@@ -85,11 +95,18 @@ export default function BlogPage() {
                 </div>
             </section>
 
+            {/* Filter - Sticky */}
+            <BlogFilter
+                categories={categories}
+                activeCategory={activeCategory}
+                onCategoryChange={setActiveCategory}
+            />
+
             {/* Blog Grid */}
             <section className="py-20">
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {blogPosts.map((post, index) => (
+                        {filteredPosts.map((post, index) => (
                             <motion.article
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
