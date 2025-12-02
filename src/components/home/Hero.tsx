@@ -7,11 +7,41 @@ import { Sparkles, ArrowRight } from "lucide-react";
 export const Hero = () => {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16">
-            {/* White Spotlight Background - Static */}
+            {/* Cone-shaped Spotlight from Badge */}
             <div className="absolute inset-0 -z-10">
-                <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-white/10 rounded-full blur-[150px]" />
-                <div className="absolute bottom-1/4 right-1/3 w-[800px] h-[800px] bg-white/8 rounded-full blur-[140px]" />
-                <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] bg-white/6 rounded-full blur-[130px]" />
+                {/* Main cone spreading from top */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[120vh]">
+                    <div 
+                        className="absolute inset-0"
+                        style={{
+                            background: 'radial-gradient(ellipse 150px 100px at 50% 0%, rgba(255,255,255,0.2), transparent 40%)',
+                            clipPath: 'polygon(45% 0%, 55% 0%, 85% 100%, 15% 100%)',
+                            filter: 'blur(40px)',
+                        }}
+                    />
+                </div>
+                {/* Wider cone layer */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[120vh]">
+                    <div 
+                        className="absolute inset-0"
+                        style={{
+                            background: 'radial-gradient(ellipse 200px 120px at 50% 0%, rgba(255,255,255,0.12), transparent 45%)',
+                            clipPath: 'polygon(42% 0%, 58% 0%, 90% 100%, 10% 100%)',
+                            filter: 'blur(60px)',
+                        }}
+                    />
+                </div>
+                {/* Softest layer */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[120vh]">
+                    <div 
+                        className="absolute inset-0"
+                        style={{
+                            background: 'radial-gradient(ellipse 300px 150px at 50% 0%, rgba(255,255,255,0.08), transparent 50%)',
+                            clipPath: 'polygon(38% 0%, 62% 0%, 95% 100%, 5% 100%)',
+                            filter: 'blur(80px)',
+                        }}
+                    />
+                </div>
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
