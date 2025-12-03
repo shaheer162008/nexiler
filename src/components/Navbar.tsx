@@ -42,39 +42,24 @@ export const Navbar = () => {
     }, [mobileMenuOpen]);
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-white/10 shadow-lg overflow-hidden">
-            {/* Navbar Gradient Effect - More Visible */}
-            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#00040F] via-[#00040F]/95 to-[#00040F]/85" />
-            <div className="absolute inset-0 -z-10">
-                <div 
-                    className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full"
-                    style={{
-                        background: 'radial-gradient(ellipse 100% 150% at 50% 0%, rgba(51, 187, 207, 0.15), rgba(51, 187, 207, 0.08) 40%, transparent 70%)',
-                        filter: 'blur(40px)',
-                    }}
-                />
-                <div 
-                    className="absolute inset-0"
-                    style={{
-                        background: 'linear-gradient(90deg, rgba(51, 187, 207, 0.05) 0%, transparent 50%, rgba(51, 187, 207, 0.05) 100%)',
-                    }}
-                />
-            </div>
+        <header className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-white/10 transition-all duration-300 ${scrolled ? 'shadow-lg' : ''}`}>
+            {/* Navbar Gradient Effect */}
+            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#00040F]/95 via-[#00040F]/90 to-[#00040F]/85" />
             
-            <div className="container mx-auto px-4 md:px-6 relative z-10">
-                <div className="flex items-center justify-between h-16 md:h-20">
+            <div className="container mx-auto px-4 sm:px-6 relative z-10">
+                <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
                     {/* Logo */}
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 z-50">
                         <Logo />
                     </div>
 
                     {/* Desktop Navigation - Centered */}
-                    <nav className="hidden md:flex items-center gap-6 lg:gap-8 absolute left-1/2 -translate-x-1/2">
+                    <nav className="hidden lg:flex items-center gap-6 xl:gap-8 absolute left-1/2 -translate-x-1/2">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className={`text-sm font-medium transition-all duration-300 hover:text-primary relative group ${pathname === link.href ? "text-primary" : "text-white/70"
+                                className={`text-sm xl:text-base font-medium transition-all duration-300 hover:text-primary relative group ${pathname === link.href ? "text-primary" : "text-white/70"
                                     }`}
                             >
                                 {link.label}
@@ -91,19 +76,19 @@ export const Navbar = () => {
 
                     {/* CTA Button (Desktop) */}
                     <Link
-                        href="/contact"
-                        className="hidden md:inline-flex px-6 py-3 bg-white/10 text-white border-2 border-white/30 rounded-xl text-sm font-bold hover:bg-white/20 hover:border-white/50 transition-all duration-300"
+                        href="/pricing"
+                        className="hidden lg:inline-flex px-5 xl:px-6 py-2.5 xl:py-3 bg-white/10 text-white border-2 border-white/30 rounded-xl text-sm xl:text-base font-bold hover:bg-white/20 hover:border-white/50 transition-all duration-300"
                     >
                         See Pricing
                     </Link>
 
-                    {/* Mobile Menu Toggle */}
+                    {/* Mobile Menu Toggle - Larger touch target */}
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="md:hidden p-2 rounded-lg text-white hover:text-primary hover:bg-white/5 transition-all duration-300"
+                        className="lg:hidden p-3 rounded-lg text-white hover:text-primary hover:bg-white/5 transition-all duration-300 z-50"
                         aria-label="Toggle menu"
                     >
-                        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                        {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                     </button>
                 </div>
             </div>
@@ -117,7 +102,7 @@ export const Navbar = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+                            className="lg:hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-40"
                             onClick={() => setMobileMenuOpen(false)}
                             style={{ top: '64px' }}
                         />
@@ -127,21 +112,21 @@ export const Navbar = () => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.3, ease: "easeOut" }}
-                            className="md:hidden fixed inset-x-0 top-16 bg-[#00040F] border-b border-white/10 shadow-2xl z-50"
+                            className="lg:hidden fixed inset-x-0 top-16 sm:top-18 md:top-20 bg-[#00040F]/98 border-b border-white/10 shadow-2xl z-50 backdrop-blur-xl"
                             style={{ maxHeight: 'calc(100vh - 64px)', overflowY: 'auto' }}
                         >
-                        <nav className="container mx-auto px-6 py-8 flex flex-col gap-1">
+                        <nav className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col gap-1">
                             {navLinks.map((link, index) => (
                                 <motion.div
                                     key={link.href}
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: index * 0.1, duration: 0.3 }}
+                                    transition={{ delay: index * 0.08, duration: 0.3 }}
                                 >
                                     <Link
                                         href={link.href}
                                         onClick={() => setMobileMenuOpen(false)}
-                                        className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                                        className={`block px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl text-base sm:text-lg font-medium transition-all duration-300 ${
                                             pathname === link.href
                                                 ? "text-primary bg-primary/10 border-l-4 border-primary"
                                                 : "text-white/80 hover:text-white hover:bg-white/5 border-l-4 border-transparent hover:border-primary/50"
@@ -158,9 +143,9 @@ export const Navbar = () => {
                                 className="mt-4 pt-4 border-t border-white/10"
                             >
                                 <Link
-                                    href="/contact"
+                                    href="/pricing"
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="block w-full px-6 py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl text-base font-bold text-center hover:bg-white/20 hover:border-white/50 transition-all duration-300"
+                                    className="block w-full px-6 py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl text-base sm:text-lg font-bold text-center hover:bg-white/20 hover:border-white/50 transition-all duration-300"
                                 >
                                     See Pricing
                                 </Link>

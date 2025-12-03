@@ -1,25 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
+/* Optimized responsive font sizing */
 html {
-  font-size: 62.5%; /* Base: 10px for easier rem calculations */
+  font-size: 62.5%; /* Base: 10px */
 }
 
 @media (min-width: 640px) {
   html {
-    font-size: 65%;
+    font-size: 62.5%;
   }
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 68%;
+    font-size: 62.5%;
   }
 }
 
 @media (min-width: 1024px) {
   html {
-    font-size: 70%;
+    font-size: 62.5%;
   }
 }
 
@@ -28,27 +29,25 @@ html {
 }
 
 body {
-  background: linear-gradient(180deg, #00040F 0%, #00050D 25%, #010816 50%, #010A1A 75%, #010613 100%);
+  background: linear-gradient(180deg, #00040F 0%, #00050D 50%, #010613 100%);
   color: white;
   min-height: 100vh;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   position: relative;
 }
 
+/* Optimized background gradient */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: 
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(51, 187, 207, 0.08), transparent),
-    radial-gradient(ellipse 60% 40% at 0% 50%, rgba(51, 187, 207, 0.05), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(51, 187, 207, 0.05), transparent),
-    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(51, 187, 207, 0.06), transparent);
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(51, 187, 207, 0.06), transparent);
   pointer-events: none;
   z-index: 0;
+  will-change: transform;
 }
 
 body::selection {
@@ -61,7 +60,6 @@ body::selection {
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
-  will-change: transform, background-color;
 }
 
 .glass:hover {
@@ -75,28 +73,23 @@ body::selection {
   background-clip: text;
   color: transparent;
   background-image: linear-gradient(135deg, #33BBCF 0%, #00F6FF 100%);
-  will-change: background-position;
 }
 
-.gradient-border {
-  position: relative;
+.cyan-gradient {
   background: linear-gradient(135deg, #33BBCF 0%, #00F6FF 100%);
-  padding: 2px;
-  border-radius: 0.5rem;
 }
 
-.gradient-border::before {
-  content: '';
-  position: absolute;
-  inset: 2px;
-  background: #00040F;
-  border-radius: 0.375rem;
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
 }
 
-.glow-cyan {
-  box-shadow: 0 0 20px rgba(51, 187, 207, 0.3), 0 0 40px rgba(51, 187, 207, 0.1);
-  transition: all 0.3s ease;
-  will-change: box-shadow, transform;
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
 
 .glow-cyan-hover:hover {

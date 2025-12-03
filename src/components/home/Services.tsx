@@ -43,11 +43,11 @@ const services = [
 
 export const Services = () => {
     return (
-        <section className="py-20 sm:py-24 md:py-32 relative overflow-hidden">
+        <section className="py-16 sm:py-20 md:py-24 lg:py-32 relative overflow-hidden">
 
             <div className="container mx-auto px-4 sm:px-6 relative z-10">
                 {/* Header */}
-                <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 md:mb-16">
+                <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 md:mb-14">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ export const Services = () => {
                 </div>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-7">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -84,7 +84,7 @@ export const Services = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             whileHover={{ y: -8, scale: 1.02 }}
-                            className="group relative p-6 rounded-2xl glass border border-white/10 hover:border-primary/50 transition-all duration-500"
+                            className="group relative p-5 sm:p-6 md:p-7 rounded-2xl glass border border-white/10 hover:border-primary/50 transition-all duration-500"
                         >
                             {/* Card Spotlight */}
                             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/[0.08] via-primary/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

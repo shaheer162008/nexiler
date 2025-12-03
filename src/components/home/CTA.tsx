@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 export const CTA = () => {
     return (
-        <section className="py-20 sm:py-24 md:py-32 relative overflow-hidden">
+        <section className="py-16 sm:py-20 md:py-24 lg:py-32 relative overflow-hidden">
 
             <div className="container mx-auto px-4 sm:px-6">
                 <motion.div
