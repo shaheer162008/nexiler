@@ -3,8 +3,14 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { use } from "react";
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
+export default function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+    const {slug} = use(params)
     return (
         <main className="min-h-screen">
             <Navbar />
@@ -36,12 +42,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                             </span>
                         </div>
                         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                            {params.slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+                            {slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
                         </h1>
                     </div>
 
                     {/* Featured Image Placeholder */}
-                    <div className="aspect-[2/1] rounded-2xl bg-gradient-to-br from-primary/20 to-purple-500/20 mb-12" />
+                    <div className="aspect-2/1 rounded-2xl bg-linear-to-br from-primary/20 to-purple-500/20 mb-12" />
 
                     {/* Content */}
                     <div className="prose prose-invert max-w-none">

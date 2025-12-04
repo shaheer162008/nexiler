@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
-import { Twitter, Linkedin, Github, Mail, Instagram } from "lucide-react";
+import { Twitter, Linkedin, Github, Mail, Instagram, Facebook, Youtube } from "lucide-react";
 
 const footerLinks = {
     company: [
@@ -23,11 +23,14 @@ const footerLinks = {
 };
 
 const socialLinks = [
-    { Icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { Icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { Icon: Github, href: "https://github.com", label: "GitHub" },
-    { Icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-    { Icon: Mail, href: "mailto:hello@nexiler.com", label: "Email" },
+    { Icon: Twitter, href: "https://x.com/NexilerOfficial", label: "Twitter" },
+    { Icon: Youtube, href: "https://www.youtube.com/@Nexiler.Official", label: "Youtube" },
+    // { Icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+    // { Icon: Github, href: "https://github.com", label: "GitHub" },
+    { Icon: Instagram, href: "https://www.instagram.com/nexiler.official?igsh=MXdzMXB2ejM2ODZ3bw==", label: "Instagram" },
+    { Icon: Mail, href: "mailto:info@nexiler.com", label: "Email" },
+    { Icon: Facebook, href: "https://www.facebook.com/share/1APYFEoejH/", label: "Facebook" },
+    
 ];
 
 export const Footer = () => {
