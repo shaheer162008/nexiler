@@ -36,26 +36,26 @@ const socialLinks = [
 export const Footer = () => {
     return (
         <footer className="border-t border-white/10 relative overflow-hidden">
-            <div className="container mx-auto px-4 py-16 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+            <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 relative z-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-12">
                     {/* Brand Column */}
-                    <div className="lg:col-span-2">
+                    <div className="lg:col-span-2 sm:col-span-2">
                         <Logo className="mb-4" />
-                        <p className="text-white/60 text-sm mb-6 max-w-sm">
+                        <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-sm">
                             Transforming businesses with cutting-edge AI automation and custom solutions.
                             Your partner in digital transformation.
                         </p>
-                        <div className="flex gap-4">
+                        <div className="flex gap-3 flex-wrap">
                             {socialLinks.map(({ Icon, href, label }) => (
                                 <a
                                     key={label}
                                     href={href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/60 hover:text-primary transition-all duration-300 hover:scale-110"
+                                    className="p-2.5 sm:p-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/60 hover:text-primary transition-all duration-300 hover:scale-110 active:scale-95"
                                     aria-label={label}
                                 >
-                                    <Icon size={20} />
+                                    <Icon size={18} className="sm:w-5 sm:h-5" />
                                 </a>
                             ))}
                         </div>
@@ -63,8 +63,8 @@ export const Footer = () => {
 
                     {/* Company Links */}
                     <div>
-                        <h3 className="text-white font-semibold mb-4">Company</h3>
-                        <ul className="space-y-3">
+                        <h3 className="text-white font-semibold mb-3 sm:mb-4 text-base">Company</h3>
+                        <ul className="space-y-2.5 sm:space-y-3">
                             {footerLinks.company.map((link) => (
                                 <li key={link.label}>
                                     <Link
@@ -80,8 +80,8 @@ export const Footer = () => {
 
                     {/* Resources Links */}
                     <div>
-                        <h3 className="text-white font-semibold mb-4">Resources</h3>
-                        <ul className="space-y-3">
+                        <h3 className="text-white font-semibold mb-3 sm:mb-4 text-base">Resources</h3>
+                        <ul className="space-y-2.5 sm:space-y-3">
                             {footerLinks.resources.map((link) => (
                                 <li key={link.label}>
                                     <Link
@@ -97,8 +97,8 @@ export const Footer = () => {
 
                     {/* Legal Links */}
                     <div>
-                        <h3 className="text-white font-semibold mb-4">Legal</h3>
-                        <ul className="space-y-3">
+                        <h3 className="text-white font-semibold mb-3 sm:mb-4 text-base">Legal</h3>
+                        <ul className="space-y-2.5 sm:space-y-3">
                             {footerLinks.legal.map((link) => (
                                 <li key={link.label}>
                                     <Link
@@ -114,11 +114,11 @@ export const Footer = () => {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-white/40 text-sm">
+                <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
+                    <p className="text-white/40 text-xs sm:text-sm text-center sm:text-left">
                         © {new Date().getFullYear()} Nexiler. All rights reserved.
                     </p>
-                    <p className="text-white/40 text-sm">
+                    <p className="text-white/40 text-xs sm:text-sm text-center sm:text-right">
                         Created by Team Nexiler
                     </p>
                 </div>

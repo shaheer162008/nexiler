@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, phone, company, service, budget, date, time, message } = body;
+    const { name, email, phone, service, budget, date, time, timezone, timezoneOffset, message } = body;
 
     // Validate required fields
     if (!name || !email || !phone || !service) {
@@ -24,13 +24,14 @@ export async function POST(request: NextRequest) {
       name,
       email,
       phone,
-      company,
       service,
       budget,
-      date,
-      time,
+      preferredDate: date,
+      preferredTime: time,
+      clientTimezone: timezone,
+      timezoneOffset: timezoneOffset,
       message,
-      timestamp: new Date().toISOString(),
+      receivedAt: new Date().toISOString(),
     });
 
     // Example: Send email using a service like Resend, SendGrid, or Nodemailer

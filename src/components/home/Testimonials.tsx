@@ -16,7 +16,7 @@ const testimonials = [
         rating: 5,
     },
     {
-        quote: "Outstanding service and support. Nexiler doesn't just build solutions, they become your long-term technology partner.",
+        quote: "Outstanding service and support. Nexiler does not just build solutions, they become your long-term technology partner.",
         author: "Emily Rodriguez",
         role: "Founder, GrowthLabs",
         rating: 5,
