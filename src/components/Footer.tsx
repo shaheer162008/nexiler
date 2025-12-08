@@ -23,11 +23,11 @@ const footerLinks = {
 };
 
 const socialLinks = [
-    { Icon: Twitter, href: "https://x.com/NexilerOfficial", label: "Twitter" },
+    { Icon: Twitter, href: "https://x.com/NexilerOfficial", label: "X" },
     { Icon: Youtube, href: "https://www.youtube.com/@Nexiler.Official", label: "Youtube" },
-    // { Icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    // { Icon: Github, href: "https://github.com", label: "GitHub" },
-    { Icon: Instagram, href: "https://www.instagram.com/nexiler.official?igsh=MXdzMXB2ejM2ODZ3bw==", label: "Instagram" },
+    { Icon: Linkedin, href: "https://www.linkedin.com/company/nexiler", label: "LinkedIn" },
+    { Icon: Github, href: "https://github.com/nexiler-official", label: "GitHub" },
+    { Icon: Instagram, href: "https://www.instagram.com/nexiler.official", label: "Instagram" },
     { Icon: Mail, href: "mailto:info@nexiler.com", label: "Email" },
     { Icon: Facebook, href: "https://www.facebook.com/share/1APYFEoejH/", label: "Facebook" },
     

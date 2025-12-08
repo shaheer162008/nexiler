@@ -145,13 +145,13 @@ export default function DatePicker({
           onClick={() => !disabled && handleDateSelect(day)}
           disabled={disabled}
           className={`
-            h-10 rounded-lg flex items-center justify-center text-sm font-medium transition-all duration-200
+            h-12 rounded-lg flex items-center justify-center text-base font-semibold transition-all duration-200
             ${disabled 
               ? 'text-white/20 cursor-not-allowed' 
-              : 'text-white hover:bg-white/10'
+              : 'text-white hover:bg-white/10 hover:scale-110'
             }
             ${today && !selected ? 'bg-white/5 border border-primary/30' : ''}
-            ${selected ? 'bg-primary text-dark font-bold shadow-lg shadow-primary/30' : ''}
+            ${selected ? 'bg-primary text-dark font-bold shadow-lg shadow-primary/30 scale-110' : ''}
           `}
         >
           {day}
@@ -195,7 +195,7 @@ export default function DatePicker({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute z-50 w-full mt-2 p-4 bg-[#00040F] border border-white/10 rounded-xl shadow-2xl backdrop-blur-xl"
+            className="absolute z-50 w-full sm:w-[350px] mt-2 p-5 bg-[#00040F] border border-white/10 rounded-xl shadow-2xl backdrop-blur-xl"
           >
             {/* Month/Year Header */}
             <div className="flex items-center justify-between mb-4">
@@ -219,16 +219,16 @@ export default function DatePicker({
             </div>
 
             {/* Day Labels */}
-            <div className="grid grid-cols-7 gap-1 mb-2">
+            <div className="grid grid-cols-7 gap-2 mb-3">
               {DAYS.map(day => (
-                <div key={day} className="h-8 flex items-center justify-center text-xs text-white/50 font-medium">
+                <div key={day} className="h-10 flex items-center justify-center text-sm text-white/60 font-semibold">
                   {day}
                 </div>
               ))}
             </div>
 
             {/* Calendar Grid */}
-            <div className="grid grid-cols-7 gap-1">
+            <div className="grid grid-cols-7 gap-2">
               {renderCalendar()}
             </div>
           </motion.div>

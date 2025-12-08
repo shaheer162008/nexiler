@@ -46,9 +46,9 @@ export default function ConsultationPage() {
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
               {/* Left: Benefits */}
-              <div className="space-y-6">
+              <div className="space-y-6 lg:sticky lg:top-32">
                 <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">
                   What You'll Get
                 </h2>
@@ -81,7 +81,7 @@ export default function ConsultationPage() {
                       className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 hover:border-primary/30 transition-all duration-300"
                     >
                       <h3 className="text-lg font-semibold text-white mb-2">
-                        ✓ {benefit.title}
+                        <span className="text-primary">✓</span> {benefit.title}
                       </h3>
                       <p className="text-white/60 text-sm">
                         {benefit.description}
@@ -91,7 +91,7 @@ export default function ConsultationPage() {
                 </div>
 
                 {/* Trust Badges */}
-                <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 mt-8">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6">
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
                       <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">230+</div>

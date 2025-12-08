@@ -1,10 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle2, Loader2, Globe } from "lucide-react";
+import { Send, CheckCircle2, Loader2, MapPin, RefreshCw } from "lucide-react";
 import Dropdown from "./ui/Dropdown";
 import DatePicker from "./ui/DatePicker";
-import TimeRangePicker from "./ui/TimeRangePicker";
+import ClockPicker from "./ui/ClockPicker";
+import { TIMEZONES, getTimezoneOffset } from "@/lib/timezones";
 
 export default function ConsultationForm() {
   const [formData, setFormData] = useState({
@@ -22,26 +23,39 @@ export default function ConsultationForm() {
   
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isDetecting, setIsDetecting] = useState(false);
 
   // Auto-detect user's timezone on component mount
   useEffect(() => {
-    // Get timezone name (e.g., "Asia/Karachi", "America/New_York")
-    const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    detectTimezone();
+  }, []);
+
+  const detectTimezone = () => {
+    setIsDetecting(true);
     
-    // Get timezone offset (e.g., "UTC+5:00", "UTC-8:00")
-    const now = new Date();
-    const offset = -now.getTimezoneOffset(); // in minutes
-    const hours = Math.floor(Math.abs(offset) / 60);
-    const minutes = Math.abs(offset) % 60;
-    const sign = offset >= 0 ? '+' : '-';
-    const timezoneOffset = `UTC${sign}${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+    // Get timezone from browser
+    const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const offset = getTimezoneOffset(browserTimezone);
     
     setFormData(prev => ({ 
       ...prev, 
-      timezone: userTimezone,
-      timezoneOffset: timezoneOffset
+      timezone: browserTimezone,
+      timezoneOffset: offset
     }));
-  }, []);
+    
+    setIsDetecting(false);
+  };
+
+  const handleManualTimezoneChange = (e: { target: { name: string; value: string } }) => {
+    const selectedTimezone = e.target.value;
+    const offset = getTimezoneOffset(selectedTimezone);
+    
+    setFormData(prev => ({
+      ...prev,
+      timezone: selectedTimezone,
+      timezoneOffset: offset
+    }));
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -73,13 +87,8 @@ export default function ConsultationForm() {
 
       if (response.ok) {
         setStatus("success");
-        const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        const now = new Date();
-        const offset = -now.getTimezoneOffset();
-        const hours = Math.floor(Math.abs(offset) / 60);
-        const minutes = Math.abs(offset) % 60;
-        const sign = offset >= 0 ? '+' : '-';
-        const timezoneOffset = `UTC${sign}${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+        const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const offset = getTimezoneOffset(browserTimezone);
         
         setFormData({
           name: "",
@@ -89,8 +98,8 @@ export default function ConsultationForm() {
           budget: "",
           date: "",
           time: "",
-          timezone: userTimezone,
-          timezoneOffset: timezoneOffset,
+          timezone: browserTimezone,
+          timezoneOffset: offset,
           message: "",
         });
       } else {
@@ -135,7 +144,7 @@ export default function ConsultationForm() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl"
+      className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8"
     >
       <div className="mb-6">
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
@@ -146,7 +155,7 @@ export default function ConsultationForm() {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-5">
+      <form onSubmit={handleSubmit} className="space-y-6">
         {/* Name */}
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
@@ -239,7 +248,7 @@ export default function ConsultationForm() {
         />
 
         {/* Preferred Date & Time */}
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="grid sm:grid-cols-2 gap-6">
           <DatePicker
             id="date"
             name="date"
@@ -249,7 +258,7 @@ export default function ConsultationForm() {
             required
             minDate={new Date().toISOString().split('T')[0]}
           />
-          <TimeRangePicker
+          <ClockPicker
             id="time"
             name="time"
             value={formData.time}
@@ -286,42 +295,65 @@ export default function ConsultationForm() {
           </motion.div>
         )}
 
-        {/* Timezone Info */}
-        <motion.div 
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/30 rounded-xl p-4 backdrop-blur-sm"
-        >
-          <div className="flex items-start gap-3">
-            <div className="mt-0.5">
-              <Globe size={20} className="text-primary" />
-            </div>
-            <div className="flex-1">
-              <p className="text-sm font-semibold text-white mb-1">
-                Your Timezone: <span className="text-primary">{formData.timezone || 'Detecting...'}</span>
-              </p>
-              <p className="text-xs text-white/70">
-                {formData.timezoneOffset && (
-                  <>Current Time: {new Date().toLocaleTimeString('en-US', { 
+        {/* Timezone Selection */}
+        <div className="space-y-3">
+          <div className="flex items-center justify-between mb-2">
+            <label className="block text-sm font-medium text-white">
+              Your Timezone <span className="text-primary">*</span>
+            </label>
+            <button
+              type="button"
+              onClick={detectTimezone}
+              disabled={isDetecting}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/20 text-white text-xs font-medium hover:bg-white/10 hover:border-primary/50 transition-all duration-300 disabled:opacity-50"
+            >
+              {isDetecting ? (
+                <>
+                  <Loader2 size={14} className="animate-spin" />
+                  Detecting...
+                </>
+              ) : (
+                <>
+                  <RefreshCw size={14} />
+                  Auto-Detect
+                </>
+              )}
+            </button>
+          </div>
+
+          <Dropdown
+            id="timezone"
+            name="timezone"
+            value={formData.timezone}
+            onChange={handleManualTimezoneChange}
+            placeholder="Select your timezone"
+            required
+            options={TIMEZONES.map(tz => ({ value: tz.value, label: tz.label }))}
+          />
+
+          {/* Current Time Display */}
+          {formData.timezone && formData.timezoneOffset && (
+            <div className="bg-white/5 border border-white/10 rounded-xl p-3">
+              <div className="flex items-center gap-2 text-sm text-white/70">
+                <MapPin size={16} className="text-primary" />
+                <span>
+                  Your Time: <strong className="text-white">{new Date().toLocaleTimeString('en-US', { 
                     hour: '2-digit', 
                     minute: '2-digit',
-                    hour12: true 
-                  })} ({formData.timezoneOffset})</>
-                )}
-              </p>
-              <p className="text-xs text-white/60 mt-2">
-                ✓ We'll schedule your meeting according to your local time
-              </p>
+                    hour12: true,
+                    timeZone: formData.timezone 
+                  })}</strong> <span className="text-primary">({formData.timezoneOffset})</span>
+                </span>
+              </div>
             </div>
-          </div>
-        </motion.div>
+          )}
+        </div>
 
         {/* Submit Button */}
         <button
           type="submit"
           disabled={status === "loading"}
-          className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-base font-bold transition-all duration-300 disabled:pointer-events-none disabled:opacity-50 bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white/50 w-full h-12 px-6 py-3"
+          className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-base font-bold transition-all duration-300 disabled:pointer-events-none disabled:opacity-50 bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white/50 hover:scale-105 active:scale-95 w-full h-12 px-6 py-3"
         >
           {status === "loading" ? (
             <>
