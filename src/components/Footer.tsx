@@ -11,7 +11,7 @@ const footerLinks = {
     ],
     resources: [
         { label: "Case Studies", href: "/portfolio" },
-        { label: "Pricing", href: "/pricing" },
+        { label: "Packages", href: "/packages" },
         { label: "Free Consultation", href: "/consultation" },
         { label: "Contact", href: "/contact" },
     ],
@@ -28,7 +28,7 @@ const socialLinks = [
     { Icon: Linkedin, href: "https://www.linkedin.com/company/nexiler", label: "LinkedIn" },
     { Icon: Github, href: "https://github.com/nexiler-official", label: "GitHub" },
     { Icon: Instagram, href: "https://www.instagram.com/nexiler.official", label: "Instagram" },
-    { Icon: Mail, href: "mailto:info@nexiler.com", label: "Email" },
+    { Icon: Mail, href: "mailto:contact@nexiler.tech", label: "Email" },
     { Icon: Facebook, href: "https://www.facebook.com/share/1APYFEoejH/", label: "Facebook" },
     
 ];
@@ -36,14 +36,13 @@ const socialLinks = [
 export const Footer = () => {
     return (
         <footer className="border-t border-white/10 relative overflow-hidden">
-            <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 relative z-10">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-12">
+            <div className="container mx-auto px-4 sm:px-6 py-10 sm:py-12 md:py-16 relative z-10">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-12">
                     {/* Brand Column */}
-                    <div className="lg:col-span-2 sm:col-span-2">
+                    <div className="col-span-2 sm:col-span-2 lg:col-span-2">
                         <Logo className="mb-4" />
                         <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-sm">
-                            Transforming businesses with cutting-edge AI automation and custom solutions.
-                            Your partner in digital transformation.
+                            We help ambitious businesses unlock growth through AI-powered automation, stunning web experiences, and strategic digital solutions. From startups to enterprises, we&apos;re your partner in building the future.
                         </p>
                         <div className="flex gap-3 flex-wrap">
                             {socialLinks.map(({ Icon, href, label }) => (
@@ -52,10 +51,10 @@ export const Footer = () => {
                                     href={href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="p-2.5 sm:p-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/60 hover:text-primary transition-all duration-300 hover:scale-110 active:scale-95"
+                                    className="w-10 h-10 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white/10 text-white/60 hover:text-primary transition-all duration-300 hover:scale-110 active:scale-95"
                                     aria-label={label}
                                 >
-                                    <Icon size={18} className="sm:w-5 sm:h-5" />
+                                    <Icon size={20} />
                                 </a>
                             ))}
                         </div>
@@ -63,13 +62,13 @@ export const Footer = () => {
 
                     {/* Company Links */}
                     <div>
-                        <h3 className="text-white font-semibold mb-3 sm:mb-4 text-base">Company</h3>
-                        <ul className="space-y-2.5 sm:space-y-3">
+                        <h3 className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Company</h3>
+                        <ul className="space-y-2 sm:space-y-3">
                             {footerLinks.company.map((link) => (
                                 <li key={link.label}>
                                     <Link
                                         href={link.href}
-                                        className="text-white/60 hover:text-primary text-sm transition-all duration-300 hover:translate-x-1 inline-block"
+                                        className="text-white/60 hover:text-primary text-xs sm:text-sm transition-all duration-300 hover:translate-x-1 inline-block"
                                     >
                                         {link.label}
                                     </Link>
@@ -80,13 +79,13 @@ export const Footer = () => {
 
                     {/* Resources Links */}
                     <div>
-                        <h3 className="text-white font-semibold mb-3 sm:mb-4 text-base">Resources</h3>
-                        <ul className="space-y-2.5 sm:space-y-3">
+                        <h3 className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Resources</h3>
+                        <ul className="space-y-2 sm:space-y-3">
                             {footerLinks.resources.map((link) => (
                                 <li key={link.label}>
                                     <Link
                                         href={link.href}
-                                        className="text-white/60 hover:text-primary text-sm transition-all duration-300 hover:translate-x-1 inline-block"
+                                        className="text-white/60 hover:text-primary text-xs sm:text-sm transition-all duration-300 hover:translate-x-1 inline-block"
                                     >
                                         {link.label}
                                     </Link>
@@ -96,14 +95,14 @@ export const Footer = () => {
                     </div>
 
                     {/* Legal Links */}
-                    <div>
-                        <h3 className="text-white font-semibold mb-3 sm:mb-4 text-base">Legal</h3>
-                        <ul className="space-y-2.5 sm:space-y-3">
+                    <div className="col-span-2 sm:col-span-1">
+                        <h3 className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Legal</h3>
+                        <ul className="space-y-2 sm:space-y-3 flex flex-row sm:flex-col gap-4 sm:gap-0 flex-wrap">
                             {footerLinks.legal.map((link) => (
                                 <li key={link.label}>
                                     <Link
                                         href={link.href}
-                                        className="text-white/60 hover:text-primary text-sm transition-all duration-300 hover:translate-x-1 inline-block"
+                                        className="text-white/60 hover:text-primary text-xs sm:text-sm transition-all duration-300 hover:translate-x-1 inline-block"
                                     >
                                         {link.label}
                                     </Link>
@@ -114,7 +113,7 @@ export const Footer = () => {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
+                <div className="mt-8 sm:mt-10 md:mt-12 pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
                     <p className="text-white/40 text-xs sm:text-sm text-center sm:text-left">
                         © {new Date().getFullYear()} Nexiler. All rights reserved.
                     </p>

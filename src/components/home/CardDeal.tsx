@@ -1,6 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Globe, Code, Palette, Video, Bot, Zap } from "lucide-react";
+
+const services = [
+    { icon: Globe, label: "Web Development", color: "text-blue-400" },
+    { icon: Bot, label: "AI Automation", color: "text-purple-400" },
+    { icon: Video, label: "Video Production", color: "text-pink-400" },
+    { icon: Palette, label: "Brand Design", color: "text-orange-400" },
+    { icon: Code, label: "Custom Software", color: "text-cyan-400" },
+    { icon: Zap, label: "API Integration", color: "text-green-400" },
+];
 
 export const CardDeal = () => {
     return (
@@ -16,12 +26,12 @@ export const CardDeal = () => {
                         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                     >
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 sm:mb-6 md:mb-8 leading-tight">
-                            <span className="text-white">Find a better solution</span>
+                            <span className="text-white">Your vision, our expertise.</span>
                             <br />
-                            <span className="text-gradient">in few easy steps.</span>
+                            <span className="text-gradient">Built to perfection.</span>
                         </h2>
                         <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 sm:mb-10 md:mb-12 leading-relaxed">
-                            Get custom AI automation solutions tailored to your specific needs. Our streamlined process makes it easy to transform your business.
+                            From stunning websites to intelligent AI solutions, Nexiler delivers end-to-end digital services that transform ideas into powerful business assets. One team, complete solutions.
                         </p>
                         <Link href="/consultation">
                             <motion.button 
@@ -30,12 +40,12 @@ export const CardDeal = () => {
                                 transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                                 className="px-8 sm:px-10 py-3 sm:py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold text-base sm:text-lg hover:bg-white/20 hover:border-white/50 transition-all duration-500"
                             >
-                                Get Free Consultation
+                                Start Your Project
                             </motion.button>
                         </Link>
                     </motion.div>
 
-                    {/* Right: Card Visual */}
+                    {/* Right: Services Visual */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -43,27 +53,43 @@ export const CardDeal = () => {
                         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                         className="relative"
                     >
-                        {/* Card Mockup */}
+                        {/* Services Grid Mockup */}
                         <div className="relative">
                             <div className="rounded-2xl sm:rounded-3xl overflow-hidden glass border border-white/10 p-5 sm:p-6 md:p-8">
-                                <div className="aspect-[16/10] bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 flex flex-col justify-between">
-                                    <div className="text-right">
-                                        <div className="text-lg sm:text-xl md:text-2xl font-bold text-white/80">NEXILER</div>
-                                    </div>
-                                    <div>
-                                        <div className="text-xs sm:text-sm text-white/40 mb-2">Card Number</div>
-                                        <div className="text-lg sm:text-xl md:text-2xl font-mono text-white tracking-wider mb-4 sm:mb-5 md:mb-6">
-                                            4562  1122  4594  7852
+                                <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8">
+                                    {/* Header */}
+                                    <div className="flex items-center justify-between mb-6">
+                                        <div className="flex items-center gap-2">
+                                            <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+                                                <span className="text-primary font-bold text-sm">N</span>
+                                            </div>
+                                            <span className="text-white font-semibold">Nexiler Services</span>
                                         </div>
-                                        <div className="flex justify-between">
-                                            <div>
-                                                <div className="text-xs text-white/40 mb-1">CARD HOLDER</div>
-                                                <div className="text-sm sm:text-base font-semibold text-white">Your Name</div>
-                                            </div>
-                                            <div className="text-right">
-                                                <div className="text-xs text-white/40 mb-1">EXPIRES</div>
-                                                <div className="text-sm sm:text-base font-semibold text-white">12/25</div>
-                                            </div>
+                                        <div className="text-xs text-white/40">15+ Solutions</div>
+                                    </div>
+                                    {/* Services Grid */}
+                                    <div className="grid grid-cols-2 gap-3">
+                                        {services.map((service, index) => (
+                                            <motion.div
+                                                key={index}
+                                                initial={{ opacity: 0, scale: 0.9 }}
+                                                whileInView={{ opacity: 1, scale: 1 }}
+                                                viewport={{ once: true }}
+                                                transition={{ duration: 0.4, delay: index * 0.1 }}
+                                                className="flex items-center gap-2 bg-white/5 rounded-lg p-3 border border-white/10 hover:border-primary/30 transition-all duration-300"
+                                            >
+                                                <service.icon className={`w-5 h-5 ${service.color}`} />
+                                                <span className="text-xs text-white/70">{service.label}</span>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                    {/* Footer */}
+                                    <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                                        <span className="text-xs text-white/40">Trusted by 230+ companies</span>
+                                        <div className="flex -space-x-2">
+                                            {[1, 2, 3, 4].map((i) => (
+                                                <div key={i} className="w-6 h-6 rounded-full bg-gradient-to-br from-primary/40 to-purple-500/40 border-2 border-dark" />
+                                            ))}
                                         </div>
                                     </div>
                                 </div>

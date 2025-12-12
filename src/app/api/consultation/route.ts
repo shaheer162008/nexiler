@@ -188,7 +188,7 @@ export async function POST(request: NextRequest) {
     // Send notification email to admin/developer
     await transporter.sendMail({
       from: "no-reply@nexiler.tech",
-      to: "info@nexiler.tech",
+      to: "contact@nexiler.tech",
       subject: `New Consultation Booking - ${name}`,
       html: adminEmailTemplate(consultationData),
     });

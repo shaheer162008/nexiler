@@ -77,7 +77,7 @@ export default function AboutPage() {
                                     Today, we've helped over 200 companies transform their operations, saved millions of hours in manual work, and deployed AI solutions that continue to drive measurable business growth.
                                 </p>
                                 <p>
-                                    Our approach combines deep technical expertise with a genuine understanding of business challenges. We don't just build software—we engineer solutions that solve real problems and create lasting value.
+                                    Our approach combines deep technical expertise with a genuine understanding of business challenges. We don't just build software, we engineer solutions that solve real problems and create lasting value.
                                 </p>
                             </div>
                         </motion.div>

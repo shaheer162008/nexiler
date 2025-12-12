@@ -11,9 +11,9 @@ import { Testimonials } from "@/components/home/Testimonials";
 import { Clients } from "@/components/home/Clients";
 import { CTA } from "@/components/home/CTA";
 import { TrustBadges } from "@/components/TrustBadges";
-import { MoneyBackGuarantee } from "@/components/MoneyBackGuarantee";
 import { Pricing } from "@/components/Pricing";
 import { Newsletter } from "@/components/Newsletter";
+import { AIWorkflow } from "@/components/home/AIWorkflow";
 import { homeMetadata } from "@/lib/metadata";
 
 export const metadata = homeMetadata
@@ -26,6 +26,7 @@ export default function Home() {
       <Hero />
       <TrustBadges />
       <Services />
+      <AIWorkflow />
       <Business />
       <Billing />
       <CardDeal />
@@ -34,7 +35,6 @@ export default function Home() {
       <FeaturedWork />
       <Testimonials />
       <Clients />
-      <MoneyBackGuarantee />
       <CTA />
       <Newsletter />
       <Footer />

@@ -6,51 +6,57 @@ import Link from "next/link";
 const pricingPlans = [
     {
         name: "Starter",
-        price: "$999",
-        period: "/project",
-        description: "Perfect for small businesses starting their digital transformation journey",
+        price: "$1,500",
+        priceEnd: "$3,000",
+        period: "",
+        description: "Essential digital foundation for new businesses and startups",
         features: [
-            "1 Custom Automation Workflow",
-            "Basic AI Integration",
-            "Up to 3 Revisions",
-            "30 Days Support",
-            "Documentation Included",
-            "Email Support",
+            "Custom Website (4-5 pages)",
+            "Basic SEO Setup & Optimization",
+            "AI Chatbot (FAQ Bot)",
+            "Mobile Responsive Design",
+            "10 Social Media Graphics",
+            "Contact Form Integration",
+            "14 Days Post-Launch Support",
         ],
         popular: false,
     },
     {
-        name: "Professional",
-        price: "$2,999",
-        period: "/month",
-        description: "Ideal for growing businesses ready to scale with AI automation",
+        name: "Growth",
+        price: "$4,000",
+        priceEnd: "$7,500",
+        period: "",
+        description: "Complete package for businesses ready to scale",
         features: [
-            "5 Custom Automation Workflows",
-            "Advanced AI Integration",
-            "Unlimited Revisions",
-            "90 Days Priority Support",
-            "Full Documentation & Training",
-            "Dedicated Account Manager",
-            "Custom API Integration",
-            "Performance Analytics",
+            "Custom Website with CMS",
+            "AI Automation (2-3 Workflows)",
+            "AI Chatbot (Lead Qualification)",
+            "Full Brand Identity Package",
+            "SEO Strategy & Implementation",
+            "Social Media Ads Setup",
+            "20 Graphic Designs",
+            "Video Editing (10 Shorts)",
+            "30 Days Support & Training",
         ],
         popular: true,
     },
     {
         name: "Enterprise",
         price: "Custom",
-        period: "",
-        description: "Complete solutions for large organizations with complex needs",
+        priceEnd: "",
+        period: "Pricing",
+        description: "Premium solutions for high-growth businesses",
         features: [
-            "Unlimited Automation Workflows",
-            "Enterprise AI Solutions",
-            "White-Glove Service",
-            "Lifetime Support & Updates",
-            "On-Site Training Available",
-            "24/7 Priority Support",
-            "Custom Integrations",
+            "Custom Web Application",
+            "AI Automation (5+ Workflows)",
+            "Multi-channel AI Chatbot",
+            "Complete Brand Creation",
+            "API & System Integrations",
+            "Video Editing (Shorts + Long)",
+            "Motion Graphics Package",
+            "3D Product Visualization",
             "Dedicated Development Team",
-            "SLA Guarantee",
+            "60 Days Priority Support",
         ],
         popular: false,
     },
@@ -86,7 +92,7 @@ export const Pricing = () => {
                 </div>
 
                 {/* Pricing Cards - Mobile First Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8  lg:gap-7 max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-5 xl:gap-6 max-w-6xl mx-auto items-stretch">
                     {pricingPlans.map((plan, index) => (
                         <motion.div
                             key={index}
@@ -94,9 +100,9 @@ export const Pricing = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className={`relative mt-4 rounded-2xl p-6 sm:p-7 md:p-8 backdrop-blur-sm transition-all duration-300 h-full flex flex-col ${
+                            className={`relative mt-4 rounded-2xl p-5 sm:p-6 lg:p-7 backdrop-blur-sm transition-all duration-300 h-full flex flex-col ${
                                 plan.popular
-                                    ? "bg-linear-to-b from-primary/20 via-primary/10 to-transparent border-2 border-primary/50 shadow-xl shadow-primary/20 md:scale-105"
+                                    ? "bg-gradient-to-b from-primary/20 via-primary/10 to-transparent border-2 border-primary/50 shadow-xl shadow-primary/20 lg:scale-[1.03] z-10"
                                     : "bg-white/5 border border-white/10 hover:border-primary/30"
                             }`}
                         >
@@ -110,13 +116,21 @@ export const Pricing = () => {
 
                             {/* Plan Header */}
                             <div className="mb-5 sm:mb-6">
-                                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                                <div className="flex items-end gap-1 mb-3 sm:mb-4">
-                                    <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-gradient">
+                                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">{plan.name}</h3>
+                                <div className="flex items-baseline gap-1 mb-3 sm:mb-4 flex-wrap">
+                                    <span className="text-3xl sm:text-4xl lg:text-4xl font-bold text-gradient">
                                         {plan.price}
                                     </span>
+                                    {plan.priceEnd && (
+                                        <>
+                                            <span className="text-xl sm:text-2xl lg:text-2xl font-bold text-white/50 mx-1">–</span>
+                                            <span className="text-3xl sm:text-4xl lg:text-4xl font-bold text-gradient">
+                                                {plan.priceEnd}
+                                            </span>
+                                        </>
+                                    )}
                                     {plan.period && (
-                                        <span className="text-base sm:text-lg text-white/60 mb-1 sm:mb-2">{plan.period}</span>
+                                        <span className="text-lg sm:text-xl font-medium text-white/50 ml-1">{plan.period}</span>
                                     )}
                                 </div>
                                 <p className="text-sm sm:text-base text-white/60 leading-relaxed">
@@ -141,10 +155,10 @@ export const Pricing = () => {
                             {/* CTA Button */}
                             <Link
                                 href="/consultation"
-                                className={`block w-full text-center px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base transition-all duration-300 ${
+                                className={`block w-full text-center px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base transition-all duration-300 border-2 ${
                                     plan.popular
-                                        ? "bg-primary text-dark hover:bg-primary/90 shadow-lg shadow-primary/30 hover:shadow-primary/50"
-                                        : "bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white/50"
+                                        ? "bg-primary text-dark border-primary hover:bg-primary/90 shadow-lg shadow-primary/30 hover:shadow-primary/50"
+                                        : "bg-white/10 text-white border-white/30 hover:bg-white/20 hover:border-white/50"
                                 }`}
                             >
                                 Choose Plan

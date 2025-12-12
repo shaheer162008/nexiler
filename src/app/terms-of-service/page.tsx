@@ -4,10 +4,10 @@ import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
     title: "Terms of Service - Nexiler",
-    description: "Read our terms of service and understand the guidelines for using Nexiler's services.",
+    description: "Read our terms of service and understand the guidelines for using Nexiler's digital services.",
     openGraph: {
         title: "Terms of Service - Nexiler",
-        description: "Read our terms of service and understand the guidelines for using Nexiler's services.",
+        description: "Read our terms of service and understand the guidelines for using Nexiler's digital services.",
         type: "website",
     },
 };
@@ -24,100 +24,235 @@ export default function TermsOfServicePage() {
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 text-center">
                         <span className="text-gradient">Terms of Service</span>
                     </h1>
-                    <p className="text-white/60 text-center mb-12">Last updated: December 1, 2025</p>
+                    <p className="text-white/60 text-center mb-12">Last updated: December 12, 2025</p>
+
+                    <div className="p-6 rounded-2xl bg-primary/5 border border-primary/20 mb-10">
+                        <p className="text-white/80 text-center">
+                            📤 <strong className="text-white">Quick Summary:</strong> We believe in clear, fair agreements. These terms protect both you and us, ensuring a smooth working relationship. If you have any questions, we&apos;re always happy to explain.
+                        </p>
+                    </div>
 
                     <div className="space-y-8 text-white/80 leading-relaxed">
-                        <section>
-                            <h2 className="text-2xl font-semibold text-white mb-4">1. Acceptance of Terms</h2>
+                        <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                            <h2 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">1</span>
+                                Acceptance of Terms
+                            </h2>
                             <p>
-                                By accessing and using Nexiler&apos;s services, you accept and agree to be bound by these Terms of Service. 
-                                If you do not agree to these terms, please do not use our services.
+                                By engaging Nexiler for any services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. 
+                                These terms apply to all services provided by Nexiler including but not limited to web development, AI automation, branding, video editing, SEO, and consulting services.
                             </p>
                         </section>
 
-                        <section>
-                            <h2 className="text-2xl font-semibold text-white mb-4">2. Services Description</h2>
+                        <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                            <h2 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">2</span>
+                                Services We Provide
+                            </h2>
                             <p className="mb-4">
-                                Nexiler provides AI automation, custom software development, and related consulting services. 
-                                We reserve the right to modify, suspend, or discontinue any aspect of our services at any time.
+                                Nexiler is a digital services agency specializing in:
+                            </p>
+                            <ul className="list-disc pl-6 space-y-2">
+                                <li>Website Development and Web Applications</li>
+                                <li>AI Automation and Chatbot Integration</li>
+                                <li>Brand Identity and Graphic Design</li>
+                                <li>Video Editing (Short-form and Long-form Content)</li>
+                                <li>Motion Graphics and 3D Visualization</li>
+                                <li>SEO Optimization and Digital Marketing</li>
+                                <li>Social Media Ads Management</li>
+                                <li>Custom Software Development and API Integration</li>
+                            </ul>
+                            <p className="mt-4">
+                                Service scope, deliverables, and timelines will be outlined in individual project proposals or contracts.
                             </p>
                         </section>
 
-                        <section>
-                            <h2 className="text-2xl font-semibold text-white mb-4">3. User Responsibilities</h2>
-                            <p className="mb-4">You agree to:</p>
+                        <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                            <h2 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">3</span>
+                                Project Engagement Process
+                            </h2>
+                            <p className="mb-4">Our standard engagement process includes:</p>
                             <ul className="list-disc pl-6 space-y-2">
-                                <li>Provide accurate and complete information</li>
-                                <li>Maintain the security of your account credentials</li>
-                                <li>Use our services in compliance with all applicable laws</li>
-                                <li>Not interfere with or disrupt our services</li>
-                                <li>Not use our services for any unlawful purpose</li>
+                                <li><strong>Consultation:</strong> Free initial consultation to understand your requirements</li>
+                                <li><strong>Proposal:</strong> Detailed project proposal with scope, timeline, and pricing</li>
+                                <li><strong>Agreement:</strong> Signed agreement and initial payment to begin work</li>
+                                <li><strong>Execution:</strong> Project development with regular updates and milestones</li>
+                                <li><strong>Delivery:</strong> Final delivery upon completion and approval</li>
+                                <li><strong>Support:</strong> Post-delivery support as specified in your package</li>
                             </ul>
                         </section>
 
-                        <section>
-                            <h2 className="text-2xl font-semibold text-white mb-4">4. Intellectual Property</h2>
-                            <p>
-                                All content, features, and functionality of our services are owned by Nexiler and are protected 
-                                by international copyright, trademark, and other intellectual property laws. You may not reproduce, 
-                                distribute, or create derivative works without our express written permission.
+                        <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                            <h2 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">4</span>
+                                Client Responsibilities
+                            </h2>
+                            <p className="mb-4">To ensure successful project delivery, clients agree to:</p>
+                            <ul className="list-disc pl-6 space-y-2">
+                                <li>Provide accurate and complete project requirements</li>
+                                <li>Supply all necessary content, assets, and access credentials in a timely manner</li>
+                                <li>Respond to communications and feedback requests within reasonable timeframes</li>
+                                <li>Review and approve deliverables at each milestone</li>
+                                <li>Make payments according to the agreed schedule</li>
+                                <li>Not share confidential project details or access credentials with unauthorized parties</li>
+                            </ul>
+                            <p className="mt-4">
+                                Delays caused by late client responses or missing information may affect project timelines and are not the responsibility of Nexiler.
                             </p>
                         </section>
 
-                        <section>
-                            <h2 className="text-2xl font-semibold text-white mb-4">5. Payment Terms</h2>
-                            <p className="mb-4">
-                                Payment terms are specified in individual service agreements. Generally:
-                            </p>
+                        <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                            <h2 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">5</span>
+                                Payment Terms
+                            </h2>
+                            <p className="mb-4">Payment terms vary by project type:</p>
                             <ul className="list-disc pl-6 space-y-2">
-                                <li>Invoices are due within 30 days of issue</li>
-                                <li>Late payments may incur additional fees</li>
-                                <li>Refunds are provided according to our refund policy</li>
-                                <li>You are responsible for all applicable taxes</li>
+                                <li><strong>One-Time Projects:</strong> Typically 50% upfront, 50% upon completion (may vary based on project size)</li>
+                                <li><strong>Monthly Retainers:</strong> Full payment due at the beginning of each billing cycle</li>
+                                <li><strong>Custom Projects:</strong> Payment schedule as specified in the project agreement</li>
+                            </ul>
+                            <p className="mt-4 mb-4">Additional terms:</p>
+                            <ul className="list-disc pl-6 space-y-2">
+                                <li>Invoices are due within 7 days of issue unless otherwise specified</li>
+                                <li>Late payments may result in project suspension until payment is received</li>
+                                <li>We accept payments via bank transfer, PayPal, Wise, or other agreed methods</li>
+                                <li>All prices are in USD unless otherwise specified</li>
+                                <li>Clients are responsible for any applicable taxes in their jurisdiction</li>
                             </ul>
                         </section>
 
-                        <section>
-                            <h2 className="text-2xl font-semibold text-white mb-4">6. Confidentiality</h2>
-                            <p>
-                                Both parties agree to maintain the confidentiality of any proprietary information shared during 
-                                the course of our business relationship. This obligation survives the termination of services.
+                        <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                            <h2 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">6</span>
+                                Revisions and Changes
+                            </h2>
+                            <p className="mb-4">
+                                Each project includes a specified number of revision rounds as outlined in your package or proposal:
+                            </p>
+                            <ul className="list-disc pl-6 space-y-2">
+                                <li>Minor revisions within scope are included in the project cost</li>
+                                <li>Major scope changes or additional features will be quoted separately</li>
+                                <li>Revision requests should be consolidated and submitted clearly</li>
+                                <li>Additional revisions beyond the included rounds may incur extra charges</li>
+                            </ul>
+                        </section>
+
+                        <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                            <h2 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">7</span>
+                                Intellectual Property
+                            </h2>
+                            <p className="mb-4">Upon full payment:</p>
+                            <ul className="list-disc pl-6 space-y-2">
+                                <li>Client receives full ownership of custom-developed deliverables (websites, designs, etc.)</li>
+                                <li>Client receives necessary licenses for any third-party assets used</li>
+                                <li>Nexiler retains the right to showcase work in our portfolio unless otherwise agreed</li>
+                                <li>Pre-existing Nexiler tools, frameworks, or code libraries remain our intellectual property</li>
+                            </ul>
+                            <p className="mt-4">
+                                Until full payment is received, all deliverables remain the property of Nexiler.
                             </p>
                         </section>
 
-                        <section>
-                            <h2 className="text-2xl font-semibold text-white mb-4">7. Limitation of Liability</h2>
+                        <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                            <h2 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">8</span>
+                                Confidentiality
+                            </h2>
                             <p>
-                                Nexiler shall not be liable for any indirect, incidental, special, consequential, or punitive 
-                                damages resulting from your use of our services. Our total liability shall not exceed the amount 
-                                paid by you for the specific service giving rise to the claim.
+                                Both parties agree to maintain the confidentiality of any proprietary information, business strategies, 
+                                access credentials, and trade secrets shared during the course of our engagement. This obligation survives 
+                                the completion or termination of services. We will never share your data with third parties without your explicit consent.
                             </p>
                         </section>
 
-                        <section>
-                            <h2 className="text-2xl font-semibold text-white mb-4">8. Termination</h2>
-                            <p>
-                                Either party may terminate services with written notice as specified in the service agreement. 
-                                We reserve the right to suspend or terminate your access immediately if you breach these terms.
+                        <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                            <h2 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">9</span>
+                                Project Cancellation
+                            </h2>
+                            <p className="mb-4">
+                                If you need to cancel a project:
+                            </p>
+                            <ul className="list-disc pl-6 space-y-2">
+                                <li><strong>Before work begins:</strong> Full refund of any payments made</li>
+                                <li><strong>After work has started:</strong> Payment is due for work completed to date</li>
+                                <li><strong>Monthly retainers:</strong> Cancel with 30 days written notice; no refund for current billing period</li>
+                            </ul>
+                            <p className="mt-4">
+                                Nexiler reserves the right to cancel projects if clients fail to meet their responsibilities or breach these terms, 
+                                with payment due for all work completed.
                             </p>
                         </section>
 
-                        <section>
-                            <h2 className="text-2xl font-semibold text-white mb-4">9. Changes to Terms</h2>
+                        <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                            <h2 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">10</span>
+                                Limitation of Liability
+                            </h2>
                             <p>
-                                We may update these Terms of Service from time to time. We will notify you of any material 
-                                changes by posting the new terms on our website. Your continued use of our services after 
-                                such changes constitutes acceptance of the new terms.
+                                Nexiler shall not be liable for any indirect, incidental, special, consequential, or punitive damages 
+                                including but not limited to loss of profits, data, or business opportunities. Our total liability shall not 
+                                exceed the amount paid by you for the specific service giving rise to the claim. We are not responsible for 
+                                issues arising from third-party services, hosting providers, or platforms beyond our control.
                             </p>
                         </section>
 
-                        <section>
-                            <h2 className="text-2xl font-semibold text-white mb-4">10. Contact Information</h2>
+                        <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                            <h2 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">11</span>
+                                Warranties and Disclaimers
+                            </h2>
+                            <p className="mb-4">
+                                Nexiler provides services with professional skill and care. However:
+                            </p>
+                            <ul className="list-disc pl-6 space-y-2">
+                                <li>We do not guarantee specific business results, rankings, or ROI</li>
+                                <li>SEO and marketing results depend on many factors beyond our control</li>
+                                <li>Third-party platforms may change their policies or algorithms</li>
+                                <li>We provide technical support for the duration specified in your package</li>
+                            </ul>
+                        </section>
+
+                        <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                            <h2 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">12</span>
+                                Dispute Resolution
+                            </h2>
                             <p>
-                                For questions about these Terms of Service, please contact us at:{" "}
-                                <a href="mailto:legal@nexiler.com" className="text-primary hover:underline">
-                                    legal@nexiler.com
+                                In case of any disputes, both parties agree to first attempt resolution through good-faith negotiation. 
+                                If a resolution cannot be reached, disputes shall be settled through mediation or arbitration. 
+                                These terms shall be governed by applicable international business laws.
+                            </p>
+                        </section>
+
+                        <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                            <h2 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">13</span>
+                                Changes to Terms
+                            </h2>
+                            <p>
+                                We may update these Terms of Service from time to time to reflect changes in our services or legal requirements. 
+                                Material changes will be communicated via email or our website. Continued use of our services after such changes 
+                                constitutes acceptance of the updated terms.
+                            </p>
+                        </section>
+
+                        <section className="p-6 rounded-xl bg-primary/10 border border-primary/30">
+                            <h2 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
+                                <span className="w-8 h-8 rounded-lg bg-primary/30 flex items-center justify-center text-primary text-sm font-bold">14</span>
+                                Contact Us
+                            </h2>
+                            <p>
+                                For questions, concerns, or clarifications about these Terms of Service, please contact us at:{" "}
+                                <a href="mailto:contact@nexiler.tech" className="text-primary hover:underline">
+                                    contact@nexiler.tech
                                 </a>
+                            </p>
+                            <p className="mt-4">
+                                We are committed to maintaining transparent and fair business practices with all our clients.
                             </p>
                         </section>
                     </div>

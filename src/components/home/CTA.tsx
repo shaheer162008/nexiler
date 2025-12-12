@@ -28,7 +28,7 @@ export const CTA = () => {
                             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6"
                         >
                             <span className="text-white">Ready to </span>
-                            <span className="text-gradient">Transform?</span>
+                            <span className="text-gradient">Build Something Amazing?</span>
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ export const CTA = () => {
                             transition={{ duration: 0.5, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
                             className="text-base sm:text-lg md:text-xl text-white/70 mb-3 sm:mb-4 max-w-2xl mx-auto"
                         >
-                            Let&apos;s discuss how we can revolutionize your business with AI automation and custom development solutions.
+                            Whether it&apos;s a stunning website, AI automation, or complete digital transformation, Nexiler has the expertise to bring your vision to life.
                         </motion.p>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ export const CTA = () => {
                             className="text-xs sm:text-sm text-primary/80 mb-8 sm:mb-9 md:mb-10 flex items-center justify-center gap-2"
                         >
                             <span className="size-2 bg-primary rounded-full animate-pulse" />
-                            Free consultation • Fast response within 24 hours
+                            Free consultation • Transparent pricing • 24/7 support
                         </motion.p>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ export const CTA = () => {
                                 href="/consultation"
                                 className="group/btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold text-sm sm:text-base md:text-lg hover:bg-white/20 hover:border-white/50 transition-all duration-500"
                             >
-                                Get Free Consultation
+                                Get Your Free Quote
                                 <ArrowRight size={20} className="group-hover/btn:translate-x-1 transition-transform duration-500 sm:w-6 sm:h-6" />
                             </Link>
                         </motion.div>

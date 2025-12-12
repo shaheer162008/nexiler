@@ -1,23 +1,23 @@
 "use client";
 import { motion } from "framer-motion";
-import { Shield, Star, Send } from "lucide-react";
+import { Shield, Zap, Clock } from "lucide-react";
 import Link from "next/link";
 
 const features = [
     {
         icon: Shield,
-        title: "Security",
-        description: "We take proactive steps to make sure your information and transactions are secure.",
+        title: "Enterprise Security",
+        description: "Your data and systems are protected with industry-leading security protocols and best practices.",
     },
     {
-        icon: Star,
-        title: "100% Trusted",
-        description: "We are trusted by 230+ companies and our clients love working with us.",
+        icon: Zap,
+        title: "Rapid Deployment",
+        description: "From concept to launch in weeks, not months. We deliver quality solutions on your timeline.",
     },
     {
-        icon: Send,
-        title: "Balance Transfer",
-        description: "A balance transfer credit card can save you a lot of money in interest charges.",
+        icon: Clock,
+        title: "24/7 Support",
+        description: "Round-the-clock technical support ensures your systems run smoothly without interruption.",
     },
 ];
 

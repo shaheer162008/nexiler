@@ -71,8 +71,8 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <div className="font-semibold text-white mb-1">Email</div>
-                                        <a href="mailto:hello@nexiler.com" className="text-white/70 hover:text-primary transition-colors">
-                                            hello@nexiler.com
+                                        <a href="mailto:contact@nexiler.tech" className="text-white/70 hover:text-primary transition-colors">
+                                            contact@nexiler.tech
                                         </a>
                                     </div>
                                 </div>
@@ -82,9 +82,9 @@ export default function ContactPage() {
                                         <Phone size={24} className="text-primary" />
                                     </div>
                                     <div>
-                                        <div className="font-semibold text-white mb-1">Phone</div>
-                                        <a href="tel:+1234567890" className="text-white/70 hover:text-primary transition-colors">
-                                            +1 (234) 567-890
+                                        <div className="font-semibold text-white mb-1">WhatsApp</div>
+                                        <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-primary transition-colors">
+                                            Chat with us on WhatsApp
                                         </a>
                                     </div>
                                 </div>
@@ -96,8 +96,8 @@ export default function ContactPage() {
                                     <div>
                                         <div className="font-semibold text-white mb-1">Location</div>
                                         <p className="text-white/70">
-                                            San Francisco, CA<br />
-                                            United States
+                                            Remote Team<br />
+                                            Serving clients worldwide
                                         </p>
                                     </div>
                                 </div>

@@ -189,7 +189,7 @@ export const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Customer Service",
-    email: "hello@nexiler.tech",
+    email: "contact@nexiler.tech",
     availableLanguage: ["English"],
   },
   sameAs: [
