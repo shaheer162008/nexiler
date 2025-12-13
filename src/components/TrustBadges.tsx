@@ -36,32 +36,70 @@ const trustBadges = [
 ];
 
 export const TrustBadges = () => {
+    // Duplicate badges for seamless infinite scroll
+    const duplicatedBadges = [...trustBadges, ...trustBadges];
+    
     return (
         <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
+            {/* Section Title */}
+            <div className="container mx-auto px-4 sm:px-6 mb-8 sm:mb-10">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="text-center"
+                >
+                    <h2 className="text-sm sm:text-base text-primary font-semibold uppercase tracking-wider mb-2">Why Choose Us</h2>
+                    <p className="text-white/60 text-sm sm:text-base max-w-lg mx-auto">Trusted by 230+ businesses worldwide for reliable AI automation solutions</p>
+                </motion.div>
+            </div>
             
-            <div className="container mx-auto px-4 sm:px-6 relative z-10">
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 md:gap-8">
-                    {trustBadges.map((badge, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.08, ease: [0.4, 0, 0.2, 1] }}
-                            className="flex flex-col items-center text-center group"
-                        >
-                            <div className="p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 mb-2 sm:mb-3 group-hover:bg-white/10 group-hover:border-primary/30 transition-all duration-500 group-hover:scale-110">
-                                <badge.icon size={28} className="text-primary" />
+            {/* Marquee Container */}
+            <div className="relative">
+                {/* Gradient Overlays */}
+                <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-r from-[#00040F] to-transparent z-10 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-l from-[#00040F] to-transparent z-10 pointer-events-none" />
+                
+                {/* Animated Marquee */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="flex"
+                >
+                    <motion.div
+                        animate={{ x: ["0%", "-50%"] }}
+                        transition={{
+                            x: {
+                                repeat: Infinity,
+                                repeatType: "loop",
+                                duration: 25,
+                                ease: "linear",
+                            },
+                        }}
+                        className="flex gap-6 sm:gap-8 md:gap-10"
+                    >
+                        {duplicatedBadges.map((badge, index) => (
+                            <div
+                                key={index}
+                                className="flex-shrink-0 flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-primary/30 transition-all duration-300 group cursor-default"
+                            >
+                                <div className="p-2 sm:p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-all duration-300">
+                                    <badge.icon size={24} className="text-primary" />
+                                </div>
+                                <div className="text-left">
+                                    <h3 className="text-sm sm:text-base font-semibold text-white whitespace-nowrap">
+                                        {badge.title}
+                                    </h3>
+                                    <p className="text-xs sm:text-sm text-white/50 whitespace-nowrap">
+                                        {badge.description}
+                                    </p>
+                                </div>
                             </div>
-                            <h3 className="text-sm font-semibold text-white mb-1">
-                                {badge.title}
-                            </h3>
-                            <p className="text-xs text-white/50">
-                                {badge.description}
-                            </p>
-                        </motion.div>
-                    ))}
-                </div>
+                        ))}
+                    </motion.div>
+                </motion.div>
             </div>
         </section>
     );

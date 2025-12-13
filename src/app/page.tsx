@@ -8,7 +8,6 @@ import { CardDeal } from "@/components/home/CardDeal";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { FeaturedWork } from "@/components/home/FeaturedWork";
 import { Testimonials } from "@/components/home/Testimonials";
-import { Clients } from "@/components/home/Clients";
 import { CTA } from "@/components/home/CTA";
 import { TrustBadges } from "@/components/TrustBadges";
 import { Pricing } from "@/components/Pricing";
@@ -34,7 +33,6 @@ export default function Home() {
       <Pricing />
       <FeaturedWork />
       <Testimonials />
-      <Clients />
       <CTA />
       <Newsletter />
       <Footer />

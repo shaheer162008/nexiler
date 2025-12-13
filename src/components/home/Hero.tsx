@@ -113,17 +113,17 @@ export const Hero = () => {
                             </motion.div>
                         </motion.div>
 
-                        {/* Right Image - Responsive */}
+                        {/* Right Image - Hidden on mobile, visible on larger screens */}
                         <motion.div
                             initial={{ opacity: 0, x: 50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 1, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                            className="relative group flex items-center justify-center mt-8 lg:mt-0"
+                            className="hidden md:flex relative group items-center justify-center mt-8 lg:mt-0"
                         >
                             <motion.div
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
-                                className="relative w-full max-w-[400px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-none aspect-square"
+                            className="relative w-full max-w-[280px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-none aspect-square"
                             >
                                 <Image
                                     src="/hero.png"
