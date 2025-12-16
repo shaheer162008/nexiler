@@ -40,6 +40,13 @@ export default function ConsultationForm() {
     const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     const offset = getTimezoneOffset(browserTimezone);
 
+    // Console log for testing - shows what data will be sent
+    console.log('🌍 Timezone Detection:');
+    console.log('Browser Timezone:', browserTimezone);
+    console.log('UTC Offset:', offset);
+    console.log('Current Local Time:', new Date().toLocaleString());
+    console.log('Current UTC Time:', new Date().toUTCString());
+
     setFormData(prev => ({ 
       ...prev, 
       timezone: browserTimezone,
@@ -85,6 +92,18 @@ export default function ConsultationForm() {
         setErrorMessage(`The time slot ${formData.time} is no longer available. Please select another time.`);
         return;
     }
+
+    // Console log for testing - shows what data will be sent to backend
+    console.log('📤 Submitting Consultation Data:');
+    console.log('Name:', formData.name);
+    console.log('Email:', formData.email);
+    console.log('Phone:', formData.phone);
+    console.log('Service:', formData.service);
+    console.log('Date:', formData.date);
+    console.log('Time:', formData.time);
+    console.log('Timezone:', formData.timezone);
+    console.log('UTC Offset:', formData.timezoneOffset);
+    console.log('-------------------');
 
     try {
       const response = await fetch('/api/consultation', {
