@@ -28,7 +28,7 @@ export const projects: Project[] = [
         title: "Emergent Enterprise",
         category: "Website Development",
         description: "Comprehensive web application for managing enterprise resources with seamless integration and user-friendly interface.",
-        image: "/Screenshot 2025-12-17 223302.png",
+        image: "/our-work/emergent-enterprise.png",
         type: "image",
         link: "https://emergententerprise.net/"
     },
@@ -37,7 +37,7 @@ export const projects: Project[] = [
         title: "Laurus Foods",
         category: "Website Development",
         description: "A modern, responsive website showcasing the Laurus Foods brand with a focus on user experience and visual appeal.",
-        image: "/Screenshot 2025-12-17 223041.png",
+        image: "/our-work/laurus-foods.png",
         type: "image",
         link: "https://laurusfoods.uk/"
     },
@@ -46,7 +46,7 @@ export const projects: Project[] = [
         title: "YAARHAULAGE Limited",
         category: "Website Development",
         description: "A simple yet effective website for a haulage company to showcase services and facilitate contact.",
-        image: "/Screenshot 2025-12-17 223133.png",
+        image: "/our-work/yaarhaulage-limited.png",
         type: "image",
         link: "https://yaarhaulagelimited.com/"
     },
@@ -55,7 +55,7 @@ export const projects: Project[] = [
         title: "Ai Solution Academy",
         category: "Website Development",
         description: "An educational platform for AI courses with registration and learning management.",
-        image: "/Screenshot 2025-12-17 223404.png",
+        image: "/our-work/ai-solution-academy.png",
         type: "image",
         link: "https://aisolutionpk.com/"
     },
@@ -64,7 +64,7 @@ export const projects: Project[] = [
         title: "Ajwa Tutors",
         category: "Website Development",
         description: "A modern, responsive website for a tutoring platform to showcase services and facilitate contact.",
-        image: "/Screenshot 2025-12-17 223155.png",
+        image: "/our-work/ajwa-tutors.png",
         type: "image",
         link: "https://ajwatutors.com/"
     },
@@ -73,7 +73,7 @@ export const projects: Project[] = [
         title: "Innox",
         category: "Website Development",
         description: "nnox Private Limited is a MEP contractor specialised in Mechanical, Electrical and Plumbing systems in construction projects.",
-        image: "/Screenshot 2025-12-17 223230.png",
+        image: "/our-work/innox.png",
         type: "image",
         link: "https://innoxes.com/"
     },
@@ -84,127 +84,17 @@ export const projects: Project[] = [
         title: "Sayyid & Shaykh",
         category: "AI Automation",
         description: "A modern, responsive website for a law firm featuring an AI-powered chatbot to assist visitors with legal inquiries and services.",
-        image: "/Screenshot 2025-12-17 223456.png",
+        image: "/our-work/sayyid-shaykh.png",
         type: "image",
         link: "https://sayyidandshaykh.com/"
     },
   {
-    id: "ai-crm-automation",
-    title: "AI-Powered CRM Automation",
-    category: "AI Automation",
-    description: "End-to-end CRM automation with predictive lead scoring, intelligent email campaigns, and automated follow-ups for Fortune 500 company.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    link: "https://example-crm.com",
-    videoUrl: "", // Add YouTube URL later for demo video
+    id: "sindh-education-dashboard",
+    title: "Sindh Education Dashboard",
+    category: "Website Development",
+    description: "Advanced monitoring dashboard built for the School Education & Literacy Department, Sindh track and manage cases, store PDFs and reports, and monitor district-level education metrics in real time.",
+    image: "/our-work/sindh-education-dashboard.png",
     type: "image",
-  },
-  {
-    id: "document-ai",
-    title: "Document Processing AI",
-    category: "AI Automation",
-    description: "Automated document classification and data extraction system processing 10,000+ documents daily with 99% accuracy.",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
-    link: "https://example-document-ai.com",
-    videoUrl: "", // Add YouTube URL later
-    type: "image",
-  },
-  {
-    id: "chatbot-integration",
-    title: "Multi-Channel AI Chatbot",
-    category: "AI Automation",
-    description: "Intelligent chatbot integrated across website, WhatsApp, and social media handling 1000+ customer queries daily.",
-    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80",
-    link: "https://example-chatbot.com",
-    videoUrl: "", // Add YouTube URL later
-    type: "image",
-  },
-
-  // Branding Projects
-  {
-    id: "brand-identity-tech",
-    title: "Tech Startup Brand Identity",
-    category: "Branding",
-    description: "Complete brand identity design including logo, color palette, typography, brand guidelines, and all visual assets.",
-    image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=800&q=80",
-    link: "https://example-brand-tech.com",
-    type: "image",
-  },
-  {
-    id: "brand-identity-health",
-    title: "Healthcare Brand Package",
-    category: "Branding",
-    description: "Professional healthcare brand with logo design, patient-friendly messaging, and comprehensive brand guidelines.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80",
-    link: "https://example-brand-health.com",
-    type: "image",
-  },
-
-  // Motion Graphics Projects (will have video URLs)
-  {
-    id: "motion-explainer-1",
-    title: "AI Product Explainer Video",
-    category: "Motion Graphics",
-    description: "High-impact animated explainer video showcasing AI features with 3D elements and kinetic typography.",
-    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80",
-    videoUrl: "", // Add YouTube URL for actual video
-    type: "video",
-  },
-  {
-    id: "motion-brand-animation",
-    title: "Brand Launch Animation",
-    category: "Motion Graphics",
-    description: "Dynamic brand launch animation with logo reveals, motion graphics, and stunning visual effects.",
-    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80",
-    videoUrl: "", // Add YouTube URL
-    type: "video",
-  },
-  {
-    id: "motion-social-ads",
-    title: "Social Media Ad Campaign",
-    category: "Motion Graphics",
-    description: "Series of eye-catching motion graphics for Instagram and Facebook ads that boosted engagement by 300%.",
-    image: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80",
-    videoUrl: "", // Add YouTube URL
-    type: "video",
-  },
-
-  // Video Editing Projects
-  {
-    id: "video-youtube-series",
-    title: "YouTube Channel Series",
-    category: "Video Editing",
-    description: "Professional editing for 50+ YouTube videos including color grading, motion graphics, and audio enhancement.",
-    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80",
-    videoUrl: "", // Add YouTube URL
-    type: "video",
-  },
-  {
-    id: "video-reels-package",
-    title: "Viral Reels Package",
-    category: "Video Editing",
-    description: "Monthly package of 20 high-engagement Instagram Reels with trending effects and optimized hooks.",
-    image: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80",
-    videoUrl: "", // Add YouTube URL
-    type: "video",
-  },
-
-  // 3D Modeling Projects
-  {
-    id: "3d-product-render",
-    title: "Product Visualization",
-    category: "3D Modeling",
-    description: "Photorealistic 3D product renders for e-commerce and marketing with AR integration.",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80",
-    link: "https://example-3d-product.com",
-    type: "image",
-  },
-  {
-    id: "3d-architecture",
-    title: "Architectural Visualization",
-    category: "3D Modeling",
-    description: "Stunning 3D architectural renders and virtual walkthroughs for real estate development project.",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
-    link: "https://example-3d-architecture.com",
-    type: "image",
+    link: "https://seldlegaldashboard.com/"
   },
 ];
