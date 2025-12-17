@@ -707,7 +707,7 @@ export const navigation = {
         { href: "/", label: "Home" },
         { href: "/about", label: "About" },
         { href: "/services", label: "Services" },
-        { href: "/portfolio", label: "Our Work" },
+        { href: "/our-work", label: "Our Work" },
         { href: "/blogs", label: "Blog" },
         { href: "/contact", label: "Contact" },
     ],
@@ -715,11 +715,11 @@ export const navigation = {
         company: [
             { label: "About Us", href: "/about" },
             { label: "Services", href: "/services" },
-            { label: "Our Work", href: "/portfolio" },
+            { label: "Our Work", href: "/our-work" },
             { label: "Blog", href: "/blogs" },
         ],
         resources: [
-            { label: "Case Studies", href: "/portfolio" },
+            { label: "Case Studies", href: "/our-work" },
             { label: "Pricing", href: "/services" },
             { label: "Contact", href: "/contact" },
             { label: "FAQ", href: "/about#faq" },

@@ -3,25 +3,25 @@ import { Metadata } from "next";
 // Base configuration
 const siteConfig = {
   name: "Nexiler",
-  description: "Custom AI automation solutions and traditional development services. Transform your business with intelligent systems that scale exponentially.",
+  description: "We help businesses grow through intelligent automation, modern web development, and strategic digital solutions. Transform your operations and scale your success with Nexiler.",
   url: "https://nexiler.tech",
   ogImage: "https://nexiler.tech/og-image.jpg",
   keywords: [
-    "AI automation",
-    "custom development",
-    "AI solutions",
-    "business automation",
+    "business growth",
+    "automation solutions",
     "web development",
-    "mobile app development",
-    "AI integration",
-    "process automation",
     "digital transformation",
-    "machine learning",
+    "business automation",
     "custom software",
-    "enterprise AI",
+    "mobile app development",
+    "process automation",
+    "tech solutions",
+    "enterprise solutions",
     "automation services",
-    "AI consulting",
-    "tech solutions"
+    "consulting",
+    "growth strategies",
+    "digital solutions",
+    "business scaling"
   ],
   creator: "Nexiler",
   authors: [{ name: "Nexiler Team", url: "https://nexiler.tech" }],
@@ -112,58 +112,58 @@ export function generateMetadata({
 
 // Home page metadata
 export const homeMetadata = generateMetadata({
-  title: "AI Automation & Custom Development Solutions",
-  description: "Transform your business with Nexiler's custom AI automation solutions and traditional development services. Trusted by 230+ companies. Get started today!",
+  title: "Grow Your Business with Smart Automation & Web Solutions",
+  description: "Nexiler helps businesses unlock growth through intelligent automation, stunning websites, and strategic digital solutions. Trusted by 230+ companies worldwide. Start your transformation today.",
   path: "",
-  keywords: ["AI automation", "custom development", "business transformation", "intelligent systems"],
+  keywords: ["business growth", "automation", "web development", "digital solutions"],
 });
 
 // About page metadata
 export const aboutMetadata = generateMetadata({
-  title: "About Us - Leading AI Automation Experts",
-  description: "Learn about Nexiler's mission to transform businesses through cutting-edge AI automation and custom development solutions. Meet our expert team.",
+  title: "About Us | Your Growth Partner",
+  description: "Nexiler is on a mission to help businesses grow through smart automation and modern development. Meet our team of experts dedicated to your success.",
   path: "/about",
-  keywords: ["about nexiler", "AI experts", "automation specialists", "tech team"],
+  keywords: ["about nexiler", "growth partner", "automation experts", "development team"],
 });
 
 // Services page metadata
 export const servicesMetadata = generateMetadata({
-  title: "Our Services - AI Automation & Development",
-  description: "Comprehensive AI automation, custom development, API integration, and consulting services. Scalable solutions tailored to your business needs.",
+  title: "Our Services | Automation, Web Development & More",
+  description: "From intelligent automation to custom web development, we offer comprehensive services to help your business grow. Scalable solutions tailored to your needs.",
   path: "/services",
-  keywords: ["AI services", "automation services", "custom development", "API integration", "consulting"],
+  keywords: ["automation services", "web development", "custom software", "API integration", "consulting"],
 });
 
 // Our Work page metadata
 export const portfolioMetadata = generateMetadata({
-  title: "Our Work - Success Stories & Projects",
-  description: "Explore Nexiler's portfolio of successful AI automation and development projects. See how we've helped businesses transform digitally.",
-  path: "/portfolio",
-  keywords: ["our work", "case studies", "success stories", "project showcase"],
+  title: "Our Work | Success Stories & Client Projects",
+  description: "Explore our portfolio of successful projects. See how we have helped businesses grow through automation, web development, and digital transformation.",
+  path: "/our-work",
+  keywords: ["our work", "case studies", "success stories", "client projects", "portfolio"],
 });
 
 // Pricing page metadata
 export const pricingMetadata = generateMetadata({
-  title: "Transparent Pricing Plans - Choose Your Growth Plan",
-  description: "Affordable AI automation and development pricing plans. From startups to enterprises. Get started from $999. Free consultation included.",
+  title: "Pricing | Transparent & Affordable Plans",
+  description: "Flexible pricing plans for businesses of all sizes. From startups to enterprises, find the perfect plan to grow your business. Free consultation included.",
   path: "/pricing",
-  keywords: ["pricing", "plans", "cost", "affordable AI", "development pricing"],
+  keywords: ["pricing", "plans", "affordable", "business packages", "growth plans"],
 });
 
 // Blog page metadata
 export const blogMetadata = generateMetadata({
-  title: "Blog - AI Automation & Tech Insights",
-  description: "Stay updated with the latest insights on AI automation, development trends, and digital transformation strategies from Nexiler experts.",
+  title: "Blog | Insights & Tips for Business Growth",
+  description: "Stay updated with the latest insights on automation, web development, and digital strategies. Expert tips to help your business grow faster.",
   path: "/blogs",
-  keywords: ["blog", "AI insights", "tech articles", "automation tips", "development guides"],
+  keywords: ["blog", "business insights", "tech articles", "growth tips", "development guides"],
 });
 
 // Contact page metadata
 export const contactMetadata = generateMetadata({
-  title: "Contact Us - Get Free Consultation",
-  description: "Ready to transform your business? Contact Nexiler for a free consultation. Fast response within 24 hours. Let's discuss your project.",
+  title: "Contact Us | Get Your Free Consultation",
+  description: "Ready to grow your business? Contact Nexiler for a free consultation. We respond within 24 hours. Let us discuss how we can help you succeed.",
   path: "/contact",
-  keywords: ["contact", "free consultation", "get in touch", "project inquiry"],
+  keywords: ["contact", "free consultation", "get in touch", "business inquiry"],
 });
 
 // Generate dynamic blog post metadata

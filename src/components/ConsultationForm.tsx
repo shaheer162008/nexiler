@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Send, CheckCircle2, Loader2, Globe, Clock, MapPin, RefreshCw } from "lucide-react";
 import Dropdown from "./ui/Dropdown";
@@ -7,17 +7,7 @@ import DatePicker from "./ui/DatePicker";
 import ClockPicker from "./ui/ClockPicker";
 import { getTimezoneOffset } from "@/lib/timezones";
 
-// Get initial timezone values
-const getInitialTimezone = () => {
-  if (typeof window === 'undefined') return { timezone: '', offset: '' };
-  const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const offset = getTimezoneOffset(browserTimezone);
-  return { timezone: browserTimezone, offset };
-};
-
 export default function ConsultationForm() {
-  const initialTz = getInitialTimezone();
-  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,8 +16,9 @@ export default function ConsultationForm() {
     budget: "",
     date: "",
     time: "",
-    timezone: initialTz.timezone,
-    timezoneOffset: initialTz.offset,
+    // Start empty on first render to match server HTML and avoid hydration mismatch.
+    timezone: "",
+    timezoneOffset: "",
     message: "",
   });
 
@@ -39,55 +30,97 @@ export default function ConsultationForm() {
   // Booked times - empty for now since API doesn't exist
   const [bookedTimes] = useState<string[]>([]);
 
-  const detectTimezone = () => {
+  const localTime = useMemo(() => {
+    if (!formData.timezone) return '';
+    try {
+      return new Intl.DateTimeFormat('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+        timeZone: formData.timezone,
+      }).format(new Date());
+    } catch (e) {
+      return new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+    }
+  }, [formData.timezone]);
+
+  const detectTimezone = useCallback(() => {
     setIsDetecting(true);
 
     // Get timezone from browser
     const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     const offset = getTimezoneOffset(browserTimezone);
 
-    // Console log for testing - shows what data will be sent
-    console.log('🌍 Timezone Detection:');
-    console.log('Browser Timezone:', browserTimezone);
-    console.log('UTC Offset:', offset);
-    console.log('Current Local Time:', new Date().toLocaleString());
-    console.log('Current UTC Time:', new Date().toUTCString());
-
-    setFormData(prev => ({ 
-      ...prev, 
+    setFormData(prev => ({
+      ...prev,
       timezone: browserTimezone,
-      timezoneOffset: offset
+      timezoneOffset: offset,
     }));
 
     setIsDetecting(false);
-  };
+  }, [setFormData]);
 
-  const requestLocationPermission = () => {
+  // Detect timezone after client mount to avoid SSR/client hydration mismatch
+  useEffect(() => {
+    try {
+      detectTimezone();
+    } catch (e) {
+      // swallow any detection errors; we'll keep timezone empty instead of causing mismatch
+      console.warn('Timezone detection failed on mount', e);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const requestLocationPermission = useCallback(() => {
     setLocationStatus("requesting");
-    
+
+    // If geolocation isn't supported, fall back to browser timezone
     if (!navigator.geolocation) {
-      // Fallback to browser timezone if geolocation not supported
       detectTimezone();
       setLocationStatus("success");
       return;
     }
 
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        console.log('📍 Location obtained:', position.coords.latitude, position.coords.longitude);
-        // Even with location, we still use Intl API for timezone as it's more reliable
-        detectTimezone();
-        setLocationStatus("success");
-      },
-      (error) => {
-        console.log('📍 Location error:', error.message);
-        // Still detect timezone from browser even if location denied
-        detectTimezone();
-        setLocationStatus(error.code === 1 ? "denied" : "success");
-      },
-      { timeout: 5000 }
-    );
-  };
+    // Use Permissions API if available to provide friendlier UX
+    const handleDetect = () => {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          // We don't need coordinates for timezone detection; calling detectTimezone is enough
+          detectTimezone();
+          setLocationStatus("success");
+        },
+        (error) => {
+          // If user denies, mark denied; otherwise fall back to browser timezone
+          detectTimezone();
+          setLocationStatus(error.code === 1 ? "denied" : "success");
+        },
+        { timeout: 8000 }
+      );
+    };
+
+    if (navigator.permissions && (navigator.permissions as any).query) {
+      // @ts-ignore - permissions types vary by browser
+      navigator.permissions.query({ name: 'geolocation' }).then((permStatus: any) => {
+        if (permStatus.state === 'granted') {
+          // Already granted — still call to ensure consistent state
+          handleDetect();
+        } else if (permStatus.state === 'prompt') {
+          // Will trigger browser prompt
+          handleDetect();
+        } else {
+          // denied
+          detectTimezone();
+          setLocationStatus('denied');
+        }
+      }).catch(() => {
+        // Permissions API not reliable — fallback to direct prompt
+        handleDetect();
+      });
+    } else {
+      // Fallback: directly request position which triggers prompt
+      handleDetect();
+    }
+  }, [detectTimezone]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -389,58 +422,58 @@ export default function ConsultationForm() {
 
         {/* Auto-Detected Timezone Display */}
         <div className="bg-linear-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-xl p-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-primary/20 rounded-lg">
-                  <Globe className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-xs text-white/50 mb-0.5">Your Timezone</p>
-                  {formData.timezone ? (
-                    <p className="text-white font-semibold text-sm sm:text-base">{formData.timezone}</p>
-                  ) : (
-                    <p className="text-white/50 text-sm">Detecting...</p>
-                  )}
-                </div>
+          <div className="flex flex-row flex-wrap items-center justify-between gap-3">
+            {/* Left: timezone label + value */}
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="p-2 bg-primary/20 rounded-lg flex-shrink-0">
+                <Globe className="w-5 h-5 text-primary" />
               </div>
-            
-            <div className="flex items-center gap-3">
+              <div className="min-w-0">
+                <p className="text-xs text-white/50 mb-0.5">Your Timezone</p>
+                {formData.timezone ? (
+                  <p className="text-white font-semibold text-sm sm:text-base max-w-[180px] truncate">{formData.timezone}</p>
+                ) : (
+                  <p className="text-white/50 text-sm">Detecting...</p>
+                )}
+              </div>
+            </div>
+
+            {/* Right: time + UTC + button (keeps compact on mobile) */}
+            <div className="flex items-center gap-3 ml-2">
               {formData.timezone && (
-                <div className="text-right">
-                  <div className="flex items-center gap-2 text-primary font-bold text-base sm:text-lg">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center text-left">
+                    <div className="flex items-center gap-2 text-primary font-bold text-base sm:text-lg">
                     <Clock className="w-4 h-4" />
-                    {new Date().toLocaleTimeString('en-US', { 
-                      hour: '2-digit', 
-                      minute: '2-digit',
-                      hour12: true,
-                      timeZone: formData.timezone 
-                    })}
+                    <span className="inline-block">{localTime}</span>
                   </div>
-                  <p className="text-xs text-white/50">UTC {formData.timezoneOffset}</p>
+                  <p className="text-xs text-white/50 sm:ml-3">UTC {formData.timezoneOffset}</p>
                 </div>
               )}
-              
+
               <button
                 type="button"
                 onClick={requestLocationPermission}
                 disabled={locationStatus === "requesting" || isDetecting}
+                aria-label="Auto-sync timezone"
                 className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 transition-all duration-300 text-sm text-white disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {locationStatus === "requesting" ? (
                   <>
                     <Loader2 className="w-4 h-4 animate-spin" />
-                    <span className="hidden sm:inline">Detecting...</span>
+                    <span className="inline text-xs">Auto-syncing...</span>
                   </>
                 ) : (
                   <>
                     <MapPin className="w-4 h-4" />
+                    {/* Show short label on mobile, fuller label on larger screens */}
+                    <span className="inline sm:hidden text-xs">Auto-sync</span>
                     <span className="hidden sm:inline">Re-detect</span>
                   </>
                 )}
               </button>
             </div>
           </div>
-          
+        </div>
           {locationStatus === "denied" && (
             <p className="text-xs text-amber-400/80 mt-3 flex items-center gap-2">
               <RefreshCw className="w-3 h-3" />
@@ -453,7 +486,6 @@ export default function ConsultationForm() {
               Allow location access for accurate timezone detection, or we&apos;ll use your browser settings.
             </p>
           )}
-        </div>
 
         {/* Submit Button */}
         <button

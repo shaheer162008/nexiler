@@ -76,7 +76,7 @@ export const Hero = () => {
                                     <ArrowRight size={16} className="sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-500" />
                                 </Link>
                                 <Link
-                                    href="/portfolio"
+                                    href="/our-work"
                                     className="w-full sm:w-auto px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-semibold text-sm sm:text-base hover:bg-white/20 hover:border-white/50 transition-all duration-500 inline-flex items-center justify-center"
                                 >
                                     See Success Stories
