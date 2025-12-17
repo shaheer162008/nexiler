@@ -425,7 +425,7 @@ export default function ConsultationForm() {
           <div className="flex flex-row flex-wrap items-center justify-between gap-3">
             {/* Left: timezone label + value */}
             <div className="flex items-center gap-3 min-w-0">
-              <div className="p-2 bg-primary/20 rounded-lg flex-shrink-0">
+              <div className="p-2 bg-primary/20 rounded-lg shrink-0">
                 <Globe className="w-5 h-5 text-primary" />
               </div>
               <div className="min-w-0">
