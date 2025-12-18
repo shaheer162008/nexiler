@@ -33,13 +33,7 @@ const socialLinks = [
 
 export const Footer = () => {
     return (
-        <footer className="relative overflow-hidden bg-gradient-to-b from-transparent via-white/5 to-black border-t border-white/10">
-            {/* Decorative elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
-                <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"></div>
-            </div>
-
+        <footer className="relative overflow-hidden bg-transparent border-t border-white/10">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 md:py-16 relative z-10">
                 {/* Main Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12 md:mb-14">

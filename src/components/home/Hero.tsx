@@ -6,7 +6,7 @@ import { Sparkles, ArrowRight } from "lucide-react";
 
 export const Hero = () => {
     return (
-        <section className="relative min-h-[66vh] md:min-h-[76vh] flex items-center justify-center overflow-hidden pt-10 sm:pt-16 pb-10 px-4">
+        <section className="relative min-h-[66vh] md:min-h-[76vh] flex items-center justify-center overflow-hidden pt-16 sm:pt-20 lg:pt-28 pb-10 px-4">
             <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
                 <div 
                     className="absolute inset-0"
@@ -27,7 +27,7 @@ export const Hero = () => {
                     >
                             <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full glass border border-primary/30 hover:border-primary/50 transition-all duration-500">
                             <Sparkles size={16} className="sm:w-[18px] sm:h-[18px] text-primary animate-pulse" />
-                            <span className="text-xs sm:text-sm md:text-base text-white/80 font-medium">AI automation trusted by 230+ companies</span>
+                            <span className="text-xs sm:text-sm md:text-base text-white/80 font-medium">Trusted by 50+ clients</span>
                         </div>
                     </motion.div>
 
@@ -57,7 +57,7 @@ export const Hero = () => {
                                 transition={{ duration: 0.8, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
                                 className="text-base sm:text-lg md:text-xl text-white/70 mb-4 sm:mb-6 md:mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0"
                             >
-                                We build websites, automate workflows, and help you grow in practical ways. We focus on clear solutions that save time and make work easier.
+                                We build websites, automate workflows, and help brands grow organically. Our specialty is AI-driven automation that creates repeatable, sustainable growth.
                             </motion.p>
 
                             {/* CTA Buttons */}
@@ -71,7 +71,7 @@ export const Hero = () => {
                                     href="/consultation"
                                     className="group w-full sm:w-auto px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-semibold text-sm sm:text-base hover:bg-white/20 hover:border-white/50 transition-all duration-500 inline-flex items-center justify-center gap-2"
                                 >
-                                    Get Free Consultation
+                                    Book a free consult
                                     <ArrowRight size={16} className="sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-500" />
                                 </Link>
                                 <Link
