@@ -6,7 +6,7 @@ import { Sparkles, ArrowRight } from "lucide-react";
 
 export const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24 pb-12 sm:pb-16 px-4">
+        <section className="relative min-h-[66vh] md:min-h-[76vh] flex items-center justify-center overflow-hidden pt-10 sm:pt-16 pb-10 px-4">
             <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
                 <div 
                     className="absolute inset-0"
@@ -25,9 +25,9 @@ export const Hero = () => {
                         transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
                         className="flex justify-center mb-6 sm:mb-8"
                     >
-                        <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full glass border border-primary/30 hover:border-primary/50 transition-all duration-500">
+                            <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full glass border border-primary/30 hover:border-primary/50 transition-all duration-500">
                             <Sparkles size={16} className="sm:w-[18px] sm:h-[18px] text-primary animate-pulse" />
-                            <span className="text-xs sm:text-sm md:text-base text-white/80 font-medium">Next-Gen AI Automation • Trusted by 230+ Companies</span>
+                            <span className="text-xs sm:text-sm md:text-base text-white/80 font-medium">AI automation trusted by 230+ companies</span>
                         </div>
                     </motion.div>
 
@@ -44,10 +44,10 @@ export const Hero = () => {
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-                                className="text-5xl md:text-7xl font-bold mb-4 sm:mb-5 md:mb-6 leading-[1.1]"
+                                className="text-4xl md:text-6xl font-bold mb-4 sm:mb-5 md:mb-6 leading-[1.05]"
                             >
-                                <span className="text-white">Transform Your </span>
-                                <span className="text-gradient whitespace-nowrap">Business with AI</span>
+                                <span className="text-white">Make your business work </span>
+                                <span className="text-gradient whitespace-nowrap">smarter with AI</span>
                             </motion.h1>
 
                             {/* Subheadline */}
@@ -55,10 +55,9 @@ export const Hero = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                                className="text-lg sm:text-xl md:text-xl lg:text-2xl text-white/70 mb-6 sm:mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0"
+                                className="text-base sm:text-lg md:text-xl text-white/70 mb-4 sm:mb-6 md:mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0"
                             >
-                                We build modern websites, automate your workflows, and create strategies that actually grow your business. 
-                                Real results, not just promises.
+                                We build websites, automate workflows, and help you grow in practical ways. We focus on clear solutions that save time and make work easier.
                             </motion.p>
 
                             {/* CTA Buttons */}
@@ -88,7 +87,7 @@ export const Hero = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.8, ease: [0.4, 0, 0.2, 1] }}
-                                className="flex gap-4 sm:gap-6 md:gap-8 justify-center lg:justify-start mx-auto lg:mx-0"
+                                className="flex gap-3 sm:gap-4 md:gap-6 justify-center lg:justify-start mx-auto lg:mx-0"
                             >
                                 {[
                                     { value: "50+", label: "Clients" },
@@ -102,7 +101,7 @@ export const Hero = () => {
                                         transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                                         className="flex flex-col items-center lg:items-start"
                                     >
-                                        <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient whitespace-nowrap mb-1">
+                                        <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gradient whitespace-nowrap mb-1">
                                             {stat.value}
                                         </div>
                                         <div className="text-xs sm:text-sm text-white/70 whitespace-nowrap">

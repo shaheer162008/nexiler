@@ -9,6 +9,7 @@ export interface Project {
   link?: string; // Optional external link
   videoUrl?: string; // Optional YouTube video URL for motion graphics/AI automation demos
   type: "image" | "video"; // Type of content
+  featured?: boolean; // mark projects that should appear on the homepage
 }
 
 export const projectCategories = [
@@ -39,7 +40,8 @@ export const projects: Project[] = [
         description: "A modern, responsive website showcasing the Laurus Foods brand with a focus on user experience and visual appeal.",
         image: "/our-work/laurus-foods.png",
         type: "image",
-        link: "https://laurusfoods.uk/"
+        link: "https://laurusfoods.uk/",
+        featured: true,
     },
     {
         id: "yaarhaulage-limited",
@@ -48,7 +50,8 @@ export const projects: Project[] = [
         description: "A simple yet effective website for a haulage company to showcase services and facilitate contact.",
         image: "/our-work/yaarhaulage-limited.png",
         type: "image",
-        link: "https://yaarhaulagelimited.com/"
+        link: "https://yaarhaulagelimited.com/",
+        
     },
     {
         id: "ai-solution-academy",
@@ -86,6 +89,7 @@ export const projects: Project[] = [
         description: "A modern, responsive website for a law firm featuring an AI-powered chatbot to assist visitors with legal inquiries and services.",
         image: "/our-work/sayyid-shaykh.png",
         type: "image",
+        featured: true,
         link: "https://sayyidandshaykh.com/"
     },
   {
@@ -96,5 +100,8 @@ export const projects: Project[] = [
     image: "/our-work/sindh-education-dashboard.png",
     type: "image",
     link: "https://seldlegaldashboard.com/"
+  ,
+    // mark this as featured on the homepage
+    featured: true
   },
 ];
