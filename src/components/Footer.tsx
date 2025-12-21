@@ -7,7 +7,7 @@ const footerLinks = {
         { label: "About Us", href: "/about" },
         { label: "Services", href: "/services" },
         { label: "Our Work", href: "/our-work" },
-        { label: "Blog", href: "/blogs" },
+        { label: "Blogs", href: "/blogs" },
     ],
     resources: [
         { label: "Packages", href: "/packages" },
@@ -45,14 +45,14 @@ export const Footer = () => {
                         <p className="text-white/65 text-base sm:text-base md:text-lg leading-relaxed mb-6 max-w-xs">
                             Unlock growth through intelligent automation, stunning web experiences, and strategic digital solutions.
                         </p>
-                        <div className="flex gap-2.5 flex-wrap">
+                        <div className="flex items-center gap-3 flex-wrap sm:flex-nowrap">
                             {socialLinks.map(({ Icon, href, label }) => (
                                 <a
                                     key={label}
                                     href={href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="group relative w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-white/10 to-white/5 hover:from-primary/20 hover:to-primary/10 text-white/50 hover:text-primary transition-all duration-300 hover:scale-110 active:scale-95 overflow-hidden"
+                                    className="group relative w-10 h-10 flex items-center justify-center rounded-xl text-white/50 hover:text-primary transition-all duration-300 hover:scale-110 active:scale-95"
                                     aria-label={label}
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
