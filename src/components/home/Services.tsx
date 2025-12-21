@@ -1,50 +1,66 @@
 "use client";
 import { motion } from "framer-motion";
-import { Bot, Zap, Globe, Video, Settings, Film, ArrowRight } from "lucide-react";
+import { ArrowRight, Code, Zap, MessageCircle, Palette, Film, Wrench, TrendingUp, Share2, Paintbrush, Box, Plug, Smartphone, Settings } from "lucide-react";
 import Link from "next/link";
+
+const getServiceIcon = (slug: string) => {
+    const iconMap: { [key: string]: React.ComponentType<any> } = {
+        "website-development": Code,
+        "ai-automation-setup": Zap,
+        "ai-chatbot-integration": MessageCircle,
+        "full-brand-creation": Palette,
+        "motion-graphics": Film,
+        "video-editing-short": Film,
+        "video-editing-long": Film,
+        "ai-automation-maintenance": Wrench,
+        "seo-optimization": TrendingUp,
+        "social-media-ads": Share2,
+        "graphic-design": Paintbrush,
+        "website-maintenance": Wrench,
+        "3d-modeling": Box,
+        "api-integration": Plug,
+        "mobile-app-development": Smartphone,
+        "custom-software": Settings,
+    };
+    return iconMap[slug] || Code;
+};
 
 const topServices = [
     {
-        icon: Globe,
+        icon: "website-development",
         title: "Website Development",
         description: "High-performance, conversion-optimized websites built with cutting-edge technologies.",
-        gradient: "from-blue-500 to-cyan-500",
         href: "/services/website-development",
     },
     {
-        icon: Bot,
+        icon: "ai-automation-setup",
         title: "AI Automation Setup",
         description: "Intelligent workflows that reduce operational costs and eliminate manual work.",
-        gradient: "from-purple-500 to-pink-500",
         href: "/services/ai-automation-setup",
     },
     {
-        icon: Settings,
+        icon: "full-brand-creation",
         title: "Full Brand Creation",
         description: "Complete brand identity with logo, guidelines, and comprehensive brand strategy.",
-        gradient: "from-orange-500 to-red-500",
         href: "/services/full-brand-creation",
     },
     {
-        icon: Zap,
+        icon: "ai-chatbot-integration",
         title: "AI Chatbot Integration",
         description: "24/7 automated customer support and intelligent lead qualification systems.",
-        gradient: "from-cyan-500 to-blue-500",
         href: "/services/ai-chatbot-integration",
     },
     {
-        icon: Video,
-        title: "Motion Graphics",
-        description: "Professional animations for explainer videos, ads, and engaging visual content.",
-        gradient: "from-green-500 to-teal-500",
-        href: "/services/motion-graphics",
+        icon: "mobile-app-development",
+        title: "Mobile App Development",
+        description: "Native and cross-platform mobile apps built for engagement, performance, and scale.",
+        href: "/services/mobile-app-development",
     },
     {
-        icon: Film,
-        title: "Video Editing",
-        description: "Professional editing for short-form Reels and YouTube long-form content.",
-        gradient: "from-pink-500 to-purple-500",
-        href: "/services/video-editing-short",
+        icon: "custom-software",
+        title: "Custom Software Solutions",
+        description: "Bespoke software built exactly for your business needs and unique challenges.",
+        href: "/services/custom-software",
     },
 ];
 
@@ -98,23 +114,29 @@ export const Services = () => {
                                 className="group relative h-full rounded-2xl overflow-hidden cursor-pointer"
                             >
                                 {/* Premium Card Background */}
-                                <div className="absolute inset-0 bg-linear-to-br from-white/8 to-white/2 border border-white/20 rounded-2xl group-hover:border-primary/50 transition-all duration-500" />
+                                <div className="absolute inset-0 bg-gradient-to-br from-white/6 to-white/1 border border-white/15 rounded-2xl group-hover:border-primary/40 transition-all duration-500" />
                                 
                                 {/* Top Accent Line */}
-                                <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 
-                                {/* Shine Effect */}
-                                <div className="absolute inset-0 bg-linear-to-br from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                                {/* Glow Effect on Hover */}
+                                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 -z-10 pointer-events-none">
+                                    <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-xl" />
+                                </div>
 
                                 {/* Content */}
                                 <div className="relative p-6 sm:p-7 md:p-8 h-full flex flex-col">
-                                    {/* Premium Icon */}
+                                    {/* Premium Icon from Lucide */}
                                     <motion.div
-                                        whileHover={{ scale: 1.2, rotate: 12 }}
+                                        whileHover={{ scale: 1.1 }}
                                         transition={{ duration: 0.4 }}
-                                        className={`relative inline-flex p-4 rounded-2xl bg-linear-to-br ${service.gradient} mb-5 w-fit shadow-xl group-hover:shadow-2xl transition-all duration-300`}
+                                        className="relative inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-white/8 to-white/4 border border-white/8 mb-5 w-fit shadow-lg group-hover:shadow-primary/20 group-hover:border-primary/30 transition-all duration-300"
+                                        style={{ width: '56px', height: '56px' }}
                                     >
-                                        <service.icon size={28} className="text-white" />
+                                        {(() => {
+                                            const IconComponent = getServiceIcon(service.icon);
+                                            return <IconComponent size={32} className="text-primary stroke-[1.5]" />;
+                                        })()}
                                     </motion.div>
 
                                     {/* Title */}

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Newsletter } from "@/components/Newsletter";
-import { Bot, Code, Box, Video, Palette, Search, Share2, Wrench, Globe, Zap, Settings, Film, Plug, Layers, ArrowRight, CheckCircle2, TrendingUp, Sparkles, DollarSign } from "lucide-react";
+import { ArrowRight, CheckCircle2, TrendingUp, Sparkles, DollarSign, Zap, PieChart, Shield, Code, MessageCircle, Palette, Film, Wrench, Share2, Paintbrush, Box, Plug, Smartphone, Settings, BarChart3, Mail } from "lucide-react";
 import Link from "next/link";
 
 interface ServiceData {
@@ -18,46 +18,31 @@ interface ServiceData {
     pricingDetails?: string;
 }
 
-const serviceIcons: Record<string, React.ElementType> = {
-    "website-development": Globe,
-    "ai-automation-setup": Bot,
-    "ai-chatbot-integration": Zap,
-    "full-brand-creation": Settings,
-    "motion-graphics": Video,
-    "video-editing-short": Film,
-    "video-editing-long": Film,
-    "ai-automation-maintenance": Wrench,
-    "seo-optimization": Search,
-    "social-media-ads": Share2,
-    "graphic-design": Palette,
-    "website-maintenance": Wrench,
-    "3d-modeling": Box,
-    "api-integration": Plug,
-    "custom-software": Layers,
-};
-
-const gradients: Record<string, string> = {
-    "website-development": "from-blue-500 to-cyan-500",
-    "ai-automation-setup": "from-purple-500 to-pink-500",
-    "ai-chatbot-integration": "from-cyan-500 to-blue-500",
-    "full-brand-creation": "from-orange-500 to-red-500",
-    "motion-graphics": "from-green-500 to-teal-500",
-    "video-editing-short": "from-pink-500 to-purple-500",
-    "video-editing-long": "from-pink-500 to-purple-500",
-    "ai-automation-maintenance": "from-green-500 to-cyan-500",
-    "seo-optimization": "from-teal-500 to-green-500",
-    "social-media-ads": "from-indigo-500 to-purple-500",
-    "graphic-design": "from-red-500 to-pink-500",
-    "website-maintenance": "from-yellow-500 to-orange-500",
-    "3d-modeling": "from-blue-500 to-indigo-500",
-    "api-integration": "from-emerald-500 to-teal-500",
-    "custom-software": "from-violet-500 to-purple-500",
+const getServiceIcon = (slug: string) => {
+    const iconMap: { [key: string]: React.ComponentType<any> } = {
+        "website-development": Code,
+        "ai-automation-setup": Zap,
+        "ai-chatbot-integration": MessageCircle,
+        "full-brand-creation": Palette,
+        "motion-graphics": Film,
+        "video-editing-short": Film,
+        "video-editing-long": Film,
+        "ai-automation-maintenance": Wrench,
+        "seo-optimization": TrendingUp,
+        "social-media-ads": Share2,
+        "graphic-design": Paintbrush,
+        "website-maintenance": Wrench,
+        "3d-modeling": Box,
+        "api-integration": Plug,
+        "mobile-app-development": Smartphone,
+        "custom-software": Settings,
+        "data-analytics": BarChart3,
+        "email-marketing": Mail,
+    };
+    return iconMap[slug] || Code;
 };
 
 export function ServiceDetailClient({ service }: { service: ServiceData }) {
-    const Icon = serviceIcons[service.slug] || Code;
-    const gradient = gradients[service.slug] || "from-primary to-cyan-500";
-
     return (
         <main className="min-h-screen">
             <Navbar />
@@ -74,19 +59,21 @@ export function ServiceDetailClient({ service }: { service: ServiceData }) {
                         transition={{ duration: 0.6 }}
                         className="text-center max-w-5xl mx-auto"
                     >
-
-                        <div className="flex justify-center mb-8">
-                            <motion.div
-                                whileHover={{ scale: 1.05 }}
-                                transition={{ duration: 0.3 }}
-                                className={`p-4 sm:p-6 rounded-2xl bg-gradient-to-br ${gradient} shadow-lg w-fit`}
-                            >
-                                <Icon size={56} className="text-white" />
-                            </motion.div>
-                        </div>
+                        {/* Service Badge */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="flex justify-center mb-8"
+                        >
+                            <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 rounded-full border border-primary/40 bg-primary/5 backdrop-blur-sm">
+                                <Sparkles size={16} className="text-primary" />
+                                <span className="text-xs sm:text-sm text-white/80 font-medium">{service.title}</span>
+                            </div>
+                        </motion.div>
 
                         <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                            <span className="text-white">{service.title}</span>
+                            <span className="text-gradient">{service.title}</span>
                         </h1>
                         
                         <p className="text-lg sm:text-xl md:text-2xl text-white/70 leading-relaxed mb-8">
@@ -134,22 +121,22 @@ export function ServiceDetailClient({ service }: { service: ServiceData }) {
                             </h2>
                             
                             <p className="text-center text-white/70 text-base sm:text-lg md:text-lg mb-12 leading-relaxed max-w-3xl mx-auto">
-                                We are not just a service provider. We are your strategic partner committed to understanding your business deeply and delivering solutions that create lasting value and real competitive advantage. Our approach focuses on quality over quantity, ensuring every engagement is meaningful and results-driven.
+                                Strategic partner delivering measurable value and real business results.
                             </p>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 <motion.div
                                     whileHover={{ y: -4 }}
                                     className="p-6 sm:p-8 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all"
                                 >
                                     <div className="flex items-center gap-4 mb-4">
-                                        <div className={`p-3 rounded-lg bg-gradient-to-br ${gradient}`}>
-                                            <TrendingUp size={24} className="text-white" />
+                                        <div className="p-3 rounded-lg bg-primary/20">
+                                            <TrendingUp size={24} className="text-primary" />
                                         </div>
-                                        <h3 className="text-xl sm:text-2xl font-bold text-white">Proven Results</h3>
+                                        <h3 className="text-lg sm:text-xl font-bold text-white">Results</h3>
                                     </div>
                                     <p className="text-white/70 leading-relaxed text-base sm:text-lg">
-                                        Every project is backed by measurable outcomes and verifiable case studies. We track KPIs, analyze performance metrics, and continuously optimize to ensure your investment delivers maximum ROI. Our proven track record speaks for itself with countless successful implementations across industries.
+                                        Measurable outcomes backed by KPIs, analytics, and proven track record across industries.
                                     </p>
                                 </motion.div>
 
@@ -158,13 +145,13 @@ export function ServiceDetailClient({ service }: { service: ServiceData }) {
                                     className="p-6 sm:p-8 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all"
                                 >
                                     <div className="flex items-center gap-3 mb-4">
-                                        <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${gradient} flex items-center justify-center`}>
-                                            <Sparkles size={18} className="text-white" />
+                                        <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+                                            <Sparkles size={18} className="text-primary" />
                                         </div>
-                                        <h3 className="text-lg sm:text-xl font-bold text-white">Expert Team</h3>
+                                        <h3 className="text-lg sm:text-xl font-bold text-white">Expertise</h3>
                                     </div>
                                     <p className="text-white/70 leading-relaxed text-sm sm:text-base">
-                                        Our specialists have years of hands on experience and genuine passion. They stay at the forefront of innovation and bring strategic insight to every challenge for exceptional results.
+                                        Years of hands-on experience with passion for innovation and strategic insight.
                                     </p>
                                 </motion.div>
 
@@ -173,13 +160,13 @@ export function ServiceDetailClient({ service }: { service: ServiceData }) {
                                     className="p-6 sm:p-8 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all"
                                 >
                                     <div className="flex items-center gap-3 mb-4">
-                                        <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${gradient} flex items-center justify-center`}>
-                                            <Code size={18} className="text-white" />
+                                        <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+                                            <Zap size={18} className="text-primary" />
                                         </div>
-                                        <h3 className="text-lg sm:text-xl font-bold text-white">Tailored Solutions</h3>
+                                        <h3 className="text-lg sm:text-xl font-bold text-white">Custom Built</h3>
                                     </div>
                                     <p className="text-white/70 leading-relaxed text-base sm:text-lg">
-                                        Every business is unique. We thoroughly understand your requirements and design solutions built specifically for your success with no template compromises.
+                                        Unique solutions built specifically for your business needs and goals.
                                     </p>
                                 </motion.div>
 
@@ -188,13 +175,43 @@ export function ServiceDetailClient({ service }: { service: ServiceData }) {
                                     className="p-6 sm:p-8 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all"
                                 >
                                     <div className="flex items-center gap-3 mb-4">
-                                        <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${gradient} flex items-center justify-center`}>
-                                            <CheckCircle2 size={18} className="text-white" />
+                                        <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+                                            <CheckCircle2 size={18} className="text-primary" />
                                         </div>
-                                        <h3 className="text-lg sm:text-xl font-bold text-white">Ongoing Partnership</h3>
+                                        <h3 className="text-lg sm:text-xl font-bold text-white">Partnership</h3>
                                     </div>
                                     <p className="text-white/70 leading-relaxed text-base sm:text-lg">
-                                        We are not a one time vendor. We become your long term partner providing continuous support, strategic guidance, and optimizations to ensure your success.
+                                        Long-term partnership with continuous support, guidance, and optimization.
+                                    </p>
+                                </motion.div>
+
+                                <motion.div
+                                    whileHover={{ y: -4 }}
+                                    className="p-6 sm:p-8 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all"
+                                >
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+                                            <PieChart size={18} className="text-primary" />
+                                        </div>
+                                        <h3 className="text-lg sm:text-xl font-bold text-white">Data Smart</h3>
+                                    </div>
+                                    <p className="text-white/70 leading-relaxed text-base sm:text-lg">
+                                        Every decision backed by data analytics and continuous performance optimization.
+                                    </p>
+                                </motion.div>
+
+                                <motion.div
+                                    whileHover={{ y: -4 }}
+                                    className="p-6 sm:p-8 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all"
+                                >
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+                                            <Shield size={18} className="text-primary" />
+                                        </div>
+                                        <h3 className="text-lg sm:text-xl font-bold text-white">Secure & Scalable</h3>
+                                    </div>
+                                    <p className="text-white/70 leading-relaxed text-base sm:text-lg">
+                                        Enterprise-grade security and scalable architecture designed for growth.
                                     </p>
                                 </motion.div>
                             </div>
@@ -232,8 +249,8 @@ export function ServiceDetailClient({ service }: { service: ServiceData }) {
                                     className="p-4 sm:p-6 md:p-8 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all"
                                 >
                                     <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-4 flex items-center gap-3">
-                                        <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${gradient} flex items-center justify-center`}>
-                                            <CheckCircle2 size={18} className="text-white" />
+                                        <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+                                            <CheckCircle2 size={18} className="text-primary" />
                                         </div>
                                         <span>Core Deliverables</span>
                                     </h3>
@@ -266,8 +283,8 @@ export function ServiceDetailClient({ service }: { service: ServiceData }) {
                                     className="p-4 sm:p-6 md:p-8 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all"
                                 >
                                     <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-4 flex items-center gap-3">
-                                        <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${gradient} flex items-center justify-center`}>
-                                            <TrendingUp size={18} className="text-white" />
+                                        <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+                                            <TrendingUp size={18} className="text-primary" />
                                         </div>
                                         <span>Business Benefits</span>
                                     </h3>
@@ -300,8 +317,8 @@ export function ServiceDetailClient({ service }: { service: ServiceData }) {
                                     className="p-4 sm:p-6 md:p-8 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all"
                                 >
                                     <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-4 flex items-center gap-3">
-                                        <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${gradient} flex items-center justify-center`}>
-                                            <Sparkles size={18} className="text-white" />
+                                        <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+                                            <Sparkles size={18} className="text-primary" />
                                         </div>
                                         <span>Ongoing Support & Optimization</span>
                                     </h3>
@@ -340,8 +357,8 @@ export function ServiceDetailClient({ service }: { service: ServiceData }) {
                                     className="p-8 sm:p-10 rounded-2xl bg-gradient-to-br from-white/8 to-white/2 border border-white/20 hover:border-primary/40 transition-all duration-500"
                                 >
                                     <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                                        <div className={`p-3 rounded-lg bg-gradient-to-br ${gradient}`}>
-                                            <CheckCircle2 size={24} className="text-white" />
+                                        <div className="p-3 rounded-lg bg-primary/20">
+                                            <CheckCircle2 size={24} className="text-primary" />
                                         </div>
                                         What We Offer
                                     </h3>
@@ -378,8 +395,8 @@ export function ServiceDetailClient({ service }: { service: ServiceData }) {
                                     className="p-8 sm:p-10 rounded-2xl bg-gradient-to-br from-white/8 to-white/2 border border-white/20 hover:border-primary/40 transition-all duration-500"
                                 >
                                     <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                                        <div className={`p-3 rounded-lg bg-gradient-to-br ${gradient}`}>
-                                            <TrendingUp size={24} className="text-white" />
+                                        <div className="p-3 rounded-lg bg-primary/20">
+                                            <TrendingUp size={24} className="text-primary" />
                                         </div>
                                         Our Approach
                                     </h3>

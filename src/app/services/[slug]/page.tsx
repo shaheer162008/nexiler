@@ -75,6 +75,11 @@ const serviceMetadata: Record<string, { title: string; description: string; keyw
         description: "Connect your apps and automate data flow with custom API solutions from Nexiler. REST and GraphQL APIs, payment gateways, CRM integrations and more.",
         keywords: ["nexiler api integration", "api development", "rest api", "graphql", "payment gateway integration", "crm integration", "Nexiler api"],
     },
+    "mobile-app-development": {
+        title: "Nexiler Mobile App Development - iOS Android Native Apps",
+        description: "Professional mobile app development from Nexiler for iOS and Android. Native performance, cross-platform reach, and apps that drive engagement and revenue.",
+        keywords: ["nexiler mobile app development", "ios app development", "android app development", "react native", "flutter", "mobile development", "Nexiler apps"],
+    },
     "custom-software": {
         title: "Nexiler Custom Software Solutions - Bespoke Web Applications",
         description: "Bespoke web apps, dashboards, and tools built exactly for your business needs from Nexiler. From internal tools to enterprise solutions.",

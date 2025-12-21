@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Newsletter } from "@/components/Newsletter";
 import { LinkedInProfile } from "@/components/LinkedInProfile";
 import SpecialThanks from "@/components/SpecialThanks";
+import CoFoundersSection from "@/components/CoFoundersSection";
 import { Target, Users, Zap, Award, Heart, Lightbulb, Globe, ExternalLink } from "lucide-react";
 import { teamMembers, teamExpertise } from "@/lib/team";
 
@@ -85,8 +86,7 @@ export default function AboutPage() {
                                 </p>
                                 <p>
                                     In <strong className="text-white">2025</strong>, that vision became reality. Shaheer brought together a group of talented individuals, 
-                                    each an expert in their field. Alongside co-founders <strong className="text-white">Saim Khalid</strong> and <strong className="text-white">Rabbiya Sohail</strong>, 
-                                    and our core team, we formed <strong className="text-white">Team Nexiler</strong>. 
+                                    each an expert in their field. Alongside his dedicated co-founders and our core team, we formed <strong className="text-white">Team Nexiler</strong>. 
                                     Now, instead of working alone, we work as one team with one goal: to grow your business and solve your problems.
                                 </p>
                                 <p>
@@ -131,6 +131,9 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
+
+            {/* Co-Founders Section */}
+            <CoFoundersSection />
 
             {/* Team Expertise Section */}
             <section className="py-20">

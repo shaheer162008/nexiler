@@ -4,42 +4,33 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Newsletter } from "@/components/Newsletter";
 import { CTA } from "@/components/home/CTA";
-import { Bot, Code, Box, Video, Palette, Search, Share2, Wrench, Globe, Zap, Settings, Film, Plug, Layers, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Code, Zap, MessageCircle, Palette, Film, Wrench, TrendingUp, Share2, Paintbrush, Box, Plug, Smartphone, Settings, BarChart3, Mail } from "lucide-react";
 import Link from "next/link";
 import { servicesContent } from "@/lib/siteContent";
 
-const serviceIcons: Record<string, React.ElementType> = {
-    "website-development": Globe,
-    "ai-automation-setup": Bot,
-    "ai-chatbot-integration": Zap,
-    "full-brand-creation": Settings,
-    "motion-graphics": Video,
-    "video-editing-short": Film,
-    "video-editing-long": Film,
-    "ai-automation-maintenance": Wrench,
-    "seo-optimization": Search,
-    "social-media-ads": Share2,
-    "graphic-design": Palette,
-    "website-maintenance": Wrench,
-    "3d-modeling": Box,
-    "api-integration": Plug,
-    "custom-software": Layers,
+const getServiceIcon = (slug: string) => {
+    const iconMap: { [key: string]: React.ComponentType<any> } = {
+        "website-development": Code,
+        "ai-automation-setup": Zap,
+        "ai-chatbot-integration": MessageCircle,
+        "full-brand-creation": Palette,
+        "motion-graphics": Film,
+        "video-editing-short": Film,
+        "video-editing-long": Film,
+        "ai-automation-maintenance": Wrench,
+        "seo-optimization": TrendingUp,
+        "social-media-ads": Share2,
+        "graphic-design": Paintbrush,
+        "website-maintenance": Wrench,
+        "3d-modeling": Box,
+        "api-integration": Plug,
+        "mobile-app-development": Smartphone,
+        "custom-software": Settings,
+        "data-analytics": BarChart3,
+        "email-marketing": Mail,
+    };
+    return iconMap[slug] || Code;
 };
-
-const gradients = [
-    "from-blue-500 to-cyan-500",
-    "from-purple-500 to-pink-500",
-    "from-cyan-500 to-blue-500",
-    "from-orange-500 to-red-500",
-    "from-green-500 to-teal-500",
-    "from-pink-500 to-purple-500",
-    "from-teal-500 to-green-500",
-    "from-indigo-500 to-purple-500",
-    "from-red-500 to-pink-500",
-    "from-yellow-500 to-orange-500",
-    "from-blue-500 to-indigo-500",
-    "from-green-500 to-cyan-500",
-];
 
 export default function ServicesPage() {
     return (
@@ -97,9 +88,6 @@ export default function ServicesPage() {
                     {/* Premium Services Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8">
                         {servicesContent.services.map((service, index) => {
-                            const Icon = serviceIcons[service.slug] || Code;
-                            const gradient = gradients[index % gradients.length];
-                            
                             return (
                                 <Link 
                                     key={service.slug} 
@@ -114,23 +102,29 @@ export default function ServicesPage() {
                                         className="group relative h-full rounded-2xl overflow-hidden cursor-pointer"
                                     >
                                         {/* Premium Card Background */}
-                                        <div className="absolute inset-0 bg-gradient-to-br from-white/8 to-white/2 border border-white/20 rounded-2xl group-hover:border-primary/50 transition-all duration-500" />
+                                        <div className="absolute inset-0 bg-gradient-to-br from-white/6 to-white/1 border border-white/15 rounded-2xl group-hover:border-primary/40 transition-all duration-500" />
                                         
                                         {/* Luxury Accent Line */}
-                                        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                         
-                                        {/* Shine Effect */}
-                                        <div className="absolute inset-0 bg-gradient-to-br from-white/[0.1] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                                        {/* Glow Effect */}
+                                        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 -z-10 pointer-events-none">
+                                            <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-xl" />
+                                        </div>
 
                                         {/* Card Content */}
                                         <div className="relative p-6 sm:p-7 md:p-8 h-full flex flex-col">
-                                            {/* Premium Icon */}
+                                            {/* Premium Icon from Lucide */}
                                             <motion.div
-                                                whileHover={{ scale: 1.2, rotate: 12 }}
+                                                whileHover={{ scale: 1.1 }}
                                                 transition={{ duration: 0.4 }}
-                                                className={`relative inline-flex p-4 sm:p-4.5 rounded-2xl bg-gradient-to-br ${gradient} mb-6 w-fit shadow-xl group-hover:shadow-2xl transition-all duration-300`}
+                                                className="relative inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-white/8 to-white/4 border border-white/8 mb-4 shadow-lg group-hover:shadow-primary/20 group-hover:border-primary/30 transition-all duration-300"
+                                                style={{ width: '48px', height: '48px' }}
                                             >
-                                                <Icon size={28} className="text-white" />
+                                                {(() => {
+                                                    const IconComponent = getServiceIcon(service.slug);
+                                                    return <IconComponent size={28} className="text-primary stroke-[1.5]" />;
+                                                })()}
                                             </motion.div>
 
                                             {/* Title */}
