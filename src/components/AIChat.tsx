@@ -202,11 +202,12 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
             ref={chatContainerRef}
             className="
               fixed z-50 bg-gradient-to-b from-gray-900 via-gray-950 to-black flex flex-col border border-cyan-500/30 shadow-2xl
-              bottom-0 right-0 left-0 top-auto
-              sm:inset-y-auto sm:bottom-6 sm:right-6 sm:rounded-2xl
-              w-full sm:w-[340px] h-screen sm:h-[500px]
+              top-[70px] bottom-0 right-0
+              sm:inset-y-auto sm:bottom-6 sm:right-6 sm:top-auto
+              w-full sm:w-[340px]
               rounded-t-3xl sm:rounded-2xl
               overflow-hidden
+              h-[calc(100vh-70px)] sm:h-auto
               max-h-[calc(100vh-70px)]
               sm:max-h-[500px]
             "
@@ -224,7 +225,7 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
             </div>
             <button
               onClick={onClose}
-              className="hover:bg-white/20 p-2 rounded-lg transition-all hover:scale-110 active:scale-95 flex-shrink-0 ml-2 bg-white/10"
+              className="p-2 rounded-lg transition-all hover:scale-110 active:scale-95 flex-shrink-0 ml-2"
               aria-label="Close chat"
             >
               <X size={20} className="text-white" />
