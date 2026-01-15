@@ -42,7 +42,7 @@ export default function ContactPage() {
                             <span className="text-gradient">Project</span>
                         </h1>
                         <p className="text-lg md:text-xl text-white/70">
-                            Nexiler is ready to help. Whether you need a website, automation system, or brand strategy, reach out and we'll figure out what's next.
+                            Virtuo Edge is ready to help. Whether you need a website, custom development, or branding strategy, reach out and we'll figure out what's next.
                         </p>
                     </motion.div>
                 </div>
@@ -59,9 +59,9 @@ export default function ContactPage() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-3xl font-bold text-white mb-6">Reach Nexiler</h2>
+                            <h2 className="text-3xl font-bold text-white mb-6">Reach Virtuo Edge</h2>
                             <p className="text-white/70 mb-8 leading-relaxed">
-                                Have a project in mind? Whether you need AI automation, custom website development, or consulting, Nexiler is ready to help. Get in touch and let's start.
+                                Have a project in mind? Whether you need custom web development, branding, or consulting, Virtuo Edge is ready to help. Get in touch and let's start.
                             </p>
 
                             <div className="space-y-6">
@@ -71,8 +71,8 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <div className="font-semibold text-white mb-1">Email</div>
-                                        <a href="mailto:contact@nexiler.tech" className="text-white/70 hover:text-primary transition-colors text-base sm:text-lg">
-                                            contact@nexiler.tech
+                                        <a href="mailto:contact@virtuoedge.com" className="text-white/70 hover:text-primary transition-colors text-base sm:text-lg">
+                                            contact@virtuoedge.com
                                         </a>
                                     </div>
                                 </div>
@@ -83,7 +83,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <div className="font-semibold text-white mb-1">WhatsApp</div>
-                                        <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-primary transition-colors text-base sm:text-lg">
+                                        <a href="https://wa.me/923390046730" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-primary transition-colors text-base sm:text-lg">
                                             Chat with us on WhatsApp
                                         </a>
                                     </div>
@@ -105,25 +105,25 @@ export default function ContactPage() {
                                 <div>
                                     <div className="font-semibold text-white mb-4">Connect With Us</div>
                                     <div className="flex gap-4 flex-wrap">
-                                        <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="WhatsApp">
+                                        <a href="https://wa.me/923390046730" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="WhatsApp">
                                             <MessageCircle size={22} />
                                         </a>
-                                        <a href="https://www.facebook.com/nexiler" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="Facebook">
+                                        <a href="https://www.facebook.com/virtuoedge" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="Facebook">
                                             <Facebook size={22} />
                                         </a>
-                                        <a href="https://www.linkedin.com/company/nexiler" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="LinkedIn">
+                                        <a href="https://www.linkedin.com/company/virtuoedge" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="LinkedIn">
                                             <Linkedin size={22} />
                                         </a>
-                                        <a href="https://x.com/NexilerOfficial" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="Twitter">
+                                        <a href="https://x.com/VirtuoEdgeOfficial" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="Twitter">
                                             <Twitter size={22} />
                                         </a>
-                                        <a href="https://www.instagram.com/nexiler.official" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="Instagram">
+                                        <a href="https://www.instagram.com/virtuoedge.official" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="Instagram">
                                             <Instagram size={22} />
                                         </a>
-                                        <a href="https://github.com/nexiler" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="GitHub">
+                                        <a href="https://github.com/virtuoedge" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="GitHub">
                                             <Github size={22} />
                                         </a>
-                                        <a href="https://www.youtube.com/@nexiler" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="YouTube">
+                                        <a href="https://www.youtube.com/@virtuoedge" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="YouTube">
                                             <Youtube size={22} />
                                         </a>
                                     </div>

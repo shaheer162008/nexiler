@@ -15,22 +15,22 @@ const values = [
     {
         icon: Lightbulb,
         title: "Problem Solvers",
-        description: "We dig into root causes and build solutions that actually work for your business.",
+        description: "We identify root causes and build solutions that work.",
     },
     {
         icon: Users,
         title: "True Partners",
-        description: "We act as an extension of your team, focused on your goals and long-term success.",
+        description: "We act in our clients' long-term interests and share responsibility for results.",
     },
     {
         icon: Globe,
-        title: "Transparent & Honest",
-        description: "We keep communication clear, pricing fair, and decisions documented always.",
+        title: "Transparency",
+        description: "Clear communication, fair pricing, and documented decisions.",
     },
     {
         icon: Award,
         title: "Craftsmanship",
-        description: "We care about the details and deliver high-quality work that lasts.",
+        description: "Attention to detail and quality that stands the test of time.",
     },
 ];
 
@@ -52,7 +52,7 @@ export default function AboutPage() {
                     >
                         <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6">
                             <span className="text-white">Meet </span>
-                            <span className="text-gradient">Team Nexiler</span>
+                            <span className="text-gradient">Virtuo Edge Team</span>
                         </h1>
                         <p className="text-base sm:text-lg md:text-xl text-white/70">
                             A passionate team of developers, designers, and strategists working together to help businesses grow globally.
@@ -77,28 +77,17 @@ export default function AboutPage() {
                             
                             <div className="space-y-6 text-white/70 text-base sm:text-lg md:text-xl leading-relaxed">
                                 <p>
-                                    Before Nexiler, we were all working individually freelancing, taking on projects solo, and doing our best to help clients one at a time. 
-                                    But <strong className="text-white">Muhammad Shaheer</strong>, our founder, had a bigger vision.
+                                    <strong className="text-white">Virtuo Edge is a full-service digital agency</strong> born from a single idea: helping businesses solve real problems by making them truly digital. We combine creativity, technology, and strategic thinking to build digital experiences that drive measurable growth—whether you're a startup finding product-market fit or an established company scaling to the next level.
                                 </p>
                                 <p>
-                                    Since 2023, Shaheer dreamed of building a company that could help people internationally a team that combines skills in web development, 
-                                    AI automation, design, and video production to deliver complete solutions. Not just websites or apps, but real business growth.
+                                    <strong className="text-white">Virtuo Edge started when a small group of freelancers and digital specialists</strong> saw the same recurring problem: companies were getting beautiful websites and campaigns that looked impressive but failed to solve real business challenges. <strong className="text-white">Founded by Ali Hamza</strong>, Virtuo Edge was created to change that — to deliver digital solutions that are practical, measurable, and aligned with clients' real goals.
                                 </p>
                                 <p>
-                                    In <strong className="text-white">2025</strong>, that vision became reality. Shaheer brought together a group of talented individuals, 
-                                    each an expert in their field. Alongside his dedicated co-founders and our core team, we formed <strong className="text-white">Team Nexiler</strong>. 
-                                    Now, instead of working alone, we work as one team with one goal: to grow your business and solve your problems.
-                                </p>
-                                <p>
-                                    Our mission is simple: provide solutions that actually work and save you time. We handle the tech so you can focus on what you do best.
-                                </p>
-
-                                <p>
-                                    We are not here just to make money. We want to solve real problems and help clients reach meaningful outcomes and grow the way they envision. We focus on lasting impact, honest advice, and building tools that make work easier for people.
+                                    Today, our team works as one integrated unit to <strong className="text-white">design, build, and optimize solutions that produce meaningful results.</strong>
                                 </p>
 
                                 <p className="text-white/60 italic border-l-4 border-primary/50 pl-4 mt-8 text-base sm:text-lg md:text-xl">
-                                    <strong className="text-white">Note:</strong> My all team is my co-founder. Everyone here is invested in Nexiler's mission and contributes as a founder would. We share the same values, vision, and commitment to excellence.
+                                    <strong className="text-white">Our Team:</strong> Everyone at Virtuo Edge shares the same values, vision, and commitment to excellence. We work as one team with one goal: to solve your problems and drive your business growth.
                                 </p>
                             </div>
 
@@ -112,7 +101,7 @@ export default function AboutPage() {
                                         <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">The Vision</h3>
                                     </div>
                                     <p className="text-sm sm:text-base md:text-lg text-white/60">
-                                        Build a company that helps businesses worldwide with top-tier development, automation, and design all under one roof.
+                                        To empower every business with digital clarity — turning pain points into scalable opportunities. We envision a world where technology and design work together to solve problems, reduce friction, and unlock sustainable growth for businesses of all sizes.
                                     </p>
                                 </div>
                                 <div className="p-4 sm:p-6 rounded-xl glass border border-white/10">
@@ -123,7 +112,7 @@ export default function AboutPage() {
                                         <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">Our Goal</h3>
                                     </div>
                                     <p className="text-sm sm:text-base md:text-lg text-white/60">
-                                        Deliver solutions that save time, reduce stress, and help our clients grow whether they're startups or established businesses.
+                                        To deliver practical, high-quality digital solutions that save time, build trust, and drive revenue. We achieve this by listening first, diagnosing clearly, and executing with craftsmanship, transparency, and accountability.
                                     </p>
                                 </div>
                             </div>
@@ -195,9 +184,9 @@ export default function AboutPage() {
                         </motion.div>
                     </div>
 
-                    {/* Nexiler Company LinkedIn */}
+                    {/* Virtuo Edge Company LinkedIn */}
                     <motion.a
-                        href="https://www.linkedin.com/company/nexiler"
+                        href="https://www.linkedin.com/company/virtuoedge"
                         target="_blank"
                         rel="noopener noreferrer"
                         initial={{ opacity: 0, y: 20 }}
@@ -210,8 +199,8 @@ export default function AboutPage() {
                         {/* Banner */}
                         <div className="relative h-32 sm:h-40 overflow-hidden">
                             <img
-                                src="https://media.licdn.com/dms/image/v2/D4D3DAQE1PEP9MxAu7g/image-scale_191_1128/B4DZruYcrlJAAc-/0/1764935982743/nexiler_cover?e=1766613600&v=beta&t=-sGGEh2CBvveY4RGDH90-mbE9GGi2TIBSzry9M9IFuk"
-                                alt="Nexiler Banner"
+                                src="https://media.licdn.com/dms/image/v2/D4D3DAQFLQdOlg3tMmw/image-scale_191_1128/B4DZXm04QWHsAc-/0/1743334378415/virtuo_edge_cover?e=1768680000&v=beta&t=hmdJIc0Qz00LARixWckwmt_TDBhnnKIX180xfV3Yiss"
+                                alt="Virtuo Edge Banner"
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#00040F] via-transparent to-transparent" />
@@ -221,17 +210,17 @@ export default function AboutPage() {
                         <div className="p-6 flex items-center gap-4">
                             <div className="w-16 h-16 rounded-xl overflow-hidden border-2 border-white/20 group-hover:border-[#0A66C2]/50 transition-all shrink-0 bg-white">
                                 <img
-                                    src="https://media.licdn.com/dms/image/v2/D4D0BAQHX1IwndP6IFA/company-logo_200_200/B4DZre7n2dHwAQ-/0/1764676763531?e=1767830400&v=beta&t=6wG9bU8hxae0LPzyMvrJsZnVfaIMEvKlsVLD02v0be0"
-                                    alt="Nexiler Logo"
+                                    src="https://media.licdn.com/dms/image/v2/D4D0BAQHugQYCz0D8TQ/company-logo_200_200/company-logo_200_200/0/1738965253639/virtuo_edge_logo?e=1769644800&v=beta&t=AEXfzOChCpmsTWZInPbZhdCtctub6d7IkIZ5LuZlvm0"
+                                    alt="Virtuo Edge Logo"
                                     className="w-full h-full object-contain"
                                 />
                             </div>
                             <div className="flex-1">
                                 <h3 className="text-xl font-semibold text-white group-hover:text-[#0A66C2] transition-colors">
-                                    Nexiler
+                                    Virtuo Edge
                                 </h3>
                                 <p className="text-white/60 text-base sm:text-lg">
-                                    Web Development, AI Automation & Business Growth
+                                    Full-Service Digital Agency | Web, Design & Business Growth
                                 </p>
                             </div>
                             <div className="flex items-center gap-2 text-sm text-white/50 group-hover:text-[#0A66C2] transition-colors">
@@ -244,10 +233,8 @@ export default function AboutPage() {
                     {/* LinkedIn Profile Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                         {teamMembers.map((member, index) => {
-                            // First two members (Shaheer and Rabbiya) - 2 columns
-                            // Third member (Saim) - centered
-                            // Fourth member (Amir) - centered until another candidate joins, then 2 columns
-                            const isCentered = index === 2 || (index === 3 && index === teamMembers.length - 1);
+                            // Ali Hamza and Muhammad Rayan - 2 columns
+                            const isCentered = false;
                             return (
                                 <motion.div
                                     key={member.id}

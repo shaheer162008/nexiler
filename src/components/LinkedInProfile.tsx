@@ -31,9 +31,9 @@ interface LinkedInProfileProps {
  * Usage:
  * ```tsx
  * <LinkedInProfile
- *     profileUrl="https://www.linkedin.com/in/muhammad-shaheer-yousuf/"
- *     name="Muhammad Shaheer"
- *     headline="Founder & CEO at Nexiler"
+ *     profileUrl="https://www.linkedin.com/in/ali-hamza-link/"
+ *     name="Ali Hamza"
+ *     headline="Founder & CEO at Virtuo Edge"
  *     isFounder={true}
  * />
  * ```

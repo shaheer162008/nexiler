@@ -1,124 +1,188 @@
 // Centralized knowledge base for the AI chatbot
-// This file contains all information the chatbot should know about Nexiler
+// This file contains all information the chatbot should know about Virtuo Edge
 
 export const siteContent = `
-Nexiler is an AI-driven automation and custom development company that helps modern businesses scale with cutting-edge technology.
+Virtuo Edge is a full-service digital agency specializing in web development, design, branding, marketing, and creative content. We help businesses solve real problems through strategic digital transformation, combining technology expertise with creative excellence.
 
 Company Overview:
-- Founded to help businesses transform through AI and automation
-- Expert team of developers, AI specialists, and strategists
+- Founded by Ali Hamza in 2024 to solve real business challenges
+- Expert team of developers, designers, marketing strategists, and creative professionals
 - Headquarters: Pakistan
 - Services available globally
+- Leadership: Ali Hamza (Founder & CEO), Muhammad Rayan (Co-founder & Director of Operations)
 
 Core Mission:
-We transform businesses by building AI-powered solutions and custom software that scale. Our team combines deep technical expertise with business acumen to deliver solutions that actually move the needle.
+To deliver practical, high-quality digital solutions that save time, build trust, and drive revenue. We achieve this by listening first, diagnosing clearly, and executing with craftsmanship, transparency, and accountability.
+
+Core Vision:
+To empower every business with digital clarity — turning pain points into scalable opportunities. We envision a world where technology and design work together to solve problems, reduce friction, and unlock sustainable growth for businesses of all sizes.
 
 Key Values:
-- Innovation: We stay at the forefront of AI and web technology
-- Quality: Every project receives meticulous attention to detail
-- Reliability: We deliver on time and within scope
-- Partnership: We work closely with clients as true partners
-- Transparency: Clear communication at every step
+- Problem Solvers: We identify root causes and build solutions that work
+- True Partners: We act in our clients' long-term interests and share responsibility for results
+- Transparency: Clear communication, fair pricing, and documented decisions
+- Craftsmanship: Attention to detail and quality that stands the test of time
+
+Primary Services:
+1. Website Development & E-commerce - Custom, conversion-focused websites
+2. UX/UI Design & Branding - Complete brand identity and user experience
+3. Digital Marketing & SEO - Search rankings, content strategy, organic growth
+4. Social Media Strategy & Ads Management - Content, community, paid campaigns
+5. Video Production & Motion Graphics - Reels, explainer videos, animations
+6. Graphic Design - Social media, marketing materials, brand assets
+7. Website Maintenance - Security, updates, ongoing support
+8. AI Chatbot Integration - 24/7 customer support automation
+9. Business Automation - Workflow optimization and efficiency
+10. 3D Modeling & Visualization - Product renders, architectural visualization
+11. API Integration - App connectivity and data automation
+12. Mobile App Development - iOS and Android native apps
+13. Custom Software Solutions - Bespoke business applications
+
+Marketing Specialties (Our Core Competency):
+- SEO Optimization: Technical SEO, content optimization, keyword research, link building, Google ranking improvement
+- Social Media Marketing: Strategy development, content creation, community management, paid ads (Facebook, Instagram)
+- Content Strategy: Blog posts, copywriting, email marketing, landing pages, conversion-focused copy
+- Digital Marketing Strategy: Data-driven approach, analytics setup, CRO, A/B testing, performance tracking
+- Brand Strategy: Logo design, brand guidelines, visual identity, brand messaging, competitive positioning
+- Conversion Rate Optimization: User behavior analysis, funnel optimization, landing page design, sales psychology
+- Social Media Ads Management: Facebook Ads, Instagram Ads, campaign strategy, budget optimization, ROI tracking
+
+Our Approach:
+1. Discover — Understand your business, audience, goals, and the root of the problem
+2. Design — Create solutions focused on clarity, usability, and conversion
+3. Build — Implement using modern, scalable, and maintainable technologies
+4. Grow — Measure, optimize, and scale what works for sustainable growth
+
+Key Differentiators:
+- Results-focused approach with measurable outcomes
+- Transparent pricing with no hidden fees
+- Fast turnaround: deliver results in days, not months
+- Expert team across multiple disciplines
+- Strategic partnership mentality
+- Proven track record across diverse industries
+- Marketing expertise at the core of everything we do
 `;
 
 export const serviceDescriptions = `
-1. Website Development ($1000 - $3500+)
-   - SEO-optimized, conversion-focused websites
-   - Mobile-first responsive design
-   - CMS integration for easy content management
-   - Third-party API integrations and payment gateways
-   - Perfect for startups scaling their online presence
+1. Website Development & E-commerce
+   - Custom websites built for conversion and user clarity
+   - E-commerce solutions with seamless payment integration
+   - Mobile-first responsive design across all devices
+   - SEO-optimized architecture for search engine ranking
+   - CMS integration for easy content management and updates
+   - Fast loading speeds and optimal performance
+   - Perfect for businesses scaling their digital presence
 
-2. AI Automation Setup ($1000 - $2500)
-   - Automate repetitive tasks and save 20+ hours weekly
-   - Custom workflow design
-   - Lead generation and nurturing automation
-   - Automated email and SMS campaigns
-   - Data sync between CRM and apps
-   - Can reduce manual work by up to 70%
+2. UX/UI Design & Branding
+   - Complete brand identity creation from scratch
+   - Custom logo and visual design that stands out
+   - Brand guidelines and design systems for consistency
+   - User interface design focused on conversion
+   - Website and mobile app design with user research
+   - Print and digital assets for cohesive branding
+   - Color psychology and design that resonates with audiences
 
-3. AI Chatbot Integration ($1000 - $1800)
-   - 24/7 AI chatbots for website, WhatsApp, and social media
-   - Natural language understanding with AI training
-   - Automatic lead capture and CRM sync
-   - Conversation analytics and insights
-   - Multi-language support
-   - 40-60% higher lead quality
+3. Digital Marketing & SEO (Our Core Specialty)
+   - Technical SEO implementation for search ranking
+   - On-page SEO optimization and content strategy
+   - Keyword research and competitive analysis
+   - Link building and domain authority development
+   - Content creation that ranks and converts
+   - Conversion rate optimization strategies
+   - Data-driven marketing approach with measurable results
 
-4. Full Brand Creation ($2500 - $4500)
-   - Complete brand identity from scratch
-   - Custom logo design
-   - Brand guidelines and visual system
-   - Color palette and typography system
-   - Brand voice and messaging framework
-   - Social media and web asset pack
+4. Social Media Strategy & Ads Management
+   - Social media planning and strategy development
+   - Content calendar and consistent posting schedule
+   - Engaging copywriting and creative content
+   - Community management and audience engagement
+   - Facebook Ads and Instagram Ads campaign management
+   - Budget optimization and ROI tracking
+   - Social media analytics and detailed reporting
+   - Growth strategy tailored to your business goals
 
-5. Motion Graphics ($400 - $1200 per asset)
-   - Stop-the-scroll animations
-   - Explainer videos and product demos
-   - Logo animation and brand motion guidelines
+5. Video Production & Motion Graphics
+   - Explainer videos and product demonstration videos
+   - Motion graphics and animations for web
+   - Reel/Short/TikTok content creation and optimization
+   - Video editing and post-production services
    - 3-4x higher engagement than static content
+   - Stop-the-scroll animations that capture attention
+   - Professional video marketing strategy
 
-6. Video Editing - Short Content/Reels ($800 - $1500/month)
-   - 10-20 platform-optimized Reels/Shorts/TikToks monthly
-   - Color grading and visual consistency
-   - Automated captions and trending effects
-   - Optimized for Instagram, TikTok, YouTube
+6. Graphic Design Services
+   - Social media graphics and content
+   - Marketing materials (flyers, banners, posters)
+   - Brand assets and icon design
+   - Unlimited revisions until satisfied
+   - Fast turnaround on deliverables
+   - Print and digital design expertise
+   - Consistent brand visual communication
 
-7. Video Editing - Long Content ($1200 - $2500/month)
-   - 4-8 long-form videos monthly (10-30 min)
-   - Multi-camera editing with seamless cuts
-   - Professional color grading and audio mixing
-   - Motion graphics, titles, and YouTube optimization
+7. Website Maintenance & Security
+   - Monthly website maintenance and updates
+   - Security monitoring and protection
+   - Regular backups and disaster recovery
+   - Technical support and bug fixes
+   - Performance optimization and speed enhancement
+   - Content updates and CMS management
+   - Ongoing technical support
 
-8. Mobile App Development
-   - Native iOS and Android development
-   - React Native cross-platform solutions
-   - Custom API development
-   - App store optimization
+8. AI Chatbot Integration
+   - 24/7 customer support automation
+   - Multi-language support capability
+   - Lead qualification and nurturing
+   - Customer service improvement
+   - Intelligent response system
+   - Integration with existing systems
+   - Reduces support costs while improving service
 
-9. E-Commerce Solutions
-   - Full e-commerce platform setup
-   - Payment gateway integration
-   - Inventory management systems
-   - Shopping cart optimization for conversions
+9. Business Automation & Workflow
+   - Automate repetitive business processes
+   - Workflow optimization and efficiency gains
+   - Lead management automation
+   - Email marketing automation
+   - Data integration between systems
+   - Custom automation solutions
+   - Time and cost savings for your business
 
-10. Data Analytics & Dashboards
-    - Custom dashboard design
-    - Real-time data visualization
-    - Business intelligence solutions
-    - Performance tracking and reporting
+10. 3D Modeling & Visualization
+    - Photorealistic product renders
+    - Architectural visualization
+    - AR/VR content creation
+    - Interactive 3D models
+    - Professional visualization for marketing
+    - Design visualization before production
+    - Stunning visual content for campaigns
 
-11. API Development & Integration
-    - Custom REST and GraphQL APIs
-    - Third-party API integration
-    - Webhook development
-    - Payment processing integrations
+11. API Integration & Custom Development
+    - REST and GraphQL API development
+    - Payment gateway integration
+    - CRM system integration
+    - Third-party app connectivity
+    - Data synchronization solutions
+    - Scalable API architecture
+    - Seamless system connectivity
 
-12. Email Marketing Automation
-    - Automated email campaigns
-    - Segmentation and personalization
-    - A/B testing and optimization
-    - Deliverability optimization
+12. Mobile App Development
+    - iOS native app development
+    - Android native app development
+    - React Native cross-platform apps
+    - App design and UX
+    - App store optimization
+    - Performance and security focus
+    - Long-term app support and updates
 
-13. SEO Optimization
-    - On-page and technical SEO
-    - Content optimization
-    - Link building strategies
-    - Search ranking improvement
-
-14. Cloud Migration & DevOps
-    - Cloud infrastructure setup (AWS, Google Cloud, Azure)
-    - CI/CD pipeline implementation
-    - Database optimization
-    - System scaling and performance tuning
-
-15. Consultation & Strategy
-    - Business technology strategy
-    - AI implementation roadmap
-    - Digital transformation planning
-    - Tech stack recommendations
+13. Custom Software Solutions
+    - Bespoke web applications
+    - Admin dashboards and tools
+    - Enterprise solutions
+    - Business software development
+    - Database design and optimization
+    - Cloud-based solutions
+    - Scalable technology architecture
 `;
+
 
 export const portfolioInfo = `
 Featured Projects:
@@ -148,37 +212,33 @@ All projects demonstrate expertise in modern web technologies, user experience d
 `;
 
 export const aboutUs = `
-The Nexiler Team:
+The Virtuo Edge Team:
 
-Leadership & Expertise:
-- Experienced AI specialists and machine learning engineers
-- Full-stack developers with expertise in modern frameworks
-- UI/UX designers with conversion-focused approach
-- Project managers ensuring on-time delivery
-- Business strategists connecting technology to ROI
+Leadership:
+- Ali Hamza - Founder & CEO
+- Muhammad Rayan - Co-founder & Director of Operations
 
 Our Approach:
-1. Discovery: We understand your business, goals, and challenges
-2. Strategy: We design a technology roadmap aligned with your vision
-3. Development: Our expert team builds with precision and care
-4. Optimization: We continuously improve and scale your solutions
-5. Support: We provide ongoing maintenance and enhancements
+1. Discover: We understand your business, audience, and challenges
+2. Design: We create solutions focused on clarity, usability, and conversion
+3. Build: We implement using modern, scalable technologies
+4. Grow: We measure, optimize, and scale what works
 
-Why Choose Nexiler:
-- Proven track record with successful projects across industries
-- Focus on ROI and business impact, not just technology
-- Agile methodology ensuring flexibility and quick iterations
-- Transparent communication and regular updates
-- Competitive pricing without compromising quality
+Why Choose Virtuo Edge:
+- Proven track record helping businesses solve real problems
+- Focus on measurable results and business impact
+- Full-service digital solutions (web, design, marketing)
+- Transparent communication and partnership approach
+- Competitive pricing with quality craftsmanship
 - Post-launch support and optimization
 
-Team Capabilities:
-- JavaScript/TypeScript (React, Next.js, Node.js)
-- Python (AI/ML, Automation, Backend)
-- Cloud platforms (AWS, Google Cloud, Firebase)
-- Database design (SQL, NoSQL, Vector databases)
-- AI/LLM integration (OpenAI, Google Gemini, etc.)
-- Mobile development (React Native, iOS, Android)
-- DevOps and infrastructure (Docker, CI/CD)
-- UI/UX design and prototyping
+Our Expertise:
+- Website development (Next.js, React, modern frameworks)
+- UI/UX design and branding
+- Digital marketing and SEO
+- Social media strategy and content creation
+- Motion graphics and video production
+- Analytics and data-driven strategy
+- Mobile-friendly responsive design
+- Performance optimization and security
 `;

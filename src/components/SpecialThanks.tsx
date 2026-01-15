@@ -12,7 +12,7 @@ interface SpecialThanksProps {
 
 export default function SpecialThanks({
     quote = "Thank you for trusting us with your ideas. We build, learn, and grow together, and that's our greatest reward.",
-    signature = "Muhammad Shaheer, Founder & CEO",
+    signature = "Ali Hamza, Founder & CEO",
     ctaText = "",
     ctaHref = "",
 }: SpecialThanksProps) {
@@ -27,7 +27,7 @@ export default function SpecialThanks({
             <div className="p-8 rounded-2xl glass border border-white/10">
                 <h3 className="text-2xl font-semibold text-white mb-3">A Note From Our Founder</h3>
                 <p className="text-white/60 mb-4">
-                    To my co-founders and the whole Nexiler team, thank you for your hard work, creativity and persistence. You turned a small idea into a company that helps businesses grow and I am proud of what we achieve together.
+                    To my co-founder Muhammad Rayan and the whole Virtuo Edge team, thank you for your hard work, creativity and persistence. You turned a small idea into a company that helps businesses solve real problems and I am proud of what we achieve together.
                 </p>
 
                 <div className="bg-gradient-to-r from-primary/5 to-cyan-500/5 p-4 rounded-lg mb-4">

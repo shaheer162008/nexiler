@@ -14,7 +14,7 @@ export async function generateMetadata({
     if (!blog) {
       return {
         title: "Blog Not Found",
-        description: "The blog you are looking for does not exist on Nexiler.",
+        description: "The blog you are looking for does not exist on Virtuo Edge.",
       };
     }
     return {
@@ -23,8 +23,8 @@ export async function generateMetadata({
       openGraph: {
         title: blog.title,
         description: blog.excerpt,
-        url: `https://nexiler.com/blogs/${slug}`,
-        siteName: "Nexiler",
+        url: `https://virtuoedge.tech/blogs/${slug}`,
+        siteName: "Virtuo Edge",
         type: "website",
       },
       twitter: {
@@ -44,10 +44,12 @@ export async function generateMetadata({
 
         querySnapshot.forEach((doc) => {
           const data = doc.data();
-          // Generate slug from title
+          // Check stored slug first, then generate from title
+          const storedSlug = data.slug;
           const generatedSlug = generateSlug(data.title);
+          const matchesSlug = storedSlug === slug || generatedSlug === slug;
 
-          if (generatedSlug === slug) {
+          if (matchesSlug) {
             foundBlog = {
               id: doc.id,
               title: data.title || "",

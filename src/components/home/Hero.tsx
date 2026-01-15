@@ -6,7 +6,7 @@ import { Sparkles, ArrowRight } from "lucide-react";
 
 export const Hero = () => {
     return (
-        <section className="relative min-h-[66vh] md:min-h-[76vh] flex items-center justify-center overflow-hidden pt-16 sm:pt-20 lg:pt-28 pb-10 px-4">
+        <section className="relative min-h-[66vh] md:min-h-[76vh] flex items-center justify-center overflow-hidden pt-24 sm:pt-28 lg:pt-32 pb-10 px-4">
             <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
                 <div 
                     className="absolute inset-0"
@@ -31,23 +31,23 @@ export const Hero = () => {
                         </div>
                     </motion.div>
 
-                    <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div className="grid lg:grid-cols-[1fr_1.1fr] gap-6 lg:gap-8 xl:gap-12 items-center">
                         {/* Left Content */}
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
-                            className="text-center lg:text-left"
+                            className="text-center lg:text-left w-full"
                         >
                             {/* Main Headline */}
                             <motion.h1
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-                                className="text-4xl md:text-6xl font-bold mb-4 sm:mb-5 md:mb-6 leading-[1.05]"
+                                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-5 leading-[1.1]"
                             >
                                 <span className="text-white">Make Your Business Work </span>
-                                <span className="text-gradient whitespace-nowrap">Smarter with Nexiler</span>
+                                <span className="text-gradient whitespace-nowrap">Smarter with Virtuo Edge</span>
                             </motion.h1>
 
                             {/* Subheadline */}
@@ -87,7 +87,7 @@ export const Hero = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.8, ease: [0.4, 0, 0.2, 1] }}
-                                className="flex gap-3 sm:gap-4 md:gap-6 justify-center lg:justify-start mx-auto lg:mx-0"
+                                className="flex gap-2 sm:gap-3 md:gap-4 lg:gap-6 justify-center lg:justify-start mx-auto lg:mx-0 flex-wrap"
                             >
                                 {[
                                     { value: "50+", label: "Clients" },
@@ -117,12 +117,12 @@ export const Hero = () => {
                             initial={{ opacity: 0, x: 50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 1, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                            className="hidden md:flex relative group items-center justify-center mt-8 lg:mt-0"
+                            className="hidden lg:flex relative group items-center justify-center justify-self-end w-full"
                         >
                             <motion.div
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
-                            className="relative w-full max-w-[280px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-none aspect-square"
+                            className="relative w-full max-w-[320px] xl:max-w-[420px] aspect-square"
                             >
                                 <Image
                                     src="/hero.png"

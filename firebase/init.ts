@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB2MPkLSehhP7o6ObXBvYUFT0ySBHfe3OU",
-  authDomain: "nexiler.firebaseapp.com",
-  projectId: "nexiler",
-  storageBucket: "nexiler.firebasestorage.app",
-  messagingSenderId: "1057091897732",
-  appId: "1:1057091897732:web:64747c8811285e426235d1",
-  measurementId: "G-VK07E4WPDE"
+  apiKey: "AIzaSyDHEsqeFOL5gjGjNaiDPL8wqfnYKfNZJsA",
+  authDomain: "virtuo-edge.firebaseapp.com",
+  projectId: "virtuo-edge",
+  storageBucket: "virtuo-edge.firebasestorage.app",
+  messagingSenderId: "241072798540",
+  appId: "1:241072798540:web:b44b76f9e231960e766de9",
+  measurementId: "G-YDWF5X1WZQ"
 };
 
 export const app = initializeApp(firebaseConfig);

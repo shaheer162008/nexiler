@@ -22,13 +22,13 @@ const footerLinks = {
 };
 
 const socialLinks = [
-    { Icon: Twitter, href: "https://x.com/NexilerOfficial", label: "X" },
-    { Icon: Youtube, href: "https://www.youtube.com/@Nexiler.Official", label: "Youtube" },
-    { Icon: Linkedin, href: "https://www.linkedin.com/company/nexiler", label: "LinkedIn" },
-    { Icon: Github, href: "https://github.com/nexiler-official", label: "GitHub" },
-    { Icon: Instagram, href: "https://www.instagram.com/nexiler.official", label: "Instagram" },
-    { Icon: Mail, href: "mailto:contact@nexiler.tech", label: "Email" },
-    { Icon: Facebook, href: "https://www.facebook.com/share/1APYFEoejH/", label: "Facebook" },
+    { Icon: Twitter, href: "https://x.com/VirtuoEdge", label: "X" },
+    { Icon: Youtube, href: "https://www.youtube.com/@VirtuoEdge", label: "Youtube" },
+    { Icon: Linkedin, href: "https://www.linkedin.com/company/virtuoedge", label: "LinkedIn" },
+    { Icon: Github, href: "https://github.com/virtuo-edge", label: "GitHub" },
+    { Icon: Instagram, href: "https://www.instagram.com/virtuoedge", label: "Instagram" },
+    { Icon: Mail, href: "mailto:contact@virtuoedge.com", label: "Email" },
+    { Icon: Facebook, href: "https://www.facebook.com/virtuoedge", label: "Facebook" },
 ];
 
 export const Footer = () => {
@@ -120,10 +120,10 @@ export const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="pt-8 sm:pt-10 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
                     <p className="text-white/40 text-base sm:text-lg text-center sm:text-left">
-                        © {new Date().getFullYear()} Nexiler. All rights reserved.
+                        © {new Date().getFullYear()} Virtuo Edge. All rights reserved.
                     </p>
                     <p className="text-white/40 text-base sm:text-lg">
-                        Developed by Team Nexiler
+                        Developed by Virtuo Edge
                     </p>
                 </div>
             </div>

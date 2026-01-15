@@ -8,6 +8,8 @@ import { db, app } from '../../../../../firebase/init'
 
 interface BlogForm {
   title: string
+  slug: string
+  excerpt: string
   content: string
   category: string
   date: string
@@ -29,6 +31,8 @@ const NewBlogPage = () => {
 
   const [formData, setFormData] = useState<BlogForm>({
     title: '',
+    slug: '',
+    excerpt: '',
     content: '',
     category: '',
     date: new Date().toISOString().split('T')[0],
@@ -59,10 +63,15 @@ const NewBlogPage = () => {
     >
   ) => {
     const { name, value } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
+    
+    // Generate slug automatically when title changes
+    let newFormData = { ...formData, [name]: value }
+    if (name === 'title') {
+      newFormData.slug = generateSlug(value)
+    }
+    
+    setFormData(newFormData)
+    
     // Clear error for this field
     if (errors[name]) {
       setErrors((prev) => {
@@ -71,6 +80,16 @@ const NewBlogPage = () => {
         return newErrors
       })
     }
+  }
+
+  // Generate slug from title
+  const generateSlug = (title: string): string => {
+    return title
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
   }
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -206,6 +225,7 @@ const NewBlogPage = () => {
 
       const blogData = {
         title: formData.title,
+        slug: generateSlug(formData.title),
         excerpt: formData.content.substring(0, 150).replace(/\n/g, ' '),
         content: processedContent,
         category: formData.category,
@@ -224,6 +244,8 @@ const NewBlogPage = () => {
       // Clear form and redirect
       setFormData({
         title: '',
+        slug: '',
+        excerpt: '',
         content: '',
         category: '',
         date: new Date().toISOString().split('T')[0],
@@ -256,6 +278,7 @@ const NewBlogPage = () => {
 
       const blogData = {
         title: formData.title,
+        slug: generateSlug(formData.title),
         excerpt: formData.content.substring(0, 150).replace(/\n/g, ' '),
         content: processedContent,
         category: formData.category,
@@ -422,6 +445,12 @@ const NewBlogPage = () => {
                   {formData.title.length}/100
                 </span>
               </div>
+              {formData.slug && (
+                <div className="mt-3 p-3 bg-gray-100 rounded-lg border border-gray-300">
+                  <p className="text-xs font-medium text-gray-700 mb-1">URL Slug:</p>
+                  <code className="text-xs text-gray-900 break-all">/blogs/{formData.slug}</code>
+                </div>
+              )}
             </div>
 
             {/* Read Time */}

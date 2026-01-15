@@ -2,32 +2,32 @@ import { Metadata } from "next";
 
 // Base configuration
 const siteConfig = {
-  name: "Nexiler",
-  description: "We help businesses grow through modern websites, smart automation, and proven strategies. Real solutions that deliver results.",
-  url: "https://nexiler.tech",
-  ogImage: "https://nexiler.tech/og-image.jpg",
+  name: "Virtuo Edge",
+  description: "We help businesses solve real problems through digital transformation. Full-service digital agency with web, design, and growth solutions.",
+  url: "https://virtuoedge.tech",
+  ogImage: "https://virtuoedge.tech/og-image.jpg",
   keywords: [
-    "business growth",
-    "automation solutions",
+    "digital agency",
     "web development",
+    "UI/UX design",
+    "branding",
+    "digital marketing",
+    "business growth",
+    "custom website",
     "digital transformation",
-    "business automation",
-    "custom software",
-    "mobile app development",
-    "process automation",
-    "tech solutions",
-    "enterprise solutions",
-    "automation services",
-    "consulting",
+    "business solutions",
+    "creative design",
+    "web design",
+    "digital strategy",
     "growth strategies",
     "digital solutions",
     "business scaling"
   ],
-  creator: "Nexiler",
-  authors: [{ name: "Nexiler Team", url: "https://nexiler.tech" }],
+  creator: "Virtuo Edge",
+  authors: [{ name: "Virtuo Edge Team", url: "https://virtuoedge.com" }],
   twitter: {
-    creator: "@nexiler",
-    site: "@nexiler",
+    creator: "@virtuoedge",
+    site: "@virtuoedge",
   },
 };
 
@@ -112,27 +112,27 @@ export function generateMetadata({
 
 // Home page metadata
 export const homeMetadata = generateMetadata({
-  title: "Nexiler AI Automation and Web Development Solutions",
-  description: "Build smarter with Nexiler. AI automation, web development, workflow optimization, and organic growth strategies for SMBs and scaling businesses.",
+  title: "Virtuo Edge - Full-Service Digital Agency",
+  description: "Build smarter with Virtuo Edge. Web development, design, branding, and growth strategies for businesses of all sizes.",
   path: "",
   keywords: [
-    "Nexiler",
-    "AI automation for small business",
-    "Nexiler web development agency",
-    "workflow automation services",
-    "AI automation solutions",
-    "custom web development",
-    "business automation platform",
-    "organic growth strategies",
+    "Virtuo Edge",
+    "digital agency",
+    "web development",
+    "UI/UX design",
+    "branding agency",
+    "digital marketing",
+    "web design services",
+    "business growth",
   ],
 });
 
 // About page metadata
 export const aboutMetadata = generateMetadata({
-  title: "About Us | Your Partners in Growth",
-  description: "We help businesses grow through smart technology and proven strategies. Meet the team behind your success.",
+  title: "About Us | Virtuo Edge - Your Digital Partner",
+  description: "We help businesses solve real problems through digital transformation. Meet Ali Hamza and Muhammad Rayan, the founders.",
   path: "/about",
-  keywords: ["about nexiler", "digital agency", "growth partners", "our team"],
+  keywords: ["about virtuo edge", "digital agency", "growth partners", "our team"],
 });
 
 // Services page metadata
@@ -194,17 +194,17 @@ export const organizationSchema = {
   url: siteConfig.url,
   logo: `${siteConfig.url}/logo.png`,
   description: siteConfig.description,
-  foundingDate: "2023",
+  foundingDate: "2024",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Customer Service",
-    email: "contact@nexiler.tech",
+    email: "contact@virtuoedge.com",
     availableLanguage: ["English"],
   },
   sameAs: [
-    "https://twitter.com/nexiler",
-    "https://linkedin.com/company/nexiler",
-    "https://github.com/nexiler",
+    "https://twitter.com/virtuoedge",
+    "https://linkedin.com/company/virtuoedge",
+    "https://github.com/virtuo-edge",
   ],
 };
 
