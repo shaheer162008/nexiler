@@ -202,12 +202,12 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
             ref={chatContainerRef}
             className="
               fixed z-50 bg-gradient-to-b from-gray-900 via-gray-950 to-black flex flex-col border border-cyan-500/30 shadow-2xl
-              top-[70px] bottom-0 right-0
-              sm:inset-y-auto sm:bottom-6 sm:right-6 sm:top-auto
+              top-[70px] bottom-0 left-0 right-0
+              sm:inset-y-auto sm:bottom-6 sm:right-6 sm:left-auto sm:top-auto
               w-full sm:w-[340px]
               rounded-t-3xl sm:rounded-2xl
               overflow-hidden
-              h-[calc(100vh-70px)] sm:h-auto
+              sm:h-auto
               max-h-[calc(100vh-70px)]
               sm:max-h-[500px]
             "
@@ -307,21 +307,21 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
           </div>
 
           {/* Input */}
-          <div className="border-t border-gray-700/50 bg-gradient-to-t from-black to-gray-950 p-4 sm:rounded-b-2xl flex-shrink-0 rounded-b-3xl sm:rounded-b-2xl">
-            <form onSubmit={handleSubmit} className="flex gap-2">
+          <div className="bg-gradient-to-t from-black to-gray-950 p-4 sm:rounded-b-2xl flex-shrink-0 rounded-b-3xl">
+            <form onSubmit={handleSubmit} className="flex gap-2 w-full">
               <input
                 ref={inputRef}
                 type="text"
                 value={input}
                 onChange={e => setInput(e.target.value)}
                 placeholder="Ask something..."
-                className="flex-1 bg-gray-800 border border-gray-700 text-white placeholder-gray-500 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                className="flex-1 text-sm bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/40 hover:border-cyan-500/60 text-cyan-300 rounded-lg px-3 py-3 placeholder-cyan-500/50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all leading-relaxed font-medium"
                 disabled={isLoading}
               />
               <button
                 type="submit"
                 disabled={isLoading || !input.trim()}
-                className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 disabled:from-gray-700 disabled:to-gray-700 disabled:cursor-not-allowed text-white rounded-lg px-4 py-2.5 transition-all active:scale-95 shadow-lg shadow-cyan-500/30 disabled:shadow-none flex items-center justify-center flex-shrink-0"
+                className="text-sm bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/40 hover:border-cyan-500/60 text-cyan-300 rounded-lg px-3 py-3 transition-all active:scale-95 leading-relaxed font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center flex-shrink-0"
               >
                 <Send size={18} />
               </button>
